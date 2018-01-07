@@ -74,4 +74,4 @@ jekyll-archives:
     category: /categories/:name/
     tag: /tags/:name/
 
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
