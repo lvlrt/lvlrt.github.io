@@ -31,3 +31,4 @@ localhost:4000
 ##extra 
 
 google analytics
+![My helpful screenshot]({{ "/assets/screenshot.png" | absolute_url }})
