@@ -195,25 +195,25 @@ The option to edit offline, have offline-backups of the complete source and real
 
 <p>When demonstrating the need for network security, there are few tools that can really get the appropriate reaction and are easy enough to demo to a crowd of people without actually sending malicious code or using an exploit which might crash the device.</p>
 
-<p>A great demo is to try to downgrade the security of traffic on a network from SSL to unencrypted HTTP. We can do this with tools such as Bettercap, SSLstrip or another variant. After this security downgrade, it is possible to inject extra code into HTTP connections to make the website’s background pink or give an alert. Just something that is very noticable to a user and that will get a reaction.</p>
+<p>A great demo is to try to downgrade the security of traffic on a network from SSL to unencrypted HTTP. <a href="https://demgeeks.com/hackotg-v1-4-see-all-traffic-on-a-network">We can do this</a> with tools such as <a href="https://www.bettercap.org">Bettercap</a>, <a href="https://moxie.org/software/sslstrip/">SSLstrip</a> or another variant. After this security downgrade, it is possible to inject extra code into HTTP connections to make the website’s background pink or give an alert. Just something that is very noticable to a user and that will get a reaction.</p>
 
-<p>What takes this to the next level is Browser Exploitation. The very famous tool BeEF (Browser Exploitation Framework Project) can control the complete website a target loaded over an unsecure connection after an extra script is injected into it which ‘hooks’ the client and makes it receive commands from BeEF.</p>
+<p>What takes this to the next level is Browser Exploitation. The very famous tool <a href="http://beefproject.com/">BeEF</a> (Browser Exploitation Framework Project) can control the complete website a target loaded over an unsecure connection after an extra script is injected into it which ‘hooks’ the client and makes it receive commands from <a href="http://beefproject.com/">BeEF</a>.</p>
 
 <h2>The issue</h2>
 
 <p>Browser Exploitation is nothing new and BeEF is a well-known tool, but it is a bit older, and needs a lot of extra dependencies. Here is were the usage of old libraries like libv8 and specific Ruby gems start to become an issue. Which makes it almost impossible to install on the newer architectures like ARM.</p>
 
-<p>We see many auditing devices built on a mobile architecture such as ARM surface such as the WiFi Pineapple, Packet Squirrel and even your own rooted Android smartphone. Which are compact tools that make a great portable and reliable platform. Using these devices on-the-go or for example a Raspberry Pi as a low-powered server in the cloud is an excellent use of these new and cheaper devices to audit networks and demonstrate attack vectors.</p>
+<p>We see many auditing devices built on a mobile architecture such as ARM surface such as the <a href="https://www.wifipineapple.com/">WiFi Pineapple</a>, <a href="https://www.hak5.org/gear/packet-squirrel">Packet Squirrel</a> and even <a href="https://null-byte.wonderhowto.com/how-to/rooted-android-your-new-pentesting-tool-0159093">your own rooted Android smartphone</a>. Which are compact tools that make a great portable and reliable platform. Using these devices on-the-go or for example a Raspberry Pi as a low-powered server in the cloud is an excellent use of these new and cheaper devices to audit networks and demonstrate attack vectors.</p>
 
 <h2>So what is BrowserSpear?</h2>
 
 <blockquote>
-  <p>Browserspear is a lightweight framework built on the NodeJS engine. The complete core and modules are written in Javascript and adding payloads is as simple as writing an extra function and saving it in the ‘modules’ folder.</p>
+  <p>Browserspear is a lightweight framework built on the <a href="https://nodejs.org/en/">NodeJS</a> engine. The complete core and modules are written in Javascript and adding payloads is as simple as writing an extra function and saving it in the ‘modules’ folder.</p>
 </blockquote>
 
 <p>A device that has the server capacity to run NodeJS will be able to act as a server to ‘spear’ browsers and the complete behavior of the server can be controlled from a shell prompt or scripted beforehand.</p>
 
-<p>BrowserSpear is still under development, but can be found in this Github repo. The core functionalities like code delivery and hooking or ‘spearing’ targets are fully working.</p>
+<p>BrowserSpear is still under development, but can be found in <a href="https://github.com/larsveelaert/browserspear">this Github repo</a>. The core functionalities like code delivery and hooking or ‘spearing’ targets are fully working.</p>
 
 <h2>How to get started</h2>
 <p>With NodeJS and NPM installed (through your favourite package manager). Clone the Github-repo and install the following packages:</p>
@@ -279,14 +279,115 @@ https://www.linkedin.com/redir/invalid-link-page?url=%5B%3A%3A1%5D KEYLOGGER:I w
 
 <p>Thats it for the basic usage. As you have control over the full webpage. There is no limit on what you can do within the constraints of Javascript. There are already known attacks to get persistance on the full-domain, cross-domain and even cross-browser.</p>
 
-<p>Looking forward to the Progressive Web Applications. There is a need to correctly mitigate against this attack vector because the native API’s already available in the browser are quite powerful and can be easily used against the user (ex. HTML5 webcam, Mic, GPS, Contacts, File access, …). The ever smaller gap between online and offline will create a need for strong security analysis so system access can be strictly controlled.</p>
+<p>Looking forward to the <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web Applications</a>. There is a need to correctly mitigate against this attack vector because the native API’s already available in the browser are quite powerful and can be easily used against the user (ex. HTML5 webcam, Mic, GPS, Contacts, File access, …). The ever smaller gap between online and offline will create a need for strong security analysis so system access can be strictly controlled.</p>
 
 <h2>Goals and Roadmap</h2>
 <p>BrowserSpear will keep expanding it’s capabilities aiming towards connection types (including obfiscation/evasion) and pre-configured payloads to make the complete framework very easy to use and very ‘hackable’.</p>
 
-<p>As it is an open-source project, development will happen through its Github page. Please feel free to contact me for more info, give feedback or even help to develop the project to its full potential.</p>
+<p>As it is an open-source project, development will happen through <a href="https://github.com/larsveelaert/browserspear">its Github page</a>. Please feel free to contact me for more info, give feedback or even help to develop the project to its full potential.</p>
 
 <p>Happy spearing!</p>
+
+        </div>
+        
+      </li>
+    
+      
+      
+
+      <li>
+        <header class="post-header">
+          <h1 class="post-title">
+            <a class="post-link" href="/2017/12/13/11-Tips-To-Protect-Yourself-From-Being-Hacked/">11 Tips To Protect Yourself From Being Hacked</a>
+          </h1>
+
+          <p class="post-meta">Dec 13, 2017</p>
+        </header>
+
+        <div class="post-content">
+          <p><em>We all live online and have complete digital lives. To chat, work, live and buy online means that we need to get the right data to the right person. First let’s start with which data is so important to us and so desired by nefarious actors in the digital world.</em></p>
+
+<p>If you say ‘I have nothing to hide’, you’re very much mistaken. We all regularly use our payment-info online, and if somebody could file your taxes instead of you by stealing your identity, that could be a problem. We all want to keep our privacy, but if the devices we use can be turned into tools to spy on us, that could be a problem…</p>
+
+<blockquote>
+  <p>If you say ‘I have nothing to hide’, you’re very much mistaken.</p>
+</blockquote>
+
+<p>But how can you protect yourself against possible attacks to gather your data or the invade your privacy? A lot of data is stored with the companies we entrust our data to. If data gets leaked from their servers, there is nothing we can do. But a lot of times we are the weakest link ourselves. These 11 tips will give you a list of things you can do to raise your personal protection level.</p>
+
+<p>Definitions of some terms used in the article;</p>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Malware">Malware</a>: <em>is the software that an attacker want to get on your system to control or monitor it.</em></li>
+  <li><a href="https://en.wikipedia.org/wiki/Exploit_(computer_security)">Exploit</a>: <em>is the attack that is developed to use a weakness for getting access or doing unintended things.</em></li>
+</ul>
+
+<h2>1. Reboot your device every day</h2>
+<p>Apart from being the greatest tip in IT-support history, it also has some real upsides from a security standpoint. Your updated software will be restarted and your temporary memory will be emptied.</p>
+
+<p>This last one is an interesting one. If you trigger malware on your system (open a nefarious file, click a wrong URL), it will start its live in temporary memory. In many cases it takes another vulnerability to make the ‘hack’ persistent across reboots.</p>
+
+<p>So a good habit would be to reboot your laptop, smartphone, tablet, … once a day. It’s great for stability, performance and security.</p>
+
+<h2>2. Disable features of your device</h2>
+<p>Have you seen the post-its covering the webcam on a colleague’s laptop? This is a great tip. If somebody would get unintended access to your device’s webcam, it would still be unusable.</p>
+
+<p>You can continue this line of thinking, and turn off Wifi, Bluetooth and GPS when you are not using it. It’ll not only save you some battery life, but you’ll limit the vectors of attacks and data that can be used against you.</p>
+
+<h2>3. Use a modern browser</h2>
+<p>Use a modern browser like <a href="https://www.google.com/chrome/browser/desktop/index.html">Google Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new">Firefox</a>. They update themselves and will protect you from scams and malicious content. If you work at a company and can’t install new software, ask the IT-person which browser is configured on your machine. Internet Explorer 9 is not a good answer.</p>
+
+<h2>4. Keep all your software up-to-date</h2>
+<p>This is not an unexpected one, many vulnerabilities are patched in the most recent software and most malware is older and is being reused by nefarious people.</p>
+
+<p>Actively look for updates of your Operating system (OSX, Windows, iOS, Android, …) and for popular software such as Microsoft Office (Word, Excel, …) and your PDF-reader (ex. Acrobat Reader). The software packages mentioned above is the most widely used for injecting malware into your system. Most software auto-updates or asks permission to do so, if you are not sure, ask a tech-savvy person if it’s a good idea to click ‘Yes’.</p>
+
+<h2>5. Install an ad blocker</h2>
+<p>A great way to get less annoying screens that pop up, trying to sell you something or tell you you have won something, is to install an extension for your browser called an ‘ad blocker’.</p>
+
+<p>This is specific to which browser you use (mentioned before), so a quick Google-search with the name of your browser and ‘ad blocker’ will get you in the right direction.</p>
+
+<p>Harass your local IT-guru if you need help or are in doubt of installing the right program.</p>
+
+<h2>6. Use the incognito mode of your browser</h2>
+<p>If you don’t want the site that you are visiting to track you or just don’t want these sites to show up in your history, use a special feature built into most modern browsers called ‘Private’ or ‘Incognito’-mode. In this mode your browser will not store any info (cache or history), leak any info about the location of the device, etc .. and disable all the plugins installed.</p>
+
+<p>It will not make your device more secure but it will keep your data and habits more private and will keep your searches from being completed to something you don’t want to show up when you are at the office.</p>
+
+<h2>7. Have a basic but good Antivirus</h2>
+<p>This is a topic of a lot of discussion because antivirus is not a remedy for all problems. Antivirus will (among other things) check new files coming onto your system and search for malicious content.</p>
+
+<p>There are apps for your mobile devices who claim to do the same, but often don’t. They can not check incoming files that are opened by other apps. These apps often give tips and assistance when browsing the web. No actual protection.</p>
+
+<p>Other operating systems like Windows 10, has a antivirus built-in. But it’s a good idea to complement it with another free option. And yes, against popular belief, your Mac can be hacked.</p>
+
+<h2>8. Diversify and protect your passwords</h2>
+<p>This one is almost beaten to death but it’s one of the most important ones.</p>
+
+<p>Yes, having one very strong password will be hard to crack. But if it is leaked by a data leak, all your services will be exposed because you used the same password.</p>
+
+<p>Having easier passwords that you can remember, but changing them up between services will make it easier for a password to be cracked but at least it will be contained.</p>
+
+<p>The best approach is to combine the best of both and use a password manager to help you remember the different passwords. A good password manager encrypts your passwords with one strong password, and that is the only one you will have to remember.</p>
+
+<h2>9. Don’t open attachments from email addresses you don’t know</h2>
+<p>A very common attack-vector for many hackers is sending an email with a malicious file attached. If you would open this file, the file will try to exploit outdated software on your system. This is not something that you will notice, the file can be empty or even a legit document.</p>
+
+<p>So If you get such a suspicious email, just delete it or report it to the IT-staff of your company.</p>
+
+<h2>10. Don’t connect to open (unsecured) Wifi</h2>
+<p>We all are desperate to search for free Wifi when we sit down at a local Coffee-shop or are staying at an hotel. Many places will have a sign with the password, or the Wifi will just be openly accessible.</p>
+
+<p>There are 2 problems with this. The first is when you are connected. You have no protection from a router or firewall. If your traffic is not secured with an extra layer (VPN, encryption), your traffic will be visible to all the others who can get access to that network and sometimes it is even possible to intercept and change some data.</p>
+
+<p>Secondly, your device will search for the name of that Wifi-hotspot everywhere it goes. If a nefarious person would make a Wifi-hotspot with the same name, your device would connect without you knowing and re-exposing you to the danger mentioned above.</p>
+
+<p>You can check your wireless settings if you have such networks saved to auto-reconnect and if you do, make your device forget them.</p>
+
+<h2>11. Scan your pc regularly with an anti-malware scanner</h2>
+<p>You often can’t prevent every piece of malware from getting onto your system. And if you did something in a rush and made a mistake you should be able to clean your system.</p>
+
+<p>A great option is an anti-malware scanner, again a Google-search will give you a good option for your specific operating system. If you do this once a month and every time you think you’ve been exposed to malware you will have a very well maintained machine.</p>
 
         </div>
         
