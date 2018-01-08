@@ -27,3 +27,7 @@ _drafts folder -> with drafts
 
 localhost:4000
 
+
+##extra 
+
+google analytics
