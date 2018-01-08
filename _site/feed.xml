@@ -5,7 +5,7 @@
   
   <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2018-01-08T17:24:42+00:00</updated>
+  <updated>2018-01-08T17:27:02+00:00</updated>
   <id>http://localhost:4000//</id>
 
   
@@ -261,8 +261,9 @@ https://www.linkedin.com/redir/invalid-link-page?url=%5B%3A%3A1%5D KEYLOGGER:I w
       <published>2017-12-13T00:00:00+00:00</published>
       <updated>2017-12-13T00:00:00+00:00</updated>
       <id>http://localhost:4000/2017/12/13/11-Tips-To-Protect-Yourself-From-Being-Hacked</id>
-      <content type="html" xml:base="http://localhost:4000/2017/12/13/11-Tips-To-Protect-Yourself-From-Being-Hacked/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/11_tips_hacked.jpg&quot; alt=&quot;Intro 11 tips hacked&quot; /&gt;
-&lt;em&gt;We all live online and have complete digital lives. To chat, work, live and buy online means that we need to get the right data to the right person. First let’s start with which data is so important to us and so desired by nefarious actors in the digital world.&lt;/em&gt;&lt;/p&gt;
+      <content type="html" xml:base="http://localhost:4000/2017/12/13/11-Tips-To-Protect-Yourself-From-Being-Hacked/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/11_tips_hacked.jpg&quot; alt=&quot;Intro 11 tips hacked&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;We all live online and have complete digital lives. To chat, work, live and buy online means that we need to get the right data to the right person. First let’s start with which data is so important to us and so desired by nefarious actors in the digital world.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;If you say ‘I have nothing to hide’, you’re very much mistaken. We all regularly use our payment-info online, and if somebody could file your taxes instead of you by stealing your identity, that could be a problem. We all want to keep our privacy, but if the devices we use can be turned into tools to spy on us, that could be a problem…&lt;/p&gt;
 
