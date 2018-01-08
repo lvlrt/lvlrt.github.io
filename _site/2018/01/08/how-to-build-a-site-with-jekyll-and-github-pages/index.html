@@ -10,7 +10,7 @@
   
   
   <title>How To Build A Site With Jekyll And Github Pages</title>
-  <meta name="description" content="I’ve made websites with Content Management Systems (CMS) before. But sometimes, especially if the person who will manage the site is technical, this can be overkill. Too much graphical interface, too much nonsense to get over, and sometimes just to much optimalization needed to get a fast, responsive website. If you just want somthing simple this can all be a bit of overkill. But what is the alternative? Designing or editing static HTML-files is a pain. search a theme check the quickstart for the needed gems, you defnitly also need jeckyll and bundler sometimes the repositroy includes a Gemfile (check, with in it all the dependencies) Bundle install will complete it good idea to make gthe gemfile, if you ever need to change it bundle exec jekyll serve #whiteglass is get gem (from ruby) gem install bundler jekyll create own and then clone both theme and own change url and baseurl to right ones copy the contents to own bundle exec jekyll serve bundle exec jekyll serve –watch (for editingblog) _drafts folder -&amp;gt; with drafts localhost:4000 ##extra google analytics">
+  <meta name="description" content="As a terminal-guy, I never really like the way Content Management Systems for websites work. Sure, they provide great UX (mostly) for the average user. But what if I want to skip all that and just make a barebones site that is easily manageable with the applications I already have on my system now? Welcome in the realm of static site generators. Awesome… So if I want to change something I have to write HTML and CSS myself? No… That is a possibility, if you want a static page for your company or just a landing page but I wanted a blog so using something like Jekyll in combination with Github Pages is more logical. Let’s walk through how to set it up. How it works Github Pages supports Jekyll, a static site generator. Which means, that there is no backend, database or hosting to configure. To add content to the site, you can use a markdown language, which makes it easy to write beautiful articles without messing with HTML and CSS. You can have a Github Pages site for every repo (Private or Public) and also one extra per user. Without adding your own custom domain, your website URL will be:https://&amp;lt;user&amp;gt;.github.io/&amp;lt;repo&amp;gt;. You do have to enable this feature on the Github-platform itself before they get hosted. Creating the repo To define the contents of your personal page, you have to make a repo with a name that exactly matches the following format:&amp;lt;user&amp;gt;.github.io. So in my case this is: larsveelaert.github.io. Normal project pages can have any name. Now when you go to your new or existing repo and hit Settings, scroll down and you will find the Github Pages-section. Under Source, Choose your branch to host your files and that is all you will have to do for the hosting of your site. Easy right? Search a theme Now get your Google-skills on and search for “Jekyll themes”. Often you will find Github-repo’s with a demo link. If you like one, continue… The easiest way to copy that theme is to clone the repo of that theme, and copy all its contents to your own repo. For example with the Whiteglass-theme do: git clone https://github.com/yous/whiteglass.git cp -R whiteglass/* larsveelaert.github.io/ You will have to set 2 settings to the right value before the site will work, namely baseurl and url. Your settings can be found in `_config.yml’: baseurl: &quot;&quot; # the subpath of your site, e.g. /blog url: &quot;https://larsveelaert.github.io&quot; # the base hostname &amp;amp; protocol for your site, e.g. http://example.com Now push your changes to your site’s repo and you have succesfully copied the theme: git add -all git commit -a -m &#39;theme setup&#39; git push After a brief waiting period, browse to your website and you should see your chosen theme presented. Making changes and adding content The great thing about this approach is that we can run Jekyll ourselves locally, so that we do not have to rely on one centralized way of changing content. Make sure Ruby is installed and run the following commands in your repo: gem install jekyll bundler bundle exec jekyll serve Now your site will be served on localhost:4000. If your want the make it rebuild the site if any of the files change, add the following option --watch. This is a great option to use when writing and previewing an article. The main settings like page-title and social links will be set in the _config.yml file of your repo. Every theme is a bit different. But go through the docs of your specific theme and you will find lean ways how to change the navigation or how to add extra pages. You can find your posts in the _posts-folder and it is there that you can just create a new file and write your articles in Markdown. A great resource to learn the basics of Markdown is this Github-page TIP: –drafts Something that is really usefull is making a _drafts. Here you can add posts that will not be added to your regular feed. To process them and preview the result you can add the --drafts switch to your local jekyll-command and they will appear as most recent blog-posts. Conclusion Using just a text-editor and the great infrastructure of Github Pages, makes it really easy to push changes with all the advantages we know from Git. The option to edit offline, have offline-backups of the complete source and really manage the changes is a great option. Not having a backend to maintain is also a great win for security. Have fun!">
   
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary">
   
   <meta name="twitter:title" content="How To Build A Site With Jekyll And Github Pages">
-  <meta name="twitter:description" content="I’ve made websites with Content Management Systems (CMS) before. But sometimes, especially if the person who will manage the site is technical, this can be overkill. Too much graphical interface, t...">
+  <meta name="twitter:description" content="As a terminal-guy, I never really like the way Content Management Systems for websites work. Sure, they provide great UX (mostly) for the average user. But what if I want to skip all that and just ...">
   
   
 
@@ -78,7 +78,13 @@
         <a class="page-link" href="/archives/">Archives</a>
       
         
-        <a class="page-link" href="https://github.com/yous/whiteglass">GitHub</a>
+        <a class="page-link" href="https://demgeeks.com">DemGeeks</a>
+      
+        
+        <a class="page-link" href="https://github.com/larsveelaert">GitHub</a>
+      
+        
+        <a class="page-link" href="https://linkedin.com/in/larsveelaert">LinkedIn</a>
       
     </nav>
 
@@ -95,39 +101,65 @@
     
       <h1 class="post-title" itemprop="name headline">How To Build A Site With Jekyll And Github Pages</h1>
     
-    <p class="post-meta"><time datetime="2018-01-08T15:14:03+00:00" itemprop="datePublished">Jan 8, 2018</time></p>
+    <p class="post-meta"><time datetime="2018-01-08T00:00:00+00:00" itemprop="datePublished">Jan 8, 2018</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>I’ve made websites with Content Management Systems (CMS) before. But sometimes, especially if the person who will manage the site is technical, this can be overkill. Too much graphical interface, too much nonsense to get over, and sometimes just to much optimalization needed to get a fast, responsive website. 
-If you just want somthing simple this can all be a bit of overkill. But what is the alternative? Designing or editing static HTML-files is a pain.</p>
+    <p><em>As a terminal-guy, I never really like the way Content Management Systems for websites work. Sure, they provide great UX (mostly) for the average user. But what if I want to skip all that and just make a barebones site that is easily manageable with the applications I already have on my system now?</em></p>
 
-<p>search a theme</p>
+<p>Welcome in the realm of static site generators. <em>Awesome… So if I want to change something I have to write HTML and CSS myself?</em> No… That is a possibility, if you want a static page for your company or just a landing page but I wanted a blog so using something like <a href="https://jekyllrb.com/">Jekyll</a> in combination with <a href="https://pages.github.com/">Github Pages</a> is more logical. Let’s walk through how to set it up.</p>
 
-<p>check the quickstart for the needed gems, you defnitly also need jeckyll and bundler
-sometimes the repositroy includes a Gemfile (check, with in it all the dependencies)
-Bundle install will complete it
-good idea to make gthe gemfile, if you ever need to change it</p>
+<h2>How it works</h2>
+<p><a href="https://pages.github.com/">Github Pages</a> supports <a href="https://jekyllrb.com/">Jekyll</a>, a static site generator. Which means, that there is no backend, database or hosting to configure. To add content to the site, you can use a markdown language, which makes it easy to write beautiful articles without messing with HTML and CSS.</p>
 
-<p>bundle exec jekyll serve</p>
+<p>You can have a <a href="https://pages.github.com/">Github Pages</a> site for every repo (Private or Public) and also one extra per user. Without adding your own custom domain, your website URL will be:<code class="highlighter-rouge">https://&lt;user&gt;.github.io/&lt;repo&gt;</code>. You do have to enable this feature on the Github-platform itself before they get hosted.</p>
 
-<p>#whiteglass is
-get gem (from ruby)
-gem install bundler jekyll
-create own and then  clone both theme and own
-change url and baseurl to right ones
-copy the contents to own
+<h2>Creating the repo</h2>
+<p>To define the contents of your personal page, you have to make a repo with a name that exactly matches the following format:<code class="highlighter-rouge">&lt;user&gt;.github.io</code>. So in my case this is: <code class="highlighter-rouge">larsveelaert.github.io</code>. Normal project pages can have any name.</p>
+
+<p>Now when you go to your new or existing repo and hit <em>Settings</em>, scroll down and you will find the Github Pages-section. Under <em>Source</em>, Choose your branch to host your files and that is all you will have to do for the hosting of your site. Easy right?</p>
+
+<h2>Search a theme</h2>
+<p>Now get your Google-skills on and search for “<em>Jekyll themes</em>”. Often you will find Github-repo’s with a demo link. If you like one, continue…</p>
+
+<p>The easiest way to copy that theme is to clone the repo of that theme, and copy all its contents to your own repo. For example with the <em><a href="https://github.com/yous/whiteglass">Whiteglass</a></em>-theme do:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/yous/whiteglass.git
+cp -R whiteglass/* larsveelaert.github.io/
+
+</code></pre></div></div>
+<p>You will have to set 2 settings to the right value before the site will work, namely <em>baseurl</em> and <em>url</em>. Your settings can be found in `_config.yml’:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://larsveelaert.github.io" # the base hostname &amp; protocol for your site, e.g. http://example.com
+</code></pre></div></div>
+
+<p>Now push your changes to your site’s repo and you have succesfully copied the theme:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -all
+git commit -a -m 'theme setup'
+git push
+</code></pre></div></div>
+
+<p>After a brief waiting period, browse to your website and you should see your chosen theme presented.</p>
+
+<h2>Making changes and adding content</h2>
+<p>The great thing about this approach is that we can run <a href="https://jekyllrb.com/">Jekyll</a> ourselves locally, so that we do not have to rely on one centralized way of changing content. 
+Make sure <em><a href="https://www.ruby-lang.org/en/">Ruby</a></em> is installed and run the following commands in your repo:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll bundler
 bundle exec jekyll serve
-bundle exec jekyll serve –watch (for editingblog)</p>
+</code></pre></div></div>
+<p>Now your site will be served on <code class="highlighter-rouge">localhost:4000</code>. If your want the make it rebuild the site if any of the files change, add the following option <code class="highlighter-rouge">--watch</code>. This is a great option to use when writing and previewing an article.</p>
 
-<p>_drafts folder -&gt; with drafts</p>
+<p>The main settings like page-title and social links will be set in the <code class="highlighter-rouge">_config.yml</code> file of your repo. Every theme is a bit different. But go through the docs of your specific theme and you will find lean ways how to change the navigation or how to add extra pages.</p>
 
-<p>localhost:4000</p>
+<p>You can find your posts in the <code class="highlighter-rouge">_posts</code>-folder and it is there that you can just create a new file and write your articles in <a href="https://nl.wikipedia.org/wiki/Markdown">Markdown</a>. A great resource to learn the basics of Markdown is <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">this Github-page</a></p>
 
-<p>##extra</p>
+<h2>TIP: –drafts</h2>
+<p>Something that is really usefull is making a <code class="highlighter-rouge">_drafts</code>. Here you can add posts that will not be added to your regular feed. To process them and preview the result you can add the <code class="highlighter-rouge">--drafts</code> switch to your local <code class="highlighter-rouge">jekyll</code>-command and they will appear as most recent blog-posts.</p>
 
-<p>google analytics
-<img src="http://localhost:4000/assets/screenshot.png" alt="My helpful screenshot" /></p>
+<h2>Conclusion</h2>
+<p>Using just a text-editor and the great infrastructure of Github Pages, makes it really easy to push changes with all the advantages we know from <em><a href="https://git-scm.com/">Git</a></em>.
+The option to edit offline, have offline-backups of the complete source and really manage the changes is a great option. Not having a backend to maintain is also a great win for security.</p>
+
+<p>Have fun!</p>
 
   </div>
 

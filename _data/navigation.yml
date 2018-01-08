@@ -5,5 +5,9 @@ main:
     url: /about/
   - title: "Archives"
     url: /archives/
+  - title: "DemGeeks"
+    url: https://demgeeks.com
   - title: "GitHub"
-    url: https://github.com/yous/whiteglass
+    url: https://github.com/larsveelaert
+  - title: "LinkedIn"
+    url: https://linkedin.com/in/larsveelaert
