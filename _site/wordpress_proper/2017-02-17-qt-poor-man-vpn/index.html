@@ -1,0 +1,67 @@
+<h2>Why?</h2>
+
+<p>There are a lot of reasons why you would want a proxy, one of them is safety and protection from attackers at your location. For example if you are searching sensitive things in your local coffee shop, other visitors could sniff your traffic and in the worst case grab some passwords.</p>
+
+<p>Other usage cases are services who are only accessible behind a firewall or only from a local IP address.</p>
+
+<p>The tool <code class="highlighter-rouge">shuttle</code> is a perfect fit if you want to route ALL traffic from your current system to your external server. The permissions are managed through your existing SSH server so no extra user management is required.</p>
+
+<p>I you are searching for a way to only route one command through a proxy have a look at <a href="https://www.demgeeks.com/tip-running-a-terminal-command-through-a-proxy/">an earlier article</a> we wrote. The more traffic your will route through your ssh server, the more demanding the operation becomes… So keep that in mind. Let’s begin!</p>
+
+<h2>How to install?</h2>
+
+<p>There are 2 things you will need;</p>
+
+<ul>
+  <li>A ssh server on a remote device (there are tutorials specific to your flavour of linux)</li>
+  <li>pip, the package manager from python</li>
+</ul>
+
+<p>To install the python package manager;</p>
+
+<pre>apt-get install python-pip # for debian and others
+pacman -Sy python pip #for archlinux users</pre>
+
+<p>Now we can install sshuttle;</p>
+
+<pre>pip install sshuttle</pre>
+
+<p>Done!</p>
+
+<h3>How to setup?</h3>
+
+<p>There are a lot of options and routing options, this tutorial will just explain the transparent proxy (reroute all outgoing traffic). But you can find the documentation <a href="https://sshuttle.readthedocs.io/en/stable/overview.html">here</a>.</p>
+
+<p>Now if we had a server at the ip address of 192.168.13.2 and properly configured to accept connections from our address, we could run;</p>
+
+<pre>sshuttle -vvr me@192.168.13.2:22 0/0</pre>
+
+<p>This will first make a connection to your ssh server and then start routing all traffic from your system to this location.</p>
+
+<p>This software has a lot of options and this command will not route DNS, UDP or IPv6, only TCP. But in most cases, that is enough.</p>
+
+<p>(If you are searching for complete safety from attackers on your network, you will probably have to launch a program like Wireshark and watch the packets that are not going through the proxy.)</p>
+
+<h3>Tip for experts</h3>
+
+<p>We can use <a href="https://www.demgeeks.com/qt-make-the-command-line-easier-with-aliases-and-functions/">an earlier quick tip</a> to have a command ready to quickly switch our “poor man’s VPN” to different locations.</p>
+
+<p>For the example we will use the basic sshuttle command, but any one of them will work…</p>
+
+<p>You can add a function to your .bashrc-file like this;</p>
+
+<pre>proxy () {
+sshuttle -vvr $1 0/0
+}</pre>
+
+<p>The result of this will be that you can run</p>
+
+<pre>$ proxy me@192.168.13.2:22 $ proxy ssh_server1</pre>
+
+<p>and it will proxy all your traffic to a preconfigured ssh server.</p>
+
+<p>To use your proxy as in the second example, you will have to configure your destination in the ~/.ssh/config file from your system to make it really useful</p>
+
+<p>There is awesome documentation of this program, so make sure to check it out!</p>
+
+<p>https://sshuttle.readthedocs.io/en/stable/overview.html</p>
