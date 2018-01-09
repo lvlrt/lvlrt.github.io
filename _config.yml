@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.author }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Lars Veelaert
+title: lvlrt
 author: Lars Veelaert
 description: Personal site of Lars Veelaert
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -24,11 +24,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Rakefile
-  - README.md
-  - LICENSE.txt
-  - CHANGELOG.md
   - jekyll-whiteglass.gemspec
-  - screenshot.png
   - vendor
 
 # Social media
