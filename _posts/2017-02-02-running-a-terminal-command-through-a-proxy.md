@@ -10,10 +10,12 @@ tags:
   - terminal
   - tor
 ---
-Sometimes, running a full VPN is not necessary, or there is not enough bandwidth for all your traffic. In cases of using Tor for example, tunneling all your traffic can even be dangerous!
-So you can specify per command you execute if you want to have it tunnel its web traffic through the proxy.
+Sometimes, running a full [VPN](https://en.wikipedia.org/wiki/Virtual_private_network) is not necessary, or there is not enough bandwidth for all your traffic. 
+In cases of using [Tor](https://www.torproject.org/) for example, tunneling all your traffic can even be dangerous!
+So there is a way to specify per command or program if you want to have it tunnel its web traffic through the proxy or not.
+This tool is called `proxychains`.
 
-If you, for example want to download a file through the proxy with the wget command. Just prepend the command with `proxychains` and done!
+If you, for example want to download a file through a proxy with the `wget` command. Just prepend the command with `proxychains` and done!
 ```
 $ proxychains wget www.remoteserver.com/fileIneed
 [proxychains] config file found: /etc/proxychains.conf

@@ -53,7 +53,10 @@ The main settings like page-title and social links will be set in the `_config.y
 You can find your posts in the `_posts`-folder and it is there that you can just create a new file and write your articles in [Markdown](https://nl.wikipedia.org/wiki/Markdown). A great resource to learn the basics of Markdown is [this Github-page](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 ## TIP: --drafts
-Something that is really usefull is making a `_drafts`. Here you can add posts that will not be added to your regular feed. To process them and preview the result you can add the `--drafts` switch to your local `jekyll`-command and they will appear as most recent blog-posts.
+Something that is really usefull is making a `_drafts` folder. Here you can add posts that will not be added to your regular feed. To process them and preview the result you can add the `--drafts` switch to your local `jekyll`-command and they will appear as most recent blog-posts.
+
+## TIP: --incremental
+When the --watch parameter is active, the site will be rebuilt whenever a file changes. If you only want to built the files that changed, use `--incremental`.
 
 ## Conclusion 
 Using just a text-editor and the great infrastructure of Github Pages, makes it really easy to push changes with all the advantages we know from _[Git](https://git-scm.com/)_.

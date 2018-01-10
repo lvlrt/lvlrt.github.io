@@ -1,33 +1,14 @@
 ---
-id: 717
-title: 'Quick Tip: A script to resolve local network hostnames without extra services (Linux)'
-date: 2017-09-27T11:08:03+00:00
-author: Lars Veelaert
+title: 'Resolve local network hostnames without extra services (Linux)'
 layout: post
-guid: https://demgeeks.com/?p=717
-permalink: /quick-tip-script-resolve-local-network-hostnames-without-extra-services/
-tdc_dirty_content:
-  - "1"
-post_views_count:
-  - "30"
-image: /wp-content/uploads/2017/09/Screenshot_2017-09-27_13-21-37.png
 categories:
-  - Quick Tips
+  - Networking
 tags:
-  - anonimity
-  - command-line
   - decentralization
   - dns
-  - git
-  - hostname
   - ip
-  - linux
-  - mac
   - networking
-  - resolve
-  - ssh server
   - terminal
-  - tips
 ---
 I was in desperate need to find a way to not always have to scan the network or go over to another device to know its IP so I could ssh into it or use a service it was serving. This is what I found.
 
@@ -101,7 +82,17 @@ b8:27:eb:4e:0c:42 kh1</pre>
 
 The second file is just a list of MAC-addresses with a name you chose behind it. You can find your MAC-address in various ways, but the easiest is just running the ifconfig command on linux. (look next to &#8220;ether&#8221;)
 
-<img class="alignnone wp-image-720 size-full" src="https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/09/Screenshot_2017-09-27_13-17-14.png?resize=640%2C157&#038;ssl=1" alt="" srcset="https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/09/Screenshot_2017-09-27_13-17-14.png?w=812&ssl=1 812w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/09/Screenshot_2017-09-27_13-17-14.png?resize=300%2C74&ssl=1 300w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/09/Screenshot_2017-09-27_13-17-14.png?resize=768%2C188&ssl=1 768w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/09/Screenshot_2017-09-27_13-17-14.png?resize=640%2C157&ssl=1 640w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" />
+```
+[root@localhost]# ifconfig
+wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.13  netmask 255.255.255.0  broadcast 192.168.1.255
+        ether 10:02:b5:d6:08:8a  txqueuelen 1000  (Ethernet)
+        RX packets 221361  bytes 303819415 (289.7 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 112644  bytes 15169217 (14.4 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+...
+```
 
 You will need the tool arp-scan to run this script, you can find it in nearly all repositories. I run this script on an android phone, a desktop, chromebook and Raspberry Pi. So no worries.
 

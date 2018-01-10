@@ -9,23 +9,23 @@
   
   
   
-  <title>Quick Tip: Keep a git repository small and lean</title>
-  <meta name="description" content="Personal site of Lars Veelaert">
+  <title>Quick tip: Running a terminal command through a proxy (Linux)</title>
+  <meta name="description" content="Sometimes, running a full VPN is not necessary, or there is not enough bandwidth for all your traffic. In cases of using Tor for example, tunneling all your traffic can even be dangerous! So there is a way to specify per command or program if you want to have it tunnel its web traffic through the proxy or not. This tool is called proxychains. If you, for example want to download a file through a proxy with the wget command. Just prepend the command with proxychains and done! $ proxychains wget www.remoteserver.com/fileIneed [proxychains] config file found: /etc/proxychains.conf [proxychains] preloading /usr/lib/libproxychains4.so [proxychains] DLL init: proxychains-ng 4.12 --2018-01-08 23:18:33-- http://www.remoteserver.com/fileineed Great! that works, but gives some output, you can silence the extra output with the -q flag. proxychains -q ... To set it up on your system follow the following steps: 1. Installation For example on Arch Linux do: pacman -Sy proxychains On Ubuntu or other Debian-based distro’s: apt-get install proxychains 2. Configuration Proxychains has a lot of configuration options but all you need to do, is go to the end of the file /etc/proxychains.conf and edit the last line; #nano /etc/proxychains.conf socks4 127.0.0.1 9050 It’s preconfigured to use tor, That means a socks4 proxy on localhost port 9050. Configure this to your needs, for example to use a SOCKS5 proxy made by SSH do this; Command to run to make the SSH connection ssh remoteserver -D 5000 Edit the configuration file like this: socks5 127.0.0.1 5000 3. Done! That’s it, proxies can be amazing to change your appearance to the public internet, get to otherwise inaccessible content or tunnel your way out of a restrictive firewall/filter. So knowing how to use them in a terminal enviroment is essential.">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/wordpress_proper/2017-02-02-tip-keep-git-repository-small-lean/">
+  <link rel="canonical" href="http://localhost:4000/2017/02/02/running-a-terminal-command-through-a-proxy/">
   
   
-  <link rel="alternate" type="application/rss+xml" title="Lars Veelaert" href="http://localhost:4000/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="lvlrt" href="http://localhost:4000/feed.xml">
 
   
 
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="Quick Tip: Keep a git repository small and lean">
-  <meta name="twitter:description" content="Personal site of Lars Veelaert">
+  <meta name="twitter:title" content="Quick tip: Running a terminal command through a proxy (Linux)">
+  <meta name="twitter:description" content="Sometimes, running a full VPN is not necessary, or there is not enough bandwidth for all your traffic. In cases of using Tor for example, tunneling all your traffic can even be dangerous! So there ...">
   
   
 
@@ -67,7 +67,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/">Lars Veelaert</a>
+    <a class="site-title" href="/">lvlrt</a>
 
     <nav class="site-nav">
       
@@ -99,11 +99,15 @@
 
   <header class="post-header">
     
-      <h1 class="post-title" itemprop="name headline">Quick Tip: Keep a git repository small and lean</h1>
+      <h1 class="post-title" itemprop="name headline">Quick tip: Running a terminal command through a proxy (Linux)</h1>
     
-    <p class="post-meta"><time datetime="" itemprop="datePublished"></time> •
+    <p class="post-meta"><time datetime="2017-02-02T00:00:00+00:00" itemprop="datePublished">Feb 2, 2017</time> •
   
     
+    
+      
+    
+      
     
       
     
@@ -277,87 +281,7 @@
     
     
       
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <a href="/tags/development/">development</a>,
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+        <a href="/tags/linux/">linux</a>,
       
     
       
@@ -370,89 +294,6 @@
     
       
     
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <a href="/tags/git/">git</a>,
       
     
       
@@ -609,6 +450,12 @@
     
   
     
+    
+      
+    
+      
+        <a href="/tags/networking/">networking</a>,
+      
     
       
     
@@ -780,6 +627,46 @@
       
     
       
+        <a href="/tags/proxy/">proxy</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
     
       
     
@@ -820,7 +707,142 @@
       
     
       
-        <a href="/tags/productivity/">productivity</a>,
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/terminal/">terminal</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
       
     
       
@@ -951,7 +973,7 @@
       
     
       
-    
+        <a href="/tags/tor/">tor</a>
       
     
       
@@ -967,7 +989,11 @@
       
     
       
-        <a href="/tags/terminal/">terminal</a>
+    
+      
+    
+      
+    
       
     
       
@@ -1112,27 +1138,51 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Git is an awesome tool. you can track your changes to a coding project, share your progress with others and let them suggest edits, fully collaborate on a project or make your own sync and backup system for you todo file.</p>
+    <p>Sometimes, running a full <a href="https://en.wikipedia.org/wiki/Virtual_private_network">VPN</a> is not necessary, or there is not enough bandwidth for all your traffic. 
+In cases of using <a href="https://www.torproject.org/">Tor</a> for example, tunneling all your traffic can even be dangerous!
+So there is a way to specify per command or program if you want to have it tunnel its web traffic through the proxy or not.
+This tool is called <code class="highlighter-rouge">proxychains</code>.</p>
 
-<p>A lot of people credit git to be one of the foremost reasons Linux has grown so much in recent years.</p>
+<p>If you, for example want to download a file through a proxy with the <code class="highlighter-rouge">wget</code> command. Just prepend the command with <code class="highlighter-rouge">proxychains</code> and done!</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ proxychains wget www.remoteserver.com/fileIneed
+[proxychains] config file found: /etc/proxychains.conf
+[proxychains] preloading /usr/lib/libproxychains4.so
+[proxychains] DLL init: proxychains-ng 4.12
+--2018-01-08 23:18:33--  http://www.remoteserver.com/fileineed
+</code></pre></div></div>
+<p>Great! that works, but gives some output, you can silence the extra output with the -q flag.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proxychains -q ...
+</code></pre></div></div>
+<p>To set it up on your system follow the following steps:</p>
+<h3>1. Installation</h3>
+<p>For example on Arch Linux do:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman -Sy proxychains
+</code></pre></div></div>
+<p>On Ubuntu or other Debian-based distro’s:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install proxychains
+</code></pre></div></div>
+<h3>2. Configuration</h3>
+<p>Proxychains has a lot of configuration options but all you need to do, is go to the end of the file /etc/proxychains.conf and edit the last line;</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#nano /etc/proxychains.conf
+socks4  127.0.0.1 9050
+</code></pre></div></div>
+<p>It’s preconfigured to use tor, 
+That means a socks4 proxy on localhost port 9050.</p>
 
-<p>The only downside of a versioning system that keeps several branches in check can be size.</p>
-
-<p>One of the best ways I found to clean up this history is the following;</p>
-
-<ol>
-  <li>Go into your repo
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd awesome-git-repo
+<p>Configure this to your needs, for example to use a SOCKS5 proxy made by SSH do this;</p>
+<ul>
+  <li>Command to run to make the SSH connection
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh remoteserver -D 5000
 </code></pre></div>    </div>
   </li>
-  <li>And run the following commands;
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git gc #Cleans up unnecessary object
-git gc --aggressive --prune=now #Same, but deletes all files whom are not in the most recent branch tips
+  <li>Edit the configuration file like this:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>socks5 127.0.0.1 5000
 </code></pre></div>    </div>
+    <h3>3. Done!</h3>
   </li>
-</ol>
+</ul>
 
-<p>That it! The minimum healthy size of the .git folder in your repository is about the size of the files in the folder itself, so remember that! If this is still an enormous difference, try to find binaries or images in your folder. Small changes to those files make a lot of changes to the files and git will not know the difference. Git is made for source files only. So delete them, and run the command of step 2 again. Or configure your .gitignore file to exclude them from your git repository.</p>
+<p>That’s it, proxies can be amazing to change your appearance to the public internet, get to otherwise inaccessible content or tunnel your way out of a restrictive firewall/filter. So knowing how to use them in a terminal enviroment is essential.</p>
 
   </div>
 

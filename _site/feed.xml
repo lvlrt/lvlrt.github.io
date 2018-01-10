@@ -5,11 +5,11 @@
   
   <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2018-01-09T00:27:18+00:00</updated>
+  <updated>2018-01-10T15:31:28+00:00</updated>
   <id>http://localhost:4000//</id>
 
   
-    <title type="html">Lars Veelaert</title>
+    <title type="html">lvlrt</title>
   
 
   
@@ -82,7 +82,10 @@ bundle exec jekyll serve
 &lt;p&gt;You can find your posts in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;-folder and it is there that you can just create a new file and write your articles in &lt;a href=&quot;https://nl.wikipedia.org/wiki/Markdown&quot;&gt;Markdown&lt;/a&gt;. A great resource to learn the basics of Markdown is &lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;this Github-page&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;TIP: –drafts&lt;/h2&gt;
-&lt;p&gt;Something that is really usefull is making a &lt;code class=&quot;highlighter-rouge&quot;&gt;_drafts&lt;/code&gt;. Here you can add posts that will not be added to your regular feed. To process them and preview the result you can add the &lt;code class=&quot;highlighter-rouge&quot;&gt;--drafts&lt;/code&gt; switch to your local &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;-command and they will appear as most recent blog-posts.&lt;/p&gt;
+&lt;p&gt;Something that is really usefull is making a &lt;code class=&quot;highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; folder. Here you can add posts that will not be added to your regular feed. To process them and preview the result you can add the &lt;code class=&quot;highlighter-rouge&quot;&gt;--drafts&lt;/code&gt; switch to your local &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;-command and they will appear as most recent blog-posts.&lt;/p&gt;
+
+&lt;h2&gt;TIP: –incremental&lt;/h2&gt;
+&lt;p&gt;When the –watch parameter is active, the site will be rebuilt whenever a file changes. If you only want to built the files that changed, use &lt;code class=&quot;highlighter-rouge&quot;&gt;--incremental&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Using just a text-editor and the great infrastructure of Github Pages, makes it really easy to push changes with all the advantages we know from &lt;em&gt;&lt;a href=&quot;https://git-scm.com/&quot;&gt;Git&lt;/a&gt;&lt;/em&gt;.
@@ -109,7 +112,7 @@ The option to edit offline, have offline-backups of the complete source and real
       
 
       
-        <summary type="html">As a terminal-guy, I never really like the way Content Management Systems for websites work. Sure, they provide great UX (mostly) for the average user. But what if I want to skip all that and just make a barebones site that is easily manageable with the applications I already have on my system now? Welcome in the realm of static site generators. Awesome… So if I want to change something I have to write HTML and CSS myself? No… That is a possibility, if you want a static page for your company or just a landing page but I wanted a blog so using something like Jekyll in combination with Github Pages is more logical. Let’s walk through how to set it up. How it works Github Pages supports Jekyll, a static site generator. Which means, that there is no backend, database or hosting to configure. To add content to the site, you can use a markdown language, which makes it easy to write beautiful articles without messing with HTML and CSS. You can have a Github Pages site for every repo (Private or Public) and also one extra per user. Without adding your own custom domain, your website URL will be:https://&amp;lt;user&amp;gt;.github.io/&amp;lt;repo&amp;gt;. You do have to enable this feature on the Github-platform itself before they get hosted. Creating the repo To define the contents of your personal page, you have to make a repo with a name that exactly matches the following format:&amp;lt;user&amp;gt;.github.io. So in my case this is: larsveelaert.github.io. Normal project pages can have any name. Now when you go to your new or existing repo and hit Settings, scroll down and you will find the Github Pages-section. Under Source, Choose your branch to host your files and that is all you will have to do for the hosting of your site. Easy right? Search a theme Now get your Google-skills on and search for “Jekyll themes”. Often you will find Github-repo’s with a demo link. If you like one, continue… The easiest way to copy that theme is to clone the repo of that theme, and copy all its contents to your own repo. For example with the Whiteglass-theme do: git clone https://github.com/yous/whiteglass.git cp -R whiteglass/* larsveelaert.github.io/ You will have to set 2 settings to the right value before the site will work, namely baseurl and url. Your settings can be found in `_config.yml’: baseurl: &quot;&quot; # the subpath of your site, e.g. /blog url: &quot;https://larsveelaert.github.io&quot; # the base hostname &amp;amp; protocol for your site, e.g. http://example.com Now push your changes to your site’s repo and you have succesfully copied the theme: git add -all git commit -a -m 'theme setup' git push After a brief waiting period, browse to your website and you should see your chosen theme presented. Making changes and adding content The great thing about this approach is that we can run Jekyll ourselves locally, so that we do not have to rely on one centralized way of changing content. Make sure Ruby is installed and run the following commands in your repo: gem install jekyll bundler bundle exec jekyll serve Now your site will be served on localhost:4000. If your want the make it rebuild the site if any of the files change, add the following option --watch. This is a great option to use when writing and previewing an article. The main settings like page-title and social links will be set in the _config.yml file of your repo. Every theme is a bit different. But go through the docs of your specific theme and you will find lean ways how to change the navigation or how to add extra pages. You can find your posts in the _posts-folder and it is there that you can just create a new file and write your articles in Markdown. A great resource to learn the basics of Markdown is this Github-page TIP: –drafts Something that is really usefull is making a _drafts. Here you can add posts that will not be added to your regular feed. To process them and preview the result you can add the --drafts switch to your local jekyll-command and they will appear as most recent blog-posts. Conclusion Using just a text-editor and the great infrastructure of Github Pages, makes it really easy to push changes with all the advantages we know from Git. The option to edit offline, have offline-backups of the complete source and really manage the changes is a great option. Not having a backend to maintain is also a great win for security. Have fun!</summary>
+        <summary type="html">As a terminal-guy, I never really like the way Content Management Systems for websites work. Sure, they provide great UX (mostly) for the average user. But what if I want to skip all that and just make a barebones site that is easily manageable with the applications I already have on my system now? Welcome in the realm of static site generators. Awesome… So if I want to change something I have to write HTML and CSS myself? No… That is a possibility, if you want a static page for your company or just a landing page but I wanted a blog so using something like Jekyll in combination with Github Pages is more logical. Let’s walk through how to set it up. How it works Github Pages supports Jekyll, a static site generator. Which means, that there is no backend, database or hosting to configure. To add content to the site, you can use a markdown language, which makes it easy to write beautiful articles without messing with HTML and CSS. You can have a Github Pages site for every repo (Private or Public) and also one extra per user. Without adding your own custom domain, your website URL will be:https://&amp;lt;user&amp;gt;.github.io/&amp;lt;repo&amp;gt;. You do have to enable this feature on the Github-platform itself before they get hosted. Creating the repo To define the contents of your personal page, you have to make a repo with a name that exactly matches the following format:&amp;lt;user&amp;gt;.github.io. So in my case this is: larsveelaert.github.io. Normal project pages can have any name. Now when you go to your new or existing repo and hit Settings, scroll down and you will find the Github Pages-section. Under Source, Choose your branch to host your files and that is all you will have to do for the hosting of your site. Easy right? Search a theme Now get your Google-skills on and search for “Jekyll themes”. Often you will find Github-repo’s with a demo link. If you like one, continue… The easiest way to copy that theme is to clone the repo of that theme, and copy all its contents to your own repo. For example with the Whiteglass-theme do: git clone https://github.com/yous/whiteglass.git cp -R whiteglass/* larsveelaert.github.io/ You will have to set 2 settings to the right value before the site will work, namely baseurl and url. Your settings can be found in `_config.yml’: baseurl: &quot;&quot; # the subpath of your site, e.g. /blog url: &quot;https://larsveelaert.github.io&quot; # the base hostname &amp;amp; protocol for your site, e.g. http://example.com Now push your changes to your site’s repo and you have succesfully copied the theme: git add -all git commit -a -m 'theme setup' git push After a brief waiting period, browse to your website and you should see your chosen theme presented. Making changes and adding content The great thing about this approach is that we can run Jekyll ourselves locally, so that we do not have to rely on one centralized way of changing content. Make sure Ruby is installed and run the following commands in your repo: gem install jekyll bundler bundle exec jekyll serve Now your site will be served on localhost:4000. If your want the make it rebuild the site if any of the files change, add the following option --watch. This is a great option to use when writing and previewing an article. The main settings like page-title and social links will be set in the _config.yml file of your repo. Every theme is a bit different. But go through the docs of your specific theme and you will find lean ways how to change the navigation or how to add extra pages. You can find your posts in the _posts-folder and it is there that you can just create a new file and write your articles in Markdown. A great resource to learn the basics of Markdown is this Github-page TIP: –drafts Something that is really usefull is making a _drafts folder. Here you can add posts that will not be added to your regular feed. To process them and preview the result you can add the --drafts switch to your local jekyll-command and they will appear as most recent blog-posts. TIP: –incremental When the –watch parameter is active, the site will be rebuilt whenever a file changes. If you only want to built the files that changed, use --incremental. Conclusion Using just a text-editor and the great infrastructure of Github Pages, makes it really easy to push changes with all the advantages we know from Git. The option to edit offline, have offline-backups of the complete source and really manage the changes is a great option. Not having a backend to maintain is also a great win for security. Have fun!</summary>
       
 
       
@@ -1921,7 +1924,16 @@ b8:27:eb:4e:0c:42 kh1&lt;/pre&gt;
 
 &lt;p&gt;The second file is just a list of MAC-addresses with a name you chose behind it. You can find your MAC-address in various ways, but the easiest is just running the ifconfig command on linux. (look next to “ether”)&lt;/p&gt;
 
-&lt;p&gt;&lt;img class=&quot;alignnone wp-image-720 size-full&quot; src=&quot;https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/09/Screenshot_2017-09-27_13-17-14.png?resize=640%2C157&amp;#038;ssl=1&quot; alt=&quot;&quot; srcset=&quot;https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/09/Screenshot_2017-09-27_13-17-14.png?w=812&amp;amp;ssl=1 812w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/09/Screenshot_2017-09-27_13-17-14.png?resize=300%2C74&amp;amp;ssl=1 300w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/09/Screenshot_2017-09-27_13-17-14.png?resize=768%2C188&amp;amp;ssl=1 768w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/09/Screenshot_2017-09-27_13-17-14.png?resize=640%2C157&amp;amp;ssl=1 640w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@localhost]# ifconfig
+wlan0: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt;  mtu 1500
+        inet 192.168.1.13  netmask 255.255.255.0  broadcast 192.168.1.255
+        ether 10:02:b5:d6:08:8a  txqueuelen 1000  (Ethernet)
+        RX packets 221361  bytes 303819415 (289.7 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 112644  bytes 15169217 (14.4 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;You will need the tool arp-scan to run this script, you can find it in nearly all repositories. I run this script on an android phone, a desktop, chromebook and Raspberry Pi. So no worries.&lt;/p&gt;
 
@@ -1995,7 +2007,419 @@ ssh root@kh1 -p 22 #same but with more arguments&lt;/pre&gt;
       
 
       
-        <summary type="html">I was in desperate need to find a way to not always have to scan the network or go over to another device to know its IP so I could ssh into it or use a service it was serving. This is what I found. The internet is just a lot of devices, which can be addressed with an IP address. Those are unique in every network. To make the network more usable we use domain names with logical, easy to remember names like www.google.com or www.facebook.com. This works by contactin a server with a fixed IP which provides DNS that resolves your domain name in an IP that your browser can go to. DNS-servers for the global internet are managed by governments and maintained by big companies like Google. This is why, If you want a domain name, it comes with a fee… On local networks, its overkill (and quite some setup) to have a DNS-server to resolve the IP of devices but other programs like zeroconf and mdns tried to have a more low-maintenance take on this problem. Short story: Still not ideal. You still have to have services running on all devices to ensure that your device gets registered… The solution The ideal solution consists of: – No changes needed to the network (so it works everywhere) – Reliable – Very little setup on the device itself and no services need to be running – Cross-platform The idea is to maintain a list of MAC-addresses of the devices I use (and sync those with Dropbox or Git), scan the network for these MAC-addresses and if found, add them to the /etc/hosts file. This is reliable because MAC-addresses are hard-coded in your hardware. You only need to know the MAC of your other devices and you can identify it. Every device has to have one. Adding to the /etc/hosts file is something that is supported by the core of linux so it is quite cross-platform on any device you can get linux working on. So whenever my network-setup changes, or it has been a while and adresses may have switched, I run the following command; bash ./HOSTS.sh ./HOSTS_MACS HOSTS.sh script: #DEPENDENCIES: arp-scan #take $1 (first argument of the script) -&amp;gt; file with mac adresses + hostname tmpfile=$(mktemp /tmp/DYNAMIC-RESOLVE.XXXXXX) #tmp file for temporary results #clear lines form the previous run in /etc/hosts file sed -i.bak '/DYNAMIC_RESOLVE/d' /etc/hosts #use the tool arp-scan to find all the devices on the network if ! [ -z $2 ]; then arp-scan -l --localnet --interface=$2 &amp;gt;&amp;gt; $tmpfile else for line in $(ip link | cut -d &quot; &quot; -f 2); do interface=${line::-1} arp-scan -l --localnet --interface=$interface 2&amp;gt;/dev/null &amp;gt;&amp;gt; $tmpfile done #TODO interfaceoption -&amp;gt; default wlan fi echo Arpscan Finished... Filtering results... #reading the results one by one while read -r line do MAC=$(echo $line | cut -d &quot; &quot; -f 1) NAME=$(echo $line | cut -d &quot; &quot; -f 2) #grep MAC from ARP cache IP=$(cat $tmpfile | grep $MAC | cut -d$'\t' -f 1) if ! [ -z &quot;${IP}&quot; ]; then echo Found $NAME at $IP! Adding to /etc/hosts... echo &quot;$IP $NAME $NAME #DYNAMIC_RESOLVE&quot;&amp;gt;&amp;gt;/etc/hosts #If the MAC is found, add to the /etc/hosts file fi done &amp;lt; &quot;$1&quot; echo Done with discovering hosts HOSTS_MACS file: 00:90:f5:d6:5b:05 c1 c0:ee:fb:59:fc:23 s1 10:02:b5:d6:08:8a o1 b8:27:eb:4e:0c:42 kh1 The second file is just a list of MAC-addresses with a name you chose behind it. You can find your MAC-address in various ways, but the easiest is just running the ifconfig command on linux. (look next to “ether”) You will need the tool arp-scan to run this script, you can find it in nearly all repositories. I run this script on an android phone, a desktop, chromebook and Raspberry Pi. So no worries. If you check the /etc/hosts file you can see the following has changed: # # /etc/hosts: static lookup table for host names # #&amp;lt;ip-address&amp;gt; &amp;lt;hostname.domain.org&amp;gt; &amp;lt;hostname&amp;gt; 127.0.0.1 localhost.localdomain localhost ::1 localhost.localdomain localhost # End of file 192.168.1.3 s1 s1 #DYNAMIC_RESOLVE 192.168.1.2 kh1 kh1 #DYNAMIC_RESOLVE You can now use the hostnames in most commands and have them automatically resolved; ssh s1 #resolves to the IP adress of my phone ssh root@kh1 -p 22 #same but with more arguments You can alias the HOSTS.sh script command in you bashrc to make it easier to use. That’s it! have fun!</summary>
+        <summary type="html">I was in desperate need to find a way to not always have to scan the network or go over to another device to know its IP so I could ssh into it or use a service it was serving. This is what I found. The internet is just a lot of devices, which can be addressed with an IP address. Those are unique in every network. To make the network more usable we use domain names with logical, easy to remember names like www.google.com or www.facebook.com. This works by contactin a server with a fixed IP which provides DNS that resolves your domain name in an IP that your browser can go to. DNS-servers for the global internet are managed by governments and maintained by big companies like Google. This is why, If you want a domain name, it comes with a fee… On local networks, its overkill (and quite some setup) to have a DNS-server to resolve the IP of devices but other programs like zeroconf and mdns tried to have a more low-maintenance take on this problem. Short story: Still not ideal. You still have to have services running on all devices to ensure that your device gets registered… The solution The ideal solution consists of: – No changes needed to the network (so it works everywhere) – Reliable – Very little setup on the device itself and no services need to be running – Cross-platform The idea is to maintain a list of MAC-addresses of the devices I use (and sync those with Dropbox or Git), scan the network for these MAC-addresses and if found, add them to the /etc/hosts file. This is reliable because MAC-addresses are hard-coded in your hardware. You only need to know the MAC of your other devices and you can identify it. Every device has to have one. Adding to the /etc/hosts file is something that is supported by the core of linux so it is quite cross-platform on any device you can get linux working on. So whenever my network-setup changes, or it has been a while and adresses may have switched, I run the following command; bash ./HOSTS.sh ./HOSTS_MACS HOSTS.sh script: #DEPENDENCIES: arp-scan #take $1 (first argument of the script) -&amp;gt; file with mac adresses + hostname tmpfile=$(mktemp /tmp/DYNAMIC-RESOLVE.XXXXXX) #tmp file for temporary results #clear lines form the previous run in /etc/hosts file sed -i.bak '/DYNAMIC_RESOLVE/d' /etc/hosts #use the tool arp-scan to find all the devices on the network if ! [ -z $2 ]; then arp-scan -l --localnet --interface=$2 &amp;gt;&amp;gt; $tmpfile else for line in $(ip link | cut -d &quot; &quot; -f 2); do interface=${line::-1} arp-scan -l --localnet --interface=$interface 2&amp;gt;/dev/null &amp;gt;&amp;gt; $tmpfile done #TODO interfaceoption -&amp;gt; default wlan fi echo Arpscan Finished... Filtering results... #reading the results one by one while read -r line do MAC=$(echo $line | cut -d &quot; &quot; -f 1) NAME=$(echo $line | cut -d &quot; &quot; -f 2) #grep MAC from ARP cache IP=$(cat $tmpfile | grep $MAC | cut -d$'\t' -f 1) if ! [ -z &quot;${IP}&quot; ]; then echo Found $NAME at $IP! Adding to /etc/hosts... echo &quot;$IP $NAME $NAME #DYNAMIC_RESOLVE&quot;&amp;gt;&amp;gt;/etc/hosts #If the MAC is found, add to the /etc/hosts file fi done &amp;lt; &quot;$1&quot; echo Done with discovering hosts HOSTS_MACS file: 00:90:f5:d6:5b:05 c1 c0:ee:fb:59:fc:23 s1 10:02:b5:d6:08:8a o1 b8:27:eb:4e:0c:42 kh1 The second file is just a list of MAC-addresses with a name you chose behind it. You can find your MAC-address in various ways, but the easiest is just running the ifconfig command on linux. (look next to “ether”) [root@localhost]# ifconfig wlan0: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt; mtu 1500 inet 192.168.1.13 netmask 255.255.255.0 broadcast 192.168.1.255 ether 10:02:b5:d6:08:8a txqueuelen 1000 (Ethernet) RX packets 221361 bytes 303819415 (289.7 MiB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 112644 bytes 15169217 (14.4 MiB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 ... You will need the tool arp-scan to run this script, you can find it in nearly all repositories. I run this script on an android phone, a desktop, chromebook and Raspberry Pi. So no worries. If you check the /etc/hosts file you can see the following has changed: # # /etc/hosts: static lookup table for host names # #&amp;lt;ip-address&amp;gt; &amp;lt;hostname.domain.org&amp;gt; &amp;lt;hostname&amp;gt; 127.0.0.1 localhost.localdomain localhost ::1 localhost.localdomain localhost # End of file 192.168.1.3 s1 s1 #DYNAMIC_RESOLVE 192.168.1.2 kh1 kh1 #DYNAMIC_RESOLVE You can now use the hostnames in most commands and have them automatically resolved; ssh s1 #resolves to the IP adress of my phone ssh root@kh1 -p 22 #same but with more arguments You can alias the HOSTS.sh script command in you bashrc to make it easier to use. That’s it! have fun!</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">Setting Up a GnuPG-based Password Manager</title>
+      
+      <link href="http://localhost:4000/2017/09/23/gnupg-based-password-manager/" rel="alternate" type="text/html" title="Setting Up a GnuPG-based Password Manager" />
+      <published>2017-09-23T00:00:00+00:00</published>
+      <updated>2017-09-23T00:00:00+00:00</updated>
+      <id>http://localhost:4000/2017/09/23/gnupg-based-password-manager</id>
+      <content type="html" xml:base="http://localhost:4000/2017/09/23/gnupg-based-password-manager/">&lt;p&gt;In this article we will setup a secure password manager. You probably use the same password over and over again on multiple sites/devices/applications. Not so great! If one service gets compromised, an attacker can wreak some serious havoc. &lt;strong&gt;YOU SHOULD USE DIFFERENT PASSWORDS!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;But this is hard, so many store their passwords in a passwords.txt file on their desktop, or even better, in a service like Dropbox storing all passwords together and keeping that file synced. Copying passwords will also circumvent &lt;a href=&quot;https://en.wikipedia.org/wiki/Keystroke_logging&quot;&gt;keyloggers&lt;/a&gt; active on your system. So awesome right?!&lt;/p&gt;
+
+&lt;p&gt;Not really, If one of your devices gets compromised, or Dropbox makes a mistake, you are screwed. You should still have an extra layer of access protection between the file and the passwords, syncing with Dropbox can be fine, but you have to encrypt the file.&lt;/p&gt;
+
+&lt;h2&gt;About password managers&lt;/h2&gt;
+
+&lt;p&gt;One option is using tools like &lt;a href=&quot;http://keepass.info/&quot;&gt;Keepass&lt;/a&gt; or &lt;a href=&quot;https://1password.com/&quot;&gt;1Password&lt;/a&gt;. 
+But you are depending on that service, its not modular (you can not choose the way it gets synced). 
+I don’t like trusting these services. 
+Not only the communication but things like encryption type, memory leaks, temporary files can all be badly designed. 
+&lt;a href=&quot;https://www.coredna.com/blogs/comparing-open-closed-source-software&quot;&gt;Open-source&lt;/a&gt; tools are the way to go, because you can trust AND verify.&lt;/p&gt;
+
+&lt;p&gt;The best way to do this is with &lt;a href=&quot;https://en.wikipedia.org/wiki/Public-key_cryptography&quot;&gt;asymmetric encryption&lt;/a&gt;. 
+Their are standards such as &lt;a href=&quot;https://nl.wikipedia.org/wiki/Pretty_Good_Privacy&quot;&gt;PGP&lt;/a&gt; (&lt;a href=&quot;https://www.gnupg.org/&quot;&gt;GnuPG&lt;/a&gt; on linux) who make this easy. 
+The encryption is very strong because you use a long encryption key, to decrypt your target file.&lt;/p&gt;
+
+&lt;p&gt;The long encryption key is stored locally on your machines, and you need a passphrase to use it. 
+So even if the can get access to the long secure encryption key (private key). They will still need the passphrase.&lt;/p&gt;
+
+&lt;p&gt;This is not all that &lt;a href=&quot;https://www.gnupg.org/&quot;&gt;GnuPG&lt;/a&gt; can do, it is an amazing piece of work, if interested, you should check it out. 
+A nice place to get started with using it is this &lt;a href=&quot;https://wiki.archlinux.org/index.php/GnuPG&quot;&gt;Arch Linux page&lt;/a&gt; about GnuPG.&lt;/p&gt;
+
+&lt;p&gt;I use the terminal everywhere and there is a cli-tool named &lt;a href=&quot;https://wiki.archlinux.org/index.php/Pass&quot;&gt;pass&lt;/a&gt; to automate the usage of GnuPG for passwords. We will use that to manage our passwords.
+The cool thing about the pass password-manager, is its cross platform uniform behavior. You know how to use it on one platform and you know it on all your other devices (more on syncing the passwords later)&lt;/p&gt;
+
+&lt;h2&gt;Dependencies&lt;/h2&gt;
+
+&lt;p&gt;You first have to install pass and GnuPG and more important, set up GnuPG and have it make a key for you (you can of course use an already existing key, but then you would not be reading this). Do what is right on your system:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Debian-based;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install pass gnupg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Arch Linux; &lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo pacman -Sy pass gnupg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Setup your encryption key&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gpg --full-gen-key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now gpg will ask you a couple questions, like what kind of key you want, press 1.
+I chose a key-size of 4096, which is the highest possible. Then put in 0 for a everlasting key, confirm you choice.
+Then it will ask for a name, email and comment (like “created pm 27/12/2016”). 
+Confirm with pressing &lt;code class=&quot;highlighter-rouge&quot;&gt;O&lt;/code&gt; and ENTER. Then STOP!&lt;/p&gt;
+
+&lt;p&gt;You should now have the following output:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@localhost ~]# gpg --full-gen-key
+gpg (GnuPG) 2.2.4; Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+Your selection? 1
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (2048) 4096
+Requested keysize is 4096 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      &amp;lt;n&amp;gt;  = key expires in n days
+      &amp;lt;n&amp;gt;w = key expires in n weeks
+      &amp;lt;n&amp;gt;m = key expires in n months
+      &amp;lt;n&amp;gt;y = key expires in n years
+Key is valid for? (0) 0
+Key does not expire at all
+Is this correct? (y/N) y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: lvlrt
+Email address: gpg@larsveelaert.com
+Comment: Thisismycomment
+You selected this USER-ID:
+    &quot;lvlrt (Thisismycomment) &amp;lt;gpg@larsveelaert.com&amp;gt;&quot;
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+Please enter the passphrase to
+protect your new key
+Passphrase: 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now put a YouTube video playing, setup a file copy from and to your disk for 10 minutes or something. 
+Then go back to your console and it will have asked for a password. Fill in the password while your device is doing the heavy work. Confirm and you are done.&lt;/p&gt;
+
+&lt;p&gt;You can close your YouTube video and the file transfer. This was to generate some computer noise. Which will improve the randomness of the generated key!&lt;/p&gt;
+
+&lt;p&gt;To test if the key was successfully created enter the following command:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@localhost ~]# gpg --list-keys
+...
+----------------------------
+pub   rsa2048 2018-01-10 [SC]
+      927A1402D78C9188216F233841CB4088BBF533E9
+uid           [ultimate] lvlrt (test) &amp;lt;gpg@larsveelaert.com&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Ok great!, let us now get pass setup, you can do that with this command: 
+(where the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;id&amp;gt;&lt;/code&gt; value is your email or name you just put in)&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pass init &amp;lt;id&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Then it will output the following:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@localhost ~]# pass init gpg@larsveelaert.com
+mkdir: created directory '/home/king/.password-store/'
+Password store initialized for gpg@larsveelaert.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Setup done!&lt;/p&gt;
+
+&lt;h2&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;To insert a password in your password-store:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;pass insert stuffathome/thingseverybodyshouldknow/wifipassword&lt;/pre&gt;
+
+&lt;p&gt;You can keep adding or removing ‘/’ signs to make more divisions in your password-store.&lt;/p&gt;
+
+&lt;p&gt;These will just be added as descending folders.&lt;/p&gt;
+
+&lt;p&gt;To have it instead generate a password for you (if you want to be extra safe) and store it in an encrypted file:&lt;/p&gt;
+
+&lt;pre&gt;pass generate stuffathome/thingseverybodyshouldknow/wifipassword&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;No password asked? Isn’t this unsafe?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The way we encrypted this password-store is asymmetrical… so everybody can encrypt, but only the ones with a private key can decrypt.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To list the available passwords just type:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;pass show&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;To retrieve the password we just created, do:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;pass show stuffathome/thingseverybodyshouldknow/wifipassword&lt;/pre&gt;
+
+&lt;p&gt;And now it will ask for your passphrase of the gpg key you specified in the setup command. Then it should echo the password out. And thats really all you need to know to use this password manager. The key will be available for a small time until it timed out. That’s it!&lt;/p&gt;
+
+&lt;h2&gt;Syncing your passwords&lt;/h2&gt;
+
+&lt;p&gt;To synchronize your password manager between devices. You need to synchronize 2 sets of files. The first one is you gpg key. Those are stored in the folder ~/.gnupg by default. You can change the location where GnuPG checks for these files with setting the $GNUPGHOME variable:&lt;/p&gt;
+
+&lt;pre&gt;export GNUPGHOME=&quot;~/keys&quot;&lt;/pre&gt;
+
+&lt;p&gt;Now you can move your .gnupg folder to a new location and put the new location in this variable. REMINDER: you have to put this command in your ~/.bashrc file or alias it with your pass command (more on that later).&lt;/p&gt;
+
+&lt;p&gt;You passwords are stored in a directory, called a store, this is the one that pass has setup for you. The default location is ~/.password-store. If you use change the variables $PASSWORD_STORE_DIR and $PASSWORDS_STORE_GIT to the location where your store is. So all this in one command (put this in ~/.bashrc):&lt;/p&gt;
+
+&lt;pre&gt;alias pass='GNUPGHOME=~/keys PASSWORD_STORE_DIR=~/DATA/PASSWORDS PASSWORD_STORE_GIT=~/DATA/PASSWORDS pass'&lt;/pre&gt;
+
+&lt;p&gt;This alias command, will make your pass command always use these variables. You copy the passwords-store and key to a service like Dropbox or in a synced git-repository, put the path to these directories in the command and you are set! Please keep the key and password-store seperate, it is still protected by a passphrase but you lose the protection of you 4096-bit key.&lt;/p&gt;
+
+&lt;p&gt;That’s it! Good Luck with your password manager!&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+        <author>
+            <name>Lars Veelaert</name>
+          
+          
+        </author>
+      
+
+      
+        <category term="Quick Tips" />
+      
+
+      
+        <category term="encryption" />
+      
+        <category term="linux" />
+      
+        <category term="productivity" />
+      
+        <category term="security" />
+      
+        <category term="terminal" />
+      
+
+      
+        <summary type="html">In this article we will setup a secure password manager. You probably use the same password over and over again on multiple sites/devices/applications. Not so great! If one service gets compromised, an attacker can wreak some serious havoc. YOU SHOULD USE DIFFERENT PASSWORDS! But this is hard, so many store their passwords in a passwords.txt file on their desktop, or even better, in a service like Dropbox storing all passwords together and keeping that file synced. Copying passwords will also circumvent keyloggers active on your system. So awesome right?! Not really, If one of your devices gets compromised, or Dropbox makes a mistake, you are screwed. You should still have an extra layer of access protection between the file and the passwords, syncing with Dropbox can be fine, but you have to encrypt the file. About password managers One option is using tools like Keepass or 1Password. But you are depending on that service, its not modular (you can not choose the way it gets synced). I don’t like trusting these services. Not only the communication but things like encryption type, memory leaks, temporary files can all be badly designed.  Open-source tools are the way to go, because you can trust AND verify. The best way to do this is with asymmetric encryption. Their are standards such as PGP (GnuPG on linux) who make this easy. The encryption is very strong because you use a long encryption key, to decrypt your target file. The long encryption key is stored locally on your machines, and you need a passphrase to use it. So even if the can get access to the long secure encryption key (private key). They will still need the passphrase. This is not all that GnuPG can do, it is an amazing piece of work, if interested, you should check it out. A nice place to get started with using it is this Arch Linux page about GnuPG. I use the terminal everywhere and there is a cli-tool named pass to automate the usage of GnuPG for passwords. We will use that to manage our passwords. The cool thing about the pass password-manager, is its cross platform uniform behavior. You know how to use it on one platform and you know it on all your other devices (more on syncing the passwords later) Dependencies You first have to install pass and GnuPG and more important, set up GnuPG and have it make a key for you (you can of course use an already existing key, but then you would not be reading this). Do what is right on your system: Debian-based; sudo apt-get install pass gnupg Arch Linux;  sudo pacman -Sy pass gnupg Setup your encryption key gpg --full-gen-key Now gpg will ask you a couple questions, like what kind of key you want, press 1. I chose a key-size of 4096, which is the highest possible. Then put in 0 for a everlasting key, confirm you choice. Then it will ask for a name, email and comment (like “created pm 27/12/2016”). Confirm with pressing O and ENTER. Then STOP! You should now have the following output: [root@localhost ~]# gpg --full-gen-key gpg (GnuPG) 2.2.4; Copyright (C) 2017 Free Software Foundation, Inc. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law. Please select what kind of key you want: (1) RSA and RSA (default) (2) DSA and Elgamal (3) DSA (sign only) (4) RSA (sign only) Your selection? 1 RSA keys may be between 1024 and 4096 bits long. What keysize do you want? (2048) 4096 Requested keysize is 4096 bits Please specify how long the key should be valid. 0 = key does not expire &amp;lt;n&amp;gt; = key expires in n days &amp;lt;n&amp;gt;w = key expires in n weeks &amp;lt;n&amp;gt;m = key expires in n months &amp;lt;n&amp;gt;y = key expires in n years Key is valid for? (0) 0 Key does not expire at all Is this correct? (y/N) y GnuPG needs to construct a user ID to identify your key. Real name: lvlrt Email address: gpg@larsveelaert.com Comment: Thisismycomment You selected this USER-ID: &quot;lvlrt (Thisismycomment) &amp;lt;gpg@larsveelaert.com&amp;gt;&quot; Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy. Please enter the passphrase to protect your new key Passphrase: Now put a YouTube video playing, setup a file copy from and to your disk for 10 minutes or something. Then go back to your console and it will have asked for a password. Fill in the password while your device is doing the heavy work. Confirm and you are done. You can close your YouTube video and the file transfer. This was to generate some computer noise. Which will improve the randomness of the generated key! To test if the key was successfully created enter the following command: [root@localhost ~]# gpg --list-keys ... ---------------------------- pub rsa2048 2018-01-10 [SC] 927A1402D78C9188216F233841CB4088BBF533E9 uid [ultimate] lvlrt (test) &amp;lt;gpg@larsveelaert.com&amp;gt; Ok great!, let us now get pass setup, you can do that with this command: (where the &amp;lt;id&amp;gt; value is your email or name you just put in) pass init &amp;lt;id&amp;gt; Then it will output the following: [root@localhost ~]# pass init gpg@larsveelaert.com mkdir: created directory '/home/king/.password-store/' Password store initialized for gpg@larsveelaert.com Setup done! Usage To insert a password in your password-store: pass insert stuffathome/thingseverybodyshouldknow/wifipassword You can keep adding or removing ‘/’ signs to make more divisions in your password-store. These will just be added as descending folders. To have it instead generate a password for you (if you want to be extra safe) and store it in an encrypted file: pass generate stuffathome/thingseverybodyshouldknow/wifipassword No password asked? Isn’t this unsafe? The way we encrypted this password-store is asymmetrical… so everybody can encrypt, but only the ones with a private key can decrypt. To list the available passwords just type: pass show To retrieve the password we just created, do: pass show stuffathome/thingseverybodyshouldknow/wifipassword And now it will ask for your passphrase of the gpg key you specified in the setup command. Then it should echo the password out. And thats really all you need to know to use this password manager. The key will be available for a small time until it timed out. That’s it! Syncing your passwords To synchronize your password manager between devices. You need to synchronize 2 sets of files. The first one is you gpg key. Those are stored in the folder ~/.gnupg by default. You can change the location where GnuPG checks for these files with setting the $GNUPGHOME variable: export GNUPGHOME=&quot;~/keys&quot; Now you can move your .gnupg folder to a new location and put the new location in this variable. REMINDER: you have to put this command in your ~/.bashrc file or alias it with your pass command (more on that later). You passwords are stored in a directory, called a store, this is the one that pass has setup for you. The default location is ~/.password-store. If you use change the variables $PASSWORD_STORE_DIR and $PASSWORDS_STORE_GIT to the location where your store is. So all this in one command (put this in ~/.bashrc): alias pass='GNUPGHOME=~/keys PASSWORD_STORE_DIR=~/DATA/PASSWORDS PASSWORD_STORE_GIT=~/DATA/PASSWORDS pass' This alias command, will make your pass command always use these variables. You copy the passwords-store and key to a service like Dropbox or in a synced git-repository, put the path to these directories in the command and you are set! Please keep the key and password-store seperate, it is still protected by a passphrase but you lose the protection of you 4096-bit key. That’s it! Good Luck with your password manager!</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">Quick Tip: A transparent poor man’s VPN with sshuttle (Linux)</title>
+      
+      <link href="http://localhost:4000/2017/02/17/poor-man-vpn/" rel="alternate" type="text/html" title="Quick Tip: A transparent poor man's VPN with sshuttle (Linux)" />
+      <published>2017-02-17T00:00:00+00:00</published>
+      <updated>2017-02-17T00:00:00+00:00</updated>
+      <id>http://localhost:4000/2017/02/17/poor-man-vpn</id>
+      <content type="html" xml:base="http://localhost:4000/2017/02/17/poor-man-vpn/">&lt;h2&gt;Why?&lt;/h2&gt;
+
+&lt;p&gt;There are a lot of reasons why you would want a &lt;a href=&quot;https://en.wikipedia.org/wiki/Proxy_server&quot;&gt;proxy&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Virtual_private_network&quot;&gt;VPN&lt;/a&gt;, one of them is safety and protection from attackers at your location. For example if you are visiting sensitive things in your local coffee shop, other visitors could sniff your traffic because they are connected to the same network. From that point it is not only possible to read but also manupulate the ftraffic and possibly inject malicious code. Other usage cases are services who are only accessible behind a firewall or only if the user appears to be located at a certain specified IP address.&lt;/p&gt;
+
+&lt;p&gt;Most of the time, a proxy is one connection that gets rerouted while a VPN is a more client-friendly option to reroute all traffic from a system.
+If you do not want to configure every application to use your proxy, and want to reroute all traffic, the tool &lt;code class=&quot;highlighter-rouge&quot;&gt;shuttle&lt;/code&gt; is a perfect fit. 
+It uses SSH under the hood so the permissions are managed through your existing SSH server so no extra user management is required.&lt;/p&gt;
+
+&lt;p&gt;I you are searching for a way to only route one command or application through a proxy have a look at &lt;a href=&quot;/2017/02/02/tip-running-a-terminal-command-through-a-proxy/&quot;&gt;an earlier article&lt;/a&gt; I wrote. 
+In a lot of cases you don’t need to search the applications native capability for configuring a proxy.
+The more traffic you route through your ssh server, 
+the more demanding and slow the operation becomes. So keep that in mind. Let’s begin!&lt;/p&gt;
+
+&lt;h2&gt;How to install?&lt;/h2&gt;
+
+&lt;p&gt;There are 2 things you will need;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A ssh server on a remote device (there are tutorials specific to your flavour of linux)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://pypi.python.org/pypi/pip&quot;&gt;pip&lt;/a&gt;&lt;/em&gt;, the package manager from python&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To install the python package manager, run one of the following commands;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apt-get install python-pip # for debian and others
+pacman -Sy python pip #for archlinux users
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we can install &lt;em&gt;sshuttle&lt;/em&gt;;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install sshuttle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Done!&lt;/p&gt;
+
+&lt;h3&gt;How to setup?&lt;/h3&gt;
+
+&lt;p&gt;There are a lot of general options and specific routing options that can be configured with &lt;code class=&quot;highlighter-rouge&quot;&gt;sshuttle&lt;/code&gt;.
+But this article will just explain the transparent proxy (reroute all outgoing traffic). 
+You can find the full documentation &lt;a href=&quot;https://sshuttle.readthedocs.io/en/stable/overview.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now,for example, if we had an SSH server located at 192.168.13.2 and properly configured to accept connections from our address, we could run;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sshuttle --dns -vvr me@192.168.13.2:22 0/0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This will first make a connection to your ssh server and then start routing all traffic from your system to this location.
+As you can see from the extra option. Also your DNS-requests will be tunneled.&lt;/p&gt;
+
+&lt;p&gt;To make sure there is not traffic leaked, look into network monitoring software like &lt;a href=&quot;https://www.wireshark.org/&quot;&gt;wireshark&lt;/a&gt;. To test launch some applications and see if there is info being leaked.&lt;/p&gt;
+
+&lt;h3&gt;Tip for experts&lt;/h3&gt;
+&lt;p&gt;You can make a bash function to automate the process and be able to quickly switch between servers.
+For this example we will use the basic sshuttle command, but any one of them will work.&lt;/p&gt;
+
+&lt;p&gt;You can add a function to your .bashrc-file like this;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;proxy () {
+sshuttle --dns -vvr $1 0/0
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The result of this will be that you can run one of the following in your bash-prompt:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ proxy me@192.168.13.2:22 
+$ proxy ssh_server1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And it will proxy all your traffic to a preconfigured ssh server.
+To use your proxy as in the second example, you will have to configure your destination in the ~/.ssh/config file from your system to make it really useful
+It will even take the keys that are loaded in your SSH-agent.&lt;/p&gt;
+
+&lt;p&gt;There is awesome documentation of this program, so &lt;a href=&quot;https://sshuttle.readthedocs.io/en/stable/overview.html&quot;&gt;make sure to check it out&lt;/a&gt;!&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+        <author>
+            <name>Lars Veelaert</name>
+          
+          
+        </author>
+      
+
+      
+        <category term="Quick Tips" />
+      
+
+      
+        <category term="anonimity" />
+      
+        <category term="encryption" />
+      
+        <category term="linux" />
+      
+        <category term="terminal" />
+      
+        <category term="vpn" />
+      
+
+      
+        <summary type="html">Why? There are a lot of reasons why you would want a proxy or VPN, one of them is safety and protection from attackers at your location. For example if you are visiting sensitive things in your local coffee shop, other visitors could sniff your traffic because they are connected to the same network. From that point it is not only possible to read but also manupulate the ftraffic and possibly inject malicious code. Other usage cases are services who are only accessible behind a firewall or only if the user appears to be located at a certain specified IP address. Most of the time, a proxy is one connection that gets rerouted while a VPN is a more client-friendly option to reroute all traffic from a system. If you do not want to configure every application to use your proxy, and want to reroute all traffic, the tool shuttle is a perfect fit. It uses SSH under the hood so the permissions are managed through your existing SSH server so no extra user management is required. I you are searching for a way to only route one command or application through a proxy have a look at an earlier article I wrote. In a lot of cases you don’t need to search the applications native capability for configuring a proxy. The more traffic you route through your ssh server, the more demanding and slow the operation becomes. So keep that in mind. Let’s begin! How to install? There are 2 things you will need; A ssh server on a remote device (there are tutorials specific to your flavour of linux) pip, the package manager from python To install the python package manager, run one of the following commands; apt-get install python-pip # for debian and others pacman -Sy python pip #for archlinux users Now we can install sshuttle; pip install sshuttle Done! How to setup? There are a lot of general options and specific routing options that can be configured with sshuttle. But this article will just explain the transparent proxy (reroute all outgoing traffic). You can find the full documentation here. Now,for example, if we had an SSH server located at 192.168.13.2 and properly configured to accept connections from our address, we could run; sshuttle --dns -vvr me@192.168.13.2:22 0/0 This will first make a connection to your ssh server and then start routing all traffic from your system to this location. As you can see from the extra option. Also your DNS-requests will be tunneled. To make sure there is not traffic leaked, look into network monitoring software like wireshark. To test launch some applications and see if there is info being leaked. Tip for experts You can make a bash function to automate the process and be able to quickly switch between servers. For this example we will use the basic sshuttle command, but any one of them will work. You can add a function to your .bashrc-file like this; proxy () { sshuttle --dns -vvr $1 0/0 } The result of this will be that you can run one of the following in your bash-prompt: $ proxy me@192.168.13.2:22 $ proxy ssh_server1 And it will proxy all your traffic to a preconfigured ssh server. To use your proxy as in the second example, you will have to configure your destination in the ~/.ssh/config file from your system to make it really useful It will even take the keys that are loaded in your SSH-agent. There is awesome documentation of this program, so make sure to check it out!</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">Quick tip: Running a terminal command through a proxy (Linux)</title>
+      
+      <link href="http://localhost:4000/2017/02/02/running-a-terminal-command-through-a-proxy/" rel="alternate" type="text/html" title="Quick tip: Running a terminal command through a proxy (Linux)" />
+      <published>2017-02-02T00:00:00+00:00</published>
+      <updated>2017-02-02T00:00:00+00:00</updated>
+      <id>http://localhost:4000/2017/02/02/running-a-terminal-command-through-a-proxy</id>
+      <content type="html" xml:base="http://localhost:4000/2017/02/02/running-a-terminal-command-through-a-proxy/">&lt;p&gt;Sometimes, running a full &lt;a href=&quot;https://en.wikipedia.org/wiki/Virtual_private_network&quot;&gt;VPN&lt;/a&gt; is not necessary, or there is not enough bandwidth for all your traffic. 
+In cases of using &lt;a href=&quot;https://www.torproject.org/&quot;&gt;Tor&lt;/a&gt; for example, tunneling all your traffic can even be dangerous!
+So there is a way to specify per command or program if you want to have it tunnel its web traffic through the proxy or not.
+This tool is called &lt;code class=&quot;highlighter-rouge&quot;&gt;proxychains&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you, for example want to download a file through a proxy with the &lt;code class=&quot;highlighter-rouge&quot;&gt;wget&lt;/code&gt; command. Just prepend the command with &lt;code class=&quot;highlighter-rouge&quot;&gt;proxychains&lt;/code&gt; and done!&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ proxychains wget www.remoteserver.com/fileIneed
+[proxychains] config file found: /etc/proxychains.conf
+[proxychains] preloading /usr/lib/libproxychains4.so
+[proxychains] DLL init: proxychains-ng 4.12
+--2018-01-08 23:18:33--  http://www.remoteserver.com/fileineed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Great! that works, but gives some output, you can silence the extra output with the -q flag.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;proxychains -q ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;To set it up on your system follow the following steps:&lt;/p&gt;
+&lt;h3&gt;1. Installation&lt;/h3&gt;
+&lt;p&gt;For example on Arch Linux do:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pacman -Sy proxychains
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;On Ubuntu or other Debian-based distro’s:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apt-get install proxychains
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;2. Configuration&lt;/h3&gt;
+&lt;p&gt;Proxychains has a lot of configuration options but all you need to do, is go to the end of the file /etc/proxychains.conf and edit the last line;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#nano /etc/proxychains.conf
+socks4  127.0.0.1 9050
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;It’s preconfigured to use tor, 
+That means a socks4 proxy on localhost port 9050.&lt;/p&gt;
+
+&lt;p&gt;Configure this to your needs, for example to use a SOCKS5 proxy made by SSH do this;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Command to run to make the SSH connection
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh remoteserver -D 5000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Edit the configuration file like this:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;socks5 127.0.0.1 5000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;h3&gt;3. Done!&lt;/h3&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That’s it, proxies can be amazing to change your appearance to the public internet, get to otherwise inaccessible content or tunnel your way out of a restrictive firewall/filter. So knowing how to use them in a terminal enviroment is essential.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+        <author>
+            <name>Lars Veelaert</name>
+          
+          
+        </author>
+      
+
+      
+        <category term="Quick Tips" />
+      
+
+      
+        <category term="linux" />
+      
+        <category term="networking" />
+      
+        <category term="proxy" />
+      
+        <category term="terminal" />
+      
+        <category term="tor" />
+      
+
+      
+        <summary type="html">Sometimes, running a full VPN is not necessary, or there is not enough bandwidth for all your traffic. In cases of using Tor for example, tunneling all your traffic can even be dangerous! So there is a way to specify per command or program if you want to have it tunnel its web traffic through the proxy or not. This tool is called proxychains. If you, for example want to download a file through a proxy with the wget command. Just prepend the command with proxychains and done! $ proxychains wget www.remoteserver.com/fileIneed [proxychains] config file found: /etc/proxychains.conf [proxychains] preloading /usr/lib/libproxychains4.so [proxychains] DLL init: proxychains-ng 4.12 --2018-01-08 23:18:33-- http://www.remoteserver.com/fileineed Great! that works, but gives some output, you can silence the extra output with the -q flag. proxychains -q ... To set it up on your system follow the following steps: 1. Installation For example on Arch Linux do: pacman -Sy proxychains On Ubuntu or other Debian-based distro’s: apt-get install proxychains 2. Configuration Proxychains has a lot of configuration options but all you need to do, is go to the end of the file /etc/proxychains.conf and edit the last line; #nano /etc/proxychains.conf socks4 127.0.0.1 9050 It’s preconfigured to use tor, That means a socks4 proxy on localhost port 9050. Configure this to your needs, for example to use a SOCKS5 proxy made by SSH do this; Command to run to make the SSH connection ssh remoteserver -D 5000 Edit the configuration file like this: socks5 127.0.0.1 5000 3. Done! That’s it, proxies can be amazing to change your appearance to the public internet, get to otherwise inaccessible content or tunnel your way out of a restrictive firewall/filter. So knowing how to use them in a terminal enviroment is essential.</summary>
       
 
       

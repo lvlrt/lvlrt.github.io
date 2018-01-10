@@ -26,6 +26,7 @@ exclude:
   - Rakefile
   - jekyll-whiteglass.gemspec
   - vendor
+  - wordpress_proper
 
 # Social media
 twitter_username:
