@@ -1,5 +1,5 @@
 ---
-title: 'Quick tip: Running a terminal command through a proxy (Linux)'
+title: 'Quick tip: Running a terminal command through a proxy'
 layout: post
 categories:
   - Quick Tips

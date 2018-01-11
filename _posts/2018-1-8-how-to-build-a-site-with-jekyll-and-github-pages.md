@@ -1,6 +1,8 @@
 ---
 layout: post
 ---
+![Jekyll and Pages Logo]({{ "/assets/jekyll_pages.jpg" | absolute_url }})
+
 _As a terminal-guy, I never really like the way Content Management Systems for websites work. Sure, they provide great UX (mostly) for the average user. But what if I want to skip all that and just make a barebones site that is easily manageable with the applications I already have on my system now?_
 
 Welcome in the realm of static site generators. _Awesome... So if I want to change something I have to write HTML and CSS myself?_ No... That is a possibility, if you want a static page for your company or just a landing page but I wanted a blog so using something like [Jekyll](https://jekyllrb.com/) in combination with [Github Pages](https://pages.github.com/) is more logical. Let's walk through how to set it up.

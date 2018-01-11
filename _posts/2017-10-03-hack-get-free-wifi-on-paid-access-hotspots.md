@@ -1,43 +1,19 @@
 ---
-id: 259
 title: 'Hack: Get free WiFi on paid-access hotspots with a DNS tunnel'
-date: 2017-10-03T15:34:58+00:00
-author: Lars Veelaert
 layout: post
-guid: http://www.demgeeks.com/?p=259
-permalink: /hack-get-free-wifi-on-paid-access-hotspots/
-post_views_count:
-  - "39"
-tdc_dirty_content:
-  - "1"
-image: /wp-content/uploads/2017/10/unnamed-e1507071682408.png
 categories:
-  - Hacking
+  - Hacks
 tags:
-  - anonimity
-  - archlinux
-  - bypass
-  - captive portal
   - dns
-  - domain
-  - hacking
-  - hostname
-  - internet
   - iodine
-  - ip
-  - linux
-  - Nameserver
-  - network
   - networking
-  - port-forwarding
   - proxy
   - security
-  - server
-  - ssh
-  - terminal
   - tunneling
   - vpn
 ---
+![header]({{ "/assets/dns-tunnel-monitoring.png" | absolute_url }})
+
 Everybody knows that you can&#8217;t connect to a WiFi-hotspot if it is secured and you don&#8217;t have a the password. But at airports, train-stations or homes with a routers from a big provider you will have a unsecured wifi hotspot, but when you connect to it and you open your browser, you will get prompted to log in or supply a credit card, etc&#8230; . Great if you have a login but otherwise you are stuck behind this [&#8216;captive&#8217; portal](https://en.wikipedia.org/wiki/Captive_portal) (that is what this page is called).
 
 ## How to bypass a captive portal
@@ -67,7 +43,7 @@ This means that if we control the subdomain we are looking up, and we control th
 
 You can use [freedns.afraid.org](https://freedns.afraid.org/) for the [dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS) and the [NS-record](https://en.wikipedia.org/wiki/List_of_DNS_record_types#NS). So make an account and go to &#8220;subdomains&#8221;. You need to make 2 subdomains. One is a normal A-record (domain name to IP) and one of the type NS that is redirected to the A-record so it points to the public IP of the server at home.
 
-<img class="alignnone wp-image-803 size-full" src="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-03-at-17.15.46-e1507071452319.png?resize=377%2C258&#038;ssl=1" alt="" srcset="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-03-at-17.15.46-e1507071452319.png?w=377&ssl=1 377w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-03-at-17.15.46-e1507071452319.png?resize=300%2C205&ssl=1 300w" sizes="(max-width: 377px) 100vw, 377px" data-recalc-dims="1" />
+![setup ddns on site]({{ "/assets/iodine1.png" | absolute_url }})
   
 For the A-record fill in a sub domain (can be anything, just remember it) and choose a domain (these are donated by a large community to use). fill in the captcha and done.
   
@@ -75,7 +51,7 @@ The NS-record do the same, but change the destination to the A-record you just m
 
 The IP of the A-record was auto-filled when the subdomain was created but it needs to be periodicly updated by the server, so it keeps pointing at the public IP of you home-router with the server behind it. There are many ways to do this ([can be found here](https://freedns.afraid.org/scripts/freedns.clients.php)), but one of the easiest is fetching an url with a curl-command every 60 seconds.If you go to [freedns.afraid.org/dynamic](https://freedns.afraid.org/dynamic/), you can choose your subdomain of your A-record and get the link behind &#8216;direct link&#8217;.
 
-<img class="alignnone wp-image-801 size-full" src="https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-03-at-15.27.27.png?resize=640%2C86&#038;ssl=1" alt="" srcset="https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-03-at-15.27.27.png?w=812&ssl=1 812w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-03-at-15.27.27.png?resize=300%2C40&ssl=1 300w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-03-at-15.27.27.png?resize=768%2C103&ssl=1 768w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-03-at-15.27.27.png?resize=640%2C86&ssl=1 640w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" />
+![extra setup]({{ "/assets/iodine2.png" | absolute_url }})
 
 It looks like this:
 
@@ -192,6 +168,7 @@ Now to tunnel a internet connection through, you can use the built in SOCKS-prox
 
 <pre>ssh user@172.18.42.1 -D 5000</pre>
 
-Research how to setup your programs on your system to use the proxy or use this quick tip which explains how to [run commands through a proxy.](https://demgeeks.com/tip-running-a-terminal-command-through-a-proxy/) There is also a transparent way that tunnels all internet through a ssh tunnel [explained here](https://demgeeks.com/qt-poor-man-vpn/).
+Research how to setup your programs on your system to use the proxy or use this quick tip which explains how to [run commands through a proxy](https://larsveelaert.github.io/2017/02/02/running-a-terminal-command-through-a-proxy/). 
+There is also a transparent way that tunnels all internet through a ssh tunnel [explained here](https://larsveelaert.github.io/2017/02/17/poor-man-vpn/).
 
 Hope you learned something about how the internet works and have some free internet in the meanwhile. Have fun!

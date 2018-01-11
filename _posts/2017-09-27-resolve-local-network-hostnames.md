@@ -114,4 +114,6 @@ You can now use the hostnames in most commands and have them automatically resol
 <pre>ssh s1 #resolves to the IP adress of my phone
 ssh root@kh1 -p 22 #same but with more arguments</pre>
 
-You can alias the _ARP-A-HOST.sh_-script command in you bashrc](https://demgeeks.com/qt-make-the-command-line-easier-with-aliases-and-functions/) to make it easier to use. That&#8217;s it! have fun!
+You can alias the _ARP-A-HOST.sh_-script command in you bashrc](https://demgeeks.com/qt-make-the-command-line-easier-with-aliases-and-functions/) to make it easier to use. There is also [a Github-repo](https://github.com/larsveelaert/ARP-A-HOST) that contains all the files needed.
+
+That&#8217;s it! have fun!

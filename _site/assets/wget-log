@@ -1,0 +1,12 @@
+--2018-01-11 15:58:55--  https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-03-at-17.15.46-e1507071452319.png?w=377
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving i0.wp.com... 192.0.77.2
+Connecting to i0.wp.com|192.0.77.2|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 11026 (11K) [image/png]
+Saving to: ‘Screenshot-2017-10-03-at-17.15.46-e1507071452319.png?w=377’
+
+                     Screenshot-2017-10-0   0%[                                                                                      ]       0  --.-KB/s               Screenshot-2017-10-03-at-17.15.46-e150707 100%[=====================================================================================>]  10.77K  --.-KB/s    in 0.001s  
+
+2018-01-11 15:58:56 (14.5 MB/s) - ‘Screenshot-2017-10-03-at-17.15.46-e1507071452319.png?w=377’ saved [11026/11026]
+
