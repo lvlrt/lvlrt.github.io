@@ -9,6 +9,8 @@ tags:
   - networking
   - terminal
 ---
+![header rss article]({{ "/assets/rss.jpg" | absolute_url }})
+
 So I have a couple sites I check regularly&#8230; YouTube, a couple blogs, Reddit-pages, LinkedIn and some news-sites. Often it happens that I miss some interesting article, or in general, I have to remember to check it. It&#8217;s not very productive to have the feeling you have to check everything, all the time.
 
 A good way to go about this is subscribing to newsletters and reviewing settings of your online accounts to have messages send to your mail inbox. Great, but not every simple site has this option and newsletters often are to bloated with ads and calls to action to be fun to read.

@@ -1,46 +1,32 @@
 ---
-id: 821
+
 title: 'HackOTG (v1.0): A universal, portable, security-platform'
-date: 2017-10-07T15:55:14+00:00
-author: Lars Veelaert
 layout: post
-guid: https://demgeeks.com/?p=821
-permalink: /hackotg-v1-0-universal-portable-security-platform/
-tdc_dirty_content:
-  - "1"
-post_views_count:
-  - "31"
-image: /wp-content/uploads/2017/10/wp-image-1292205321-e1507621436783.jpg
 categories:
-  - Hacking
+  - HackOTG
 tags:
-  - android
-  - badusb
-  - bluetooth
-  - embedded system
+  - embedded
   - ethernet
   - hid
   - kernel
   - linux
   - microusb
-  - modules
   - networking
-  - operating system
-  - os
   - OTG
   - raspbian
   - rpi
-  - rpi zero
   - sd
   - usb
   - wifi
   - wireless
 ---
-When demonstrating a possible attack vector to a friend or a client, you want something standalone that is not influenced by your day-to-day tasks. Many have a persistent [Kali Linux](https://www.kali.org/) on a [bootable USB-drive](https://demgeeks.com/eli5-boot-different-operating-system-bootable-usb-drive/) exactly for this purpose. There are also many attack-vectors which require physical devices. Exploits like [DNS-tunneling](https://demgeeks.com/hack-get-free-wifi-on-paid-access-hotspots/), HID-attacks and [BadUSB](https://www.topsec.com/it-security-news-and-info/what-is-badusb-and-should-i-be-scared) are only a couple of examples.
+![HackOTG]({{ "/assets/HackOTG.jpg" | absolute_url }})
+
+_When demonstrating a possible attack vector to a friend or a client, you want something standalone that is not influenced by your day-to-day tasks. Many have a persistent [Kali Linux](https://www.kali.org/) on a [bootable USB-drive](https://demgeeks.com/eli5-boot-different-operating-system-bootable-usb-drive/) exactly for this purpose. There are also many attack-vectors which require physical devices. Exploits like [DNS-tunneling](https://demgeeks.com/hack-get-free-wifi-on-paid-access-hotspots/), HID-attacks and [BadUSB](https://www.topsec.com/it-security-news-and-info/what-is-badusb-and-should-i-be-scared) are only a couple of examples._
 
 You can buy specific devices like the [USB rubber ducky](https://hakshop.com/products/usb-rubber-ducky-deluxe) to perform these attacks in an easy, portable, quick way. Apart from being quite costly, you can&#8217;t carry them all in your everyday backpack and they often require to be reprogrammed for a different attack on the same vector&#8230; So having multiple will only make it worse.
 
-I&#8217;ve ported a lot of my physical exploits and some wifi-exploits to my Android device. It&#8217;s disguised, a all-in-one and you&#8217;ll always have it on you. An OTG-cable in my backpack and I&#8217;m ready to go&#8230; But often a lot of these exploits require a custom kernel or some modules to be able to function. Many tweaks are also device specific. When there is an update, a lot of unexpected things can happen. Not the best solution.
+I&#8217;ve ported a lot of my physical exploits and some wifi-exploits to my Android device. It&#8217;s disguised, an all-in-one and you&#8217;ll always have it on you. An OTG-cable in my backpack and I&#8217;m ready to go&#8230; But often a lot of these exploits require a custom kernel or some modules to be able to function. Many tweaks are also device specific. When there is an update, a lot of unexpected things can happen. Not the best solution.
 
 So I was searching something open-source, portable, inexpensive, expendable, easy-to-mod and easy to interface with and change it behavior and I found this:
 

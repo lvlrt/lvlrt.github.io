@@ -5,7 +5,6 @@ categories:
   - Hacks
 tags:
   - dns
-  - iodine
   - networking
   - proxy
   - security

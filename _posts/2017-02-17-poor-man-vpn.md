@@ -1,5 +1,5 @@
 ---
-title: "A transparent poor man's VPN with sshuttle (Linux)"
+title: "A transparent poor man's VPN with sshuttle"
 layout: post
 categories:
   - Networking
