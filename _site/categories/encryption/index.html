@@ -9,12 +9,12 @@
   
   
   
-  <title>Quick tip: Running a terminal command through a proxy (Linux)</title>
-  <meta name="description" content="Sometimes, running a full VPN is not necessary, or there is not enough bandwidth for all your traffic. In cases of using Tor for example, tunneling all your traffic can even be dangerous! So there is a way to specify per command or program if you want to have it tunnel its web traffic through the proxy or not. This tool is called proxychains. If you, for example want to download a file through a proxy with the wget command. Just prepend the command with proxychains and done! $ proxychains wget www.remoteserver.com/fileIneed [proxychains] config file found: /etc/proxychains.conf [proxychains] preloading /usr/lib/libproxychains4.so [proxychains] DLL init: proxychains-ng 4.12 --2018-01-08 23:18:33-- http://www.remoteserver.com/fileineed Great! that works, but gives some output, you can silence the extra output with the -q flag. proxychains -q ... To set it up on your system follow the following steps: 1. Installation For example on Arch Linux do: pacman -Sy proxychains On Ubuntu or other Debian-based distro’s: apt-get install proxychains 2. Configuration Proxychains has a lot of configuration options but all you need to do, is go to the end of the file /etc/proxychains.conf and edit the last line; #nano /etc/proxychains.conf socks4 127.0.0.1 9050 It’s preconfigured to use tor, That means a socks4 proxy on localhost port 9050. Configure this to your needs, for example to use a SOCKS5 proxy made by SSH do this; Command to run to make the SSH connection ssh remoteserver -D 5000 Edit the configuration file like this: socks5 127.0.0.1 5000 3. Done! That’s it, proxies can be amazing to change your appearance to the public internet, get to otherwise inaccessible content or tunnel your way out of a restrictive firewall/filter. So knowing how to use them in a terminal enviroment is essential.">
+  <title>encryption</title>
+  <meta name="description" content="Personal site of Lars Veelaert">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2017/02/02/running-a-terminal-command-through-a-proxy/">
+  <link rel="canonical" href="http://localhost:4000/categories/encryption/">
   
   
   <link rel="alternate" type="application/rss+xml" title="lvlrt" href="http://localhost:4000/feed.xml">
@@ -24,8 +24,8 @@
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="Quick tip: Running a terminal command through a proxy (Linux)">
-  <meta name="twitter:description" content="Sometimes, running a full VPN is not necessary, or there is not enough bandwidth for all your traffic. In cases of using Tor for example, tunneling all your traffic can even be dangerous! So there ...">
+  <meta name="twitter:title" content="encryption">
+  <meta name="twitter:description" content="Personal site of Lars Veelaert">
   
   
 
@@ -95,13 +95,22 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="home">
 
-  <header class="post-header">
+  <h1 class="page-heading">Archive of category 'encryption'</h1>
+
+  
+
+  <ul class="post-archives">
     
-      <h1 class="post-title" itemprop="name headline">Quick tip: Running a terminal command through a proxy (Linux)</h1>
-    
-    <p class="post-meta"><time datetime="2017-02-02T00:00:00+00:00" itemprop="datePublished">Feb 2, 2017</time> •
+      
+      
+
+      <li>
+        <span class="post-meta">
+          Sep 23, 2017
+          
+             •
   
     
     
@@ -258,11 +267,11 @@
       
     
       
-        <a href="/categories/quick-tips/">Quick Tips</a>
-      
     
       
     
+      
+        <a href="/categories/encryption/">encryption</a>
       
     
       
@@ -446,299 +455,8 @@
       
     
       
-        <a href="/tags/networking/">networking</a>,
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-    
-      
-    
-      
     
       
-        <a href="/tags/proxy/">proxy</a>,
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
     
       
     
@@ -751,50 +469,7 @@
       
     
       
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-    
-      
-    
-      
-    
-      
-    
-      
-        <a href="/tags/terminal/">terminal</a>,
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+        <a href="/tags/productivity/">productivity</a>,
       
     
       
@@ -953,7 +628,174 @@
       
     
       
-        <a href="/tags/tor/">tor</a>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/security/">security</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/terminal/">terminal</a>
+      
+    
       
     
       
@@ -1110,61 +952,17 @@
     
   
 
-</p>
-  </header>
 
-  <div class="post-content" itemprop="articleBody">
-    <p>Sometimes, running a full <a href="https://en.wikipedia.org/wiki/Virtual_private_network">VPN</a> is not necessary, or there is not enough bandwidth for all your traffic. 
-In cases of using <a href="https://www.torproject.org/">Tor</a> for example, tunneling all your traffic can even be dangerous!
-So there is a way to specify per command or program if you want to have it tunnel its web traffic through the proxy or not.
-This tool is called <code class="highlighter-rouge">proxychains</code>.</p>
+          </span>
 
-<p>If you, for example want to download a file through a proxy with the <code class="highlighter-rouge">wget</code> command. Just prepend the command with <code class="highlighter-rouge">proxychains</code> and done!</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ proxychains wget www.remoteserver.com/fileIneed
-[proxychains] config file found: /etc/proxychains.conf
-[proxychains] preloading /usr/lib/libproxychains4.so
-[proxychains] DLL init: proxychains-ng 4.12
---2018-01-08 23:18:33--  http://www.remoteserver.com/fileineed
-</code></pre></div></div>
-<p>Great! that works, but gives some output, you can silence the extra output with the -q flag.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proxychains -q ...
-</code></pre></div></div>
-<p>To set it up on your system follow the following steps:</p>
-<h3>1. Installation</h3>
-<p>For example on Arch Linux do:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman -Sy proxychains
-</code></pre></div></div>
-<p>On Ubuntu or other Debian-based distro’s:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install proxychains
-</code></pre></div></div>
-<h3>2. Configuration</h3>
-<p>Proxychains has a lot of configuration options but all you need to do, is go to the end of the file /etc/proxychains.conf and edit the last line;</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#nano /etc/proxychains.conf
-socks4  127.0.0.1 9050
-</code></pre></div></div>
-<p>It’s preconfigured to use tor, 
-That means a socks4 proxy on localhost port 9050.</p>
+        <h2>
+          <a class="post-link" href="/2017/09/23/gnupg-based-password-manager/">Setting Up a GnuPG-based Password Manager</a>
+        </h2>
+      </li>
+    
+  </ul>
 
-<p>Configure this to your needs, for example to use a SOCKS5 proxy made by SSH do this;</p>
-<ul>
-  <li>Command to run to make the SSH connection
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh remoteserver -D 5000
-</code></pre></div>    </div>
-  </li>
-  <li>Edit the configuration file like this:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>socks5 127.0.0.1 5000
-</code></pre></div>    </div>
-    <h3>3. Done!</h3>
-  </li>
-</ul>
-
-<p>That’s it, proxies can be amazing to change your appearance to the public internet, get to otherwise inaccessible content or tunnel your way out of a restrictive firewall/filter. So knowing how to use them in a terminal enviroment is essential.</p>
-
-  </div>
-
-  
-
-</article>
+</div>
 
       </div>
     </main>

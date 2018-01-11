@@ -1,5 +1,5 @@
 ---
-title: 'Resolve local network hostnames without extra services (Linux)'
+title: 'ARP-A-HOST, a script to resolve local network hostnames without extra services'
 layout: post
 categories:
   - Networking
@@ -34,10 +34,9 @@ The idea is to maintain a list of [MAC-addresses](https://en.wikipedia.org/wiki/
 
 So whenever my network-setup changes, or it has been a while and adresses may have switched, I run the following command;
 
-<pre>bash ./HOSTS.sh ./HOSTS_MACS</pre>
+<pre>bash ./ARP-A-HOST.sh ./HOSTS_MACS</pre>
 
-**HOSTS.sh script:**
-
+**ARP-A-HOST.sh script:**
 <pre>#DEPENDENCIES: arp-scan
 #take $1 (first argument of the script) -&gt; file with mac adresses + hostname
 
@@ -115,4 +114,4 @@ You can now use the hostnames in most commands and have them automatically resol
 <pre>ssh s1 #resolves to the IP adress of my phone
 ssh root@kh1 -p 22 #same but with more arguments</pre>
 
-You can [alias the HOSTS.sh script command in you bashrc](https://demgeeks.com/qt-make-the-command-line-easier-with-aliases-and-functions/) to make it easier to use. That&#8217;s it! have fun!
+You can alias the _ARP-A-HOST.sh_-script command in you bashrc](https://demgeeks.com/qt-make-the-command-line-easier-with-aliases-and-functions/) to make it easier to use. That&#8217;s it! have fun!

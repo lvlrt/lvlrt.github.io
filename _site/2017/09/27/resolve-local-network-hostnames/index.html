@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>ARP-A-HOST, a script to resolve local network hostnames without extra services</title>
+  <meta name="description" content="I was in desperate need to find a way to not always have to scan the network or go over to another device to know its IP so I could ssh into it or use a service it was serving. This is what I found. The internet is just a lot of devices, which can be addressed with an IP address. Those are unique in every network. To make the network more usable we use domain names with logical, easy to remember names like www.google.com or www.facebook.com. This works by contactin a server with a fixed IP which provides DNS that resolves your domain name in an IP that your browser can go to. DNS-servers for the global internet are managed by governments and maintained by big companies like Google. This is why, If you want a domain name, it comes with a fee… On local networks, its overkill (and quite some setup) to have a DNS-server to resolve the IP of devices but other programs like zeroconf and mdns tried to have a more low-maintenance take on this problem. Short story: Still not ideal. You still have to have services running on all devices to ensure that your device gets registered… The solution The ideal solution consists of: – No changes needed to the network (so it works everywhere) – Reliable – Very little setup on the device itself and no services need to be running – Cross-platform The idea is to maintain a list of MAC-addresses of the devices I use (and sync those with Dropbox or Git), scan the network for these MAC-addresses and if found, add them to the /etc/hosts file. This is reliable because MAC-addresses are hard-coded in your hardware. You only need to know the MAC of your other devices and you can identify it. Every device has to have one. Adding to the /etc/hosts file is something that is supported by the core of linux so it is quite cross-platform on any device you can get linux working on. So whenever my network-setup changes, or it has been a while and adresses may have switched, I run the following command; bash ./ARP-A-HOST.sh ./HOSTS_MACS ARP-A-HOST.sh script: #DEPENDENCIES: arp-scan #take $1 (first argument of the script) -&amp;gt; file with mac adresses + hostname tmpfile=$(mktemp /tmp/DYNAMIC-RESOLVE.XXXXXX) #tmp file for temporary results #clear lines form the previous run in /etc/hosts file sed -i.bak &#39;/DYNAMIC_RESOLVE/d&#39; /etc/hosts #use the tool arp-scan to find all the devices on the network if ! [ -z $2 ]; then arp-scan -l --localnet --interface=$2 &amp;gt;&amp;gt; $tmpfile else for line in $(ip link | cut -d &quot; &quot; -f 2); do interface=${line::-1} arp-scan -l --localnet --interface=$interface 2&amp;gt;/dev/null &amp;gt;&amp;gt; $tmpfile done #TODO interfaceoption -&amp;gt; default wlan fi echo Arpscan Finished... Filtering results... #reading the results one by one while read -r line do MAC=$(echo $line | cut -d &quot; &quot; -f 1) NAME=$(echo $line | cut -d &quot; &quot; -f 2) #grep MAC from ARP cache IP=$(cat $tmpfile | grep $MAC | cut -d$&#39;\t&#39; -f 1) if ! [ -z &quot;${IP}&quot; ]; then echo Found $NAME at $IP! Adding to /etc/hosts... echo &quot;$IP $NAME $NAME #DYNAMIC_RESOLVE&quot;&amp;gt;&amp;gt;/etc/hosts #If the MAC is found, add to the /etc/hosts file fi done &amp;lt; &quot;$1&quot; echo Done with discovering hosts HOSTS_MACS file: 00:90:f5:d6:5b:05 c1 c0:ee:fb:59:fc:23 s1 10:02:b5:d6:08:8a o1 b8:27:eb:4e:0c:42 kh1 The second file is just a list of MAC-addresses with a name you chose behind it. You can find your MAC-address in various ways, but the easiest is just running the ifconfig command on linux. (look next to “ether”) [root@localhost]# ifconfig wlan0: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt; mtu 1500 inet 192.168.1.13 netmask 255.255.255.0 broadcast 192.168.1.255 ether 10:02:b5:d6:08:8a txqueuelen 1000 (Ethernet) RX packets 221361 bytes 303819415 (289.7 MiB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 112644 bytes 15169217 (14.4 MiB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 ... You will need the tool arp-scan to run this script, you can find it in nearly all repositories. I run this script on an android phone, a desktop, chromebook and Raspberry Pi. So no worries. If you check the /etc/hosts file you can see the following has changed: # # /etc/hosts: static lookup table for host names # #&amp;lt;ip-address&amp;gt; &amp;lt;hostname.domain.org&amp;gt; &amp;lt;hostname&amp;gt; 127.0.0.1 localhost.localdomain localhost ::1 localhost.localdomain localhost # End of file 192.168.1.3 s1 s1 #DYNAMIC_RESOLVE 192.168.1.2 kh1 kh1 #DYNAMIC_RESOLVE You can now use the hostnames in most commands and have them automatically resolved; ssh s1 #resolves to the IP adress of my phone ssh root@kh1 -p 22 #same but with more arguments You can alias the ARP-A-HOST.sh-script command in you bashrc](https://demgeeks.com/qt-make-the-command-line-easier-with-aliases-and-functions/) to make it easier to use. That’s it! have fun!">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2017/09/27/resolve-local-network-hostnames/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="lvlrt" href="http://localhost:4000/feed.xml">
+
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="ARP-A-HOST, a script to resolve local network hostnames without ext...">
+  <meta name="twitter:description" content="I was in desperate need to find a way to not always have to scan the network or go over to another device to know its IP so I could ssh into it or use a service it was serving. This is what I found...">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-112123975-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">lvlrt</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/archives/">Archives</a>
+      
+        
+        <a class="page-link" href="https://demgeeks.com">DemGeeks</a>
+      
+        
+        <a class="page-link" href="https://github.com/larsveelaert">GitHub</a>
+      
+        
+        <a class="page-link" href="https://linkedin.com/in/larsveelaert">LinkedIn</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">ARP-A-HOST, a script to resolve local network hostnames without extra services</h1>
+    
+    <p class="post-meta"><time datetime="2017-09-27T00:00:00+00:00" itemprop="datePublished">Sep 27, 2017</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/networking/">Networking</a>
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+
+ •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/decentralization/">decentralization</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/dns/">dns</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/ip/">ip</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+        <a href="/tags/networking/">networking</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/terminal/">terminal</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I was in desperate need to find a way to not always have to scan the network or go over to another device to know its IP so I could ssh into it or use a service it was serving. This is what I found.</p>
+
+<p>The internet is just a lot of devices, which can be addressed with an <a href="https://en.wikipedia.org/wiki/IP_address">IP address</a>. Those are unique in every network. To make the network more usable we use <a href="https://en.wikipedia.org/wiki/Domain_name">domain names</a> with logical, easy to remember names like www.google.com or www.facebook.com.</p>
+
+<p>This works by contactin a server with a fixed IP which provides <a href="https://nl.wikipedia.org/wiki/Domain_Name_System">DNS</a> that resolves your domain name in an IP that your browser can go to. DNS-servers for the global internet are managed by governments and maintained by big companies like Google. This is why, If you want a domain name, it comes with a fee…</p>
+
+<p>On local networks, its overkill (and quite some setup) to have a <a href="https://www.lifewire.com/what-is-a-dns-server-2625854">DNS-server</a> to resolve the IP of devices but other programs like <a href="https://nl.wikipedia.org/wiki/Zeroconf">zeroconf</a> and <a href="https://en.wikipedia.org/wiki/Multicast_DNS">mdns</a> tried to have a more low-maintenance take on this problem. Short story: Still not ideal. You still have to have services running on all devices to ensure that your device gets registered…</p>
+
+<h2>The solution</h2>
+
+<p>The ideal solution consists of:</p>
+
+<p>– No changes needed to the network (so it works everywhere)</p>
+
+<p>– Reliable</p>
+
+<p>– Very little setup on the device itself and no services need to be running</p>
+
+<p>– Cross-platform</p>
+
+<p>The idea is to maintain a list of <a href="https://en.wikipedia.org/wiki/MAC_address">MAC-addresses</a> of the devices I use (and sync those with <a href="https://www.dropbox.com/">Dropbox</a> or <a href="https://git-scm.com/">Git</a>), scan the network for these <a href="https://en.wikipedia.org/wiki/MAC_address">MAC-addresses</a> and if found, add them to the /etc/hosts file. This is reliable because MAC-addresses are hard-coded in your hardware. You only need to know the MAC of your other devices and you can identify it. Every device has to have one. Adding to the /etc/hosts file is something that is supported by the core of linux so it is quite cross-platform on any device you can get linux working on.</p>
+
+<p>So whenever my network-setup changes, or it has been a while and adresses may have switched, I run the following command;</p>
+
+<pre>bash ./ARP-A-HOST.sh ./HOSTS_MACS</pre>
+
+<p><strong>ARP-A-HOST.sh script:</strong></p>
+<pre>#DEPENDENCIES: arp-scan
+#take $1 (first argument of the script) -&gt; file with mac adresses + hostname
+
+tmpfile=$(mktemp /tmp/DYNAMIC-RESOLVE.XXXXXX) #tmp file for temporary results
+
+#clear lines form the previous run in /etc/hosts file
+sed -i.bak '/DYNAMIC_RESOLVE/d' /etc/hosts
+
+#use the tool arp-scan to find all the devices on the network
+if ! [ -z $2 ]; then
+ arp-scan -l --localnet --interface=$2 &gt;&gt; $tmpfile
+else
+ for line in $(ip link | cut -d " " -f 2); do
+ interface=${line::-1}
+ arp-scan -l --localnet --interface=$interface 2&gt;/dev/null &gt;&gt; $tmpfile
+ done
+ #TODO interfaceoption -&gt; default wlan
+fi
+echo Arpscan Finished... Filtering results...
+
+#reading the results one by one
+while read -r line
+do
+ MAC=$(echo $line | cut -d " " -f 1)
+ NAME=$(echo $line | cut -d " " -f 2)
+ #grep MAC from ARP cache
+ IP=$(cat $tmpfile | grep $MAC | cut -d$'\t' -f 1)
+
+if ! [ -z "${IP}" ]; then
+ echo Found $NAME at $IP! Adding to /etc/hosts...
+ echo "$IP $NAME $NAME #DYNAMIC_RESOLVE"&gt;&gt;/etc/hosts #If the MAC is found, add to the /etc/hosts file
+ fi 
+done &lt; "$1"
+echo Done with discovering hosts</pre>
+
+<p><strong>HOSTS_MACS file:</strong></p>
+
+<pre>00:90:f5:d6:5b:05 c1
+c0:ee:fb:59:fc:23 s1
+10:02:b5:d6:08:8a o1
+b8:27:eb:4e:0c:42 kh1</pre>
+
+<p>The second file is just a list of MAC-addresses with a name you chose behind it. You can find your MAC-address in various ways, but the easiest is just running the ifconfig command on linux. (look next to “ether”)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@localhost]# ifconfig
+wlan0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.1.13  netmask 255.255.255.0  broadcast 192.168.1.255
+        ether 10:02:b5:d6:08:8a  txqueuelen 1000  (Ethernet)
+        RX packets 221361  bytes 303819415 (289.7 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 112644  bytes 15169217 (14.4 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+...
+</code></pre></div></div>
+
+<p>You will need the tool arp-scan to run this script, you can find it in nearly all repositories. I run this script on an android phone, a desktop, chromebook and Raspberry Pi. So no worries.</p>
+
+<p>If you check the /etc/hosts file you can see the following has changed:</p>
+
+<pre>#
+# /etc/hosts: static lookup table for host names
+#
+
+#&lt;ip-address&gt; &lt;hostname.domain.org&gt; &lt;hostname&gt;
+127.0.0.1 localhost.localdomain localhost
+::1 localhost.localdomain localhost
+
+# End of file
+192.168.1.3 s1 s1 #DYNAMIC_RESOLVE
+192.168.1.2 kh1 kh1 #DYNAMIC_RESOLVE</pre>
+
+<p>You can now use the hostnames in most commands and have them automatically resolved;</p>
+
+<pre>ssh s1 #resolves to the IP adress of my phone
+ssh root@kh1 -p 22 #same but with more arguments</pre>
+
+<p>You can alias the <em>ARP-A-HOST.sh</em>-script command in you bashrc](https://demgeeks.com/qt-make-the-command-line-easier-with-aliases-and-functions/) to make it easier to use. That’s it! have fun!</p>
+
+  </div>
+
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; Lars Veelaert - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="http://localhost:4000/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
