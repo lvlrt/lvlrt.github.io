@@ -1,0 +1,35 @@
+#BUILDUP
+DONE-> on network control
+-> what if not on network ourself(USB) -> spoof a free network or impersonate
+-> no network connectivity (USB) -> physical access
+--> first ethernet catchall, tap (ev posintap hier deminstreren omdat het zo luid is)
+--> then HID -> introduce metasploit
+#->beef, poisontab, metasplit(kinda) all general tools -> if control over internet
+
+-> Blochain setup easy -> some info
+
+-> file necryption info.
+
+-> 3D printer
+
+#IDEAS POISONTAB
+Ntlm hak5
+-> reset interface and all tools -> script -> improvement article -> samen met github setup
+setup script maken voor de first boot - hotspot en dependencies
+ssh from windows ergens uitleggen.
+
+scripts, die testen of dingen geinstalleerd zijn -&gt; desnoods installeren ... -&gt; of toch echoen wat het process is So here we can end our attack on networks we already know the password to. Next we will dive into other ways to get control over a victims traffic.
+
+deauth (must also be 5ghz)
+- extra microusb port..?? Ja? -> voor op android direct aan te sluiten? -> of zowiso kabel gebruiken
+
+IR
+ding dong ditch https://github.com/milaq/rpi-rf
+yard stick one -&gt; ipv van zelf samenstellen ? multiple freq https://www.youtube.com/watch?v=F3bISk5t8cA
+replay attack, maar wat als 2 frequencies?
+radio spoof data, denial of service, of een file afspelen (google translate).
+- beef
+-rpi shite noise radio signals fm stations, spoof only text
+>poisontab en usbdriveby</li>
+
+-> end phone call -> white noise? -> later even fake bbs
