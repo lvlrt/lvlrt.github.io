@@ -1,5 +1,4 @@
 ---
-
 title: 'HackOTG (v1.0): A universal, portable, security-platform'
 layout: post
 categories:
@@ -7,18 +6,9 @@ categories:
 tags:
   - embedded
   - ethernet
-  - hid
-  - kernel
-  - linux
-  - microusb
-  - networking
   - OTG
-  - raspbian
   - rpi
-  - sd
   - usb
-  - wifi
-  - wireless
 ---
 ![HackOTG]({{ "/assets/HackOTG.jpg" | absolute_url }})
 
@@ -204,6 +194,6 @@ _You can find the next one here:_
 
 <blockquote class="wp-embedded-content" data-secret="HpdD86nrmQ">
   <p>
-    <a href="https://demgeeks.com/hackotg-v1-1-integrating-the-cable-for-more-portability/">HackOTG (v1.1): Integrating the cable for more portability</a>
+    <a href="/2017/10/10/hackotg-v1-1-integrating-the-cable-for-more-portability/">HackOTG (v1.1): Integrating the cable for more portability</a>
   </p>
 </blockquote>

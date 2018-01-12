@@ -1,48 +1,16 @@
 ---
-id: 905
 title: 'HackOTG (v1.4): See all traffic on a network with Promiscuous mode and Bettercap'
-date: 2017-10-31T10:57:31+00:00
-author: Lars Veelaert
 layout: post
-guid: https://demgeeks.com/?p=905
-permalink: /hackotg-v1-4-see-all-traffic-on-a-network/
-tdc_dirty_content:
-  - "1"
-post_views_count:
-  - "16"
-image: /wp-content/uploads/2017/10/man-in-the-middle-iphone-680x400.jpg
 categories:
-  - Hacking
+  - HackOTG
 tags:
-  - arp
-  - bash
   - bettercap
-  - command-line
-  - deny
-  - dns
-  - embedded system
-  - hacking
-  - hackotg
-  - ifconfig
-  - ip
-  - linux
   - mitm
-  - monitor
-  - monitoring
-  - networking
   - promiscuous
-  - proxy
-  - raspbian
-  - rpi
-  - rpi zero
   - sniffing
   - spoofing
-  - terminal
-  - wifi
-  - wifi wireless
-  - wireless
 ---
- _This article is part of a series:_ _[you can find the first article here](https://demgeeks.com/hackotg-v1-0-universal-portable-security-platform/)__. If you missed the previous one,_ _[it is here](https://demgeeks.com/hackotg-v1-3-creating-our-own-hotspot-on-boot/)__._
+ _This article is part of a series:_ _[you can find the first article here](/2017/10/07/hackotg-v1-0-universal-portable-security-platform/)__. If you missed the previous one,_ _[it is here](/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/)__._
 
 ## First, the basics
 

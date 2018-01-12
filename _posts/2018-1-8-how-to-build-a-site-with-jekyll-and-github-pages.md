@@ -1,5 +1,14 @@
 ---
+title: 'How to build a site with Jekyll and Github Pages'
 layout: post
+categories:
+  - webdev
+tags:
+  - terminal
+  - open-source
+  - decentralization
+  - git
+  - jekyll
 ---
 ![Jekyll and Pages Logo]({{ "/assets/jekyll_pages.jpg" | absolute_url }})
 

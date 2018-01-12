@@ -1,0 +1,53 @@
+<p><img src="http://localhost:4000/assets/rss.jpg" alt="header rss article" /></p>
+
+<p>So I have a couple sites I check regularly… YouTube, a couple blogs, Reddit-pages, LinkedIn and some news-sites. Often it happens that I miss some interesting article, or in general, I have to remember to check it. It’s not very productive to have the feeling you have to check everything, all the time.</p>
+
+<p>A good way to go about this is subscribing to newsletters and reviewing settings of your online accounts to have messages send to your mail inbox. Great, but not every simple site has this option and newsletters often are to bloated with ads and calls to action to be fun to read.</p>
+
+<p>I’ve wanted to solve this problem for quite a while but never found a good solution. My general philosophy is having everything on every device working in exactly the same way. I make sure I get a terminal on every device and from there I open my Linux environment with all my tools setup and synced.</p>
+
+<h2 id="and-then-i-discovered-rss">And then I discovered RSS</h2>
+
+<p>Most sites today offer a RSS-feed. This is a file that resides somewhere on the domain (often linked somewhere on the homepage) and is a very simple XML file that has a summary of the meaningful changes to a site. Most engines like WordPress and Joomla have it by default. And any major site will support it (I havent found one that does not). Sometimes a Google-search is needed to find the right URL for sites like Reddit, but it’s (nearly) always there.</p>
+
+<h2 id="the-problem">The problem</h2>
+
+<p>So if you have all your links of RSS-feeds, you can put them in a program that handles all the news for you. 
+In the early days there was <a href="https://www.google.com/reader/about/">Google Reader</a> but that is gone right now (it did not fit the Google marketing anymore).
+There are apps like <a href="https://feedly.com/">Feedly</a> to replace it and many <a href="https://www.howtogeek.com/128487/the-best-free-rss-readers-for-keeping-up-with-your-favorite-websites/">others</a>.</p>
+
+<p>These are definitely great, but I don’t like standalone programs. I’d like my news to end up in my mailbox. I tried online RSS to Email converters like <a href="https://blogtrottr.com/">Blogtrottr</a> but never really liked it. It failed often and I had to go online and log in to add extra feeds. I also like to use as few resources or services as possible.</p>
+
+<p>Then local converters such as <a href="https://www.google.be/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwiBm8yikMrWAhWBCBoKHfDdDi0QFggwMAE&amp;url=http%3A%2F%2Fnewspipe.sourceforge.net%2F&amp;usg=AFQjCNEANFszQVtDJDB4BQN6CgfnLXsc4w">newspipe</a> and <a href="http://www.allthingsrss.com/rss2email/">rss2email</a> got my attention but they are the main page was down and rss2email needed a specific format to read the links from and would write my mails into an incompatible and older version of mailbox.</p>
+
+<h2 id="the-diy-fix">The DIY fix</h2>
+
+<p>So I realized <a href="http://www.allthingsrss.com/rss2email/">rss2email</a> was written in Python (Yes!) and most of its heavy-lifting was done by a module called “feedparser”. So I wrote my own script to take a list of URL’s (of rss-feeds) and add them my local inbox in Maildir-format (I use the terminal application <a href="https://nl.wikipedia.org/wiki/Mutt">mutt</a> for my email). Many email-programs use this standardized format so research if yours is compatible. If you want to read a great article on how to set up Mutt I recommend <a href="https://wiki.archlinux.org/index.php/mutt">this Arch Linux post</a> and <a href="http://stevelosh.com/blog/2012/10/the-homely-mutt/">The Homely Mutt</a>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+  41 N   Jan 03 RecentQuestions (2.4K) [SE TOR] Clearing the client side DNS cache provides privacy improvement?            
+  42 N   Jan 03 RecentQuestions (0.8K) [SE TOR] How to make VPN like Tor faster ? or is there any VPN like Tor but faster?  
+  43 N   Jan 03 RecentQuestions (3.2K) [SE TOR] Clearing the state of rendezvous client provides privacy improvement?       
+  44 N   Jan 03 LinusTechTips   (1.6K) [LTT] 5 Gadgets to help you Wake-Up                                                  
+  45 N   Jan 03 BryanLunduke    (0.7K) [YT BRYAN LUNDUKE] Weekly Tech News - Jan 3rd, 2018                                  
+  46 N   Jan 03 reddit.be       (0.7K) [REDDIT BELGIUM] Wat de Nederlandse oud-premier Dries van Agt (1977-1982) vanavond op
+  47 N   Jan 03 Crypt0          (2.8K) [CRYPTO] Ripple: The New World Order Coin? / BTC's Birthday! / Intel's BIG Mistake / 
+  48 N   Jan 03 VICENews        (1.9K) [VICE NEWS] The Darkest Place In America &amp; Marines In Afghanistan: VICE News Tonight 
+  49 N   Jan 04 VICENews        (2.2K) [VICE NEWS] Scientists Can Now Quickly Link Extreme Weather Events To Climate Change 
+  50 N   Jan 04 VICENews        (1.7K) [VICE NEWS] The Making Of Bhad Bhabie (HBO) 
+...
+</code></pre></div></div>
+<p>So this is the command you can add to a macro or <a href="https://demgeeks.com/qt-make-the-command-line-easier-with-aliases-and-functions/">alias</a> to fetch the feeds form the <em>rss.txt</em> file in the <em>~/RSS/</em> directory and parse them offline into emails which will be added to the <em>~/MAILDIR/account/INBOX</em></p>
+
+<pre>python ~/rss2maildir.py ~/RSS ~/MAILDIR/account/INBOX</pre>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+0 found!
+checking: http://www.reddit.com/r/belgium/.rss
+0 found!
+checking: https://tor.stackexchange.com/feeds
+0 found!
+checking: https://security.stackexchange.com/feeds
+...
+</code></pre></div></div>
+<p>You can find the script and an example rss.txt in <a href="https://github.com/polarsbear/rss2maildir">this Github-repo</a>. Feel free to give tips and share your experiences!</p>

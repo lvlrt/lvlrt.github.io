@@ -5,7 +5,7 @@
   
   <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2018-01-11T16:43:50+00:00</updated>
+  <updated>2018-01-11T23:39:01+00:00</updated>
   <id>http://localhost:4000//</id>
 
   
@@ -28,9 +28,9 @@
   
     <entry>
       
-      <title type="html">How To Build A Site With Jekyll And Github Pages</title>
+      <title type="html">How to build a site with Jekyll and Github Pages</title>
       
-      <link href="http://localhost:4000/2018/01/08/how-to-build-a-site-with-jekyll-and-github-pages/" rel="alternate" type="text/html" title="How To Build A Site With Jekyll And Github Pages" />
+      <link href="http://localhost:4000/2018/01/08/how-to-build-a-site-with-jekyll-and-github-pages/" rel="alternate" type="text/html" title="How to build a site with Jekyll and Github Pages" />
       <published>2018-01-08T00:00:00+00:00</published>
       <updated>2018-01-08T00:00:00+00:00</updated>
       <id>http://localhost:4000/2018/01/08/how-to-build-a-site-with-jekyll-and-github-pages</id>
@@ -110,7 +110,19 @@ The option to edit offline, have offline-backups of the complete source and real
       
 
       
+        <category term="webdev" />
+      
 
+      
+        <category term="terminal" />
+      
+        <category term="open-source" />
+      
+        <category term="decentralization" />
+      
+        <category term="git" />
+      
+        <category term="jekyll" />
       
 
       
@@ -125,9 +137,9 @@ The option to edit offline, have offline-backups of the complete source and real
   
     <entry>
       
-      <title type="html">Introducing Browserspear, A Lightweight Browser Exploitation Framework For Embedded Devices</title>
+      <title type="html">Introducing BrowserSpear, a Lightweight Browser Exploitation Framework for Embedded Devices</title>
       
-      <link href="http://localhost:4000/2018/01/02/Introducing-BrowserSpear,-A-Lightweight-Browser-Exploitation-Framework-For-Embedded-Devices/" rel="alternate" type="text/html" title="Introducing Browserspear, A Lightweight Browser Exploitation Framework For Embedded Devices" />
+      <link href="http://localhost:4000/2018/01/02/Introducing-BrowserSpear,-A-Lightweight-Browser-Exploitation-Framework-For-Embedded-Devices/" rel="alternate" type="text/html" title="Introducing BrowserSpear, a Lightweight Browser Exploitation Framework for Embedded Devices" />
       <published>2018-01-02T00:00:00+00:00</published>
       <updated>2018-01-02T00:00:00+00:00</updated>
       <id>http://localhost:4000/2018/01/02/Introducing-BrowserSpear,-A-Lightweight-Browser-Exploitation-Framework-For-Embedded-Devices</id>
@@ -245,7 +257,19 @@ https://www.linkedin.com/redir/invalid-link-page?url=%5B%3A%3A1%5D KEYLOGGER:I w
       
 
       
+        <category term="BrowserSpear" />
+      
 
+      
+        <category term="Browser" />
+      
+        <category term="exploitation" />
+      
+        <category term="javascript" />
+      
+        <category term="embedded" />
+      
+        <category term="cross-platform" />
       
 
       
@@ -260,9 +284,9 @@ https://www.linkedin.com/redir/invalid-link-page?url=%5B%3A%3A1%5D KEYLOGGER:I w
   
     <entry>
       
-      <title type="html">11 Tips To Protect Yourself From Being Hacked</title>
+      <title type="html">11 Tips to protect yourself from being hacked</title>
       
-      <link href="http://localhost:4000/2017/12/13/11-Tips-To-Protect-Yourself-From-Being-Hacked/" rel="alternate" type="text/html" title="11 Tips To Protect Yourself From Being Hacked" />
+      <link href="http://localhost:4000/2017/12/13/11-Tips-To-Protect-Yourself-From-Being-Hacked/" rel="alternate" type="text/html" title="11 Tips to protect yourself from being hacked" />
       <published>2017-12-13T00:00:00+00:00</published>
       <updated>2017-12-13T00:00:00+00:00</updated>
       <id>http://localhost:4000/2017/12/13/11-Tips-To-Protect-Yourself-From-Being-Hacked</id>
@@ -367,7 +391,19 @@ https://www.linkedin.com/redir/invalid-link-page?url=%5B%3A%3A1%5D KEYLOGGER:I w
       
 
       
+        <category term="Security" />
+      
 
+      
+        <category term="security" />
+      
+        <category term="clients" />
+      
+        <category term="privacy" />
+      
+        <category term="malware" />
+      
+        <category term="attack-vectors" />
       
 
       
@@ -384,11 +420,11 @@ https://www.linkedin.com/redir/invalid-link-page?url=%5B%3A%3A1%5D KEYLOGGER:I w
       
       <title type="html">HackOTG (v1.4): See all traffic on a network with Promiscuous mode and Bettercap</title>
       
-      <link href="http://localhost:4000/hackotg-v1-4-see-all-traffic-on-a-network/" rel="alternate" type="text/html" title="HackOTG (v1.4): See all traffic on a network with Promiscuous mode and Bettercap" />
-      <published>2017-10-31T10:57:31+00:00</published>
-      <updated>2017-10-31T10:57:31+00:00</updated>
-      <id>http://localhost:4000/hackotg-v1-4-see-all-traffic-on-a-network</id>
-      <content type="html" xml:base="http://localhost:4000/hackotg-v1-4-see-all-traffic-on-a-network/">&lt;p&gt;&lt;em&gt;This article is part of a series:&lt;/em&gt; &lt;em&gt;&lt;a href=&quot;https://demgeeks.com/hackotg-v1-0-universal-portable-security-platform/&quot;&gt;you can find the first article here&lt;/a&gt;&lt;strong&gt;. If you missed the previous one,_ _&lt;a href=&quot;https://demgeeks.com/hackotg-v1-3-creating-our-own-hotspot-on-boot/&quot;&gt;it is here&lt;/a&gt;&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;
+      <link href="http://localhost:4000/2017/10/31/hackotg-v1-4-see-all-traffic-on-a-network/" rel="alternate" type="text/html" title="HackOTG (v1.4): See all traffic on a network with Promiscuous mode and Bettercap" />
+      <published>2017-10-31T00:00:00+00:00</published>
+      <updated>2017-10-31T00:00:00+00:00</updated>
+      <id>http://localhost:4000/2017/10/31/hackotg-v1-4-see-all-traffic-on-a-network</id>
+      <content type="html" xml:base="http://localhost:4000/2017/10/31/hackotg-v1-4-see-all-traffic-on-a-network/">&lt;p&gt;&lt;em&gt;This article is part of a series:&lt;/em&gt; &lt;em&gt;&lt;a href=&quot;/2017/10/07/hackotg-v1-0-universal-portable-security-platform/&quot;&gt;you can find the first article here&lt;/a&gt;&lt;strong&gt;. If you missed the previous one,_ _&lt;a href=&quot;/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/&quot;&gt;it is here&lt;/a&gt;&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2&gt;First, the basics&lt;/h2&gt;
 
@@ -635,63 +671,19 @@ src=&quot;https://www.youtube.com/embed/kffacxfA7G4?autoplay=1&quot; frameborder
       
 
       
-        <category term="Hacking" />
+        <category term="HackOTG" />
       
 
       
-        <category term="arp" />
-      
-        <category term="bash" />
-      
         <category term="bettercap" />
-      
-        <category term="command-line" />
-      
-        <category term="deny" />
-      
-        <category term="dns" />
-      
-        <category term="embedded system" />
-      
-        <category term="hacking" />
-      
-        <category term="hackotg" />
-      
-        <category term="ifconfig" />
-      
-        <category term="ip" />
-      
-        <category term="linux" />
       
         <category term="mitm" />
       
-        <category term="monitor" />
-      
-        <category term="monitoring" />
-      
-        <category term="networking" />
-      
         <category term="promiscuous" />
-      
-        <category term="proxy" />
-      
-        <category term="raspbian" />
-      
-        <category term="rpi" />
-      
-        <category term="rpi zero" />
       
         <category term="sniffing" />
       
         <category term="spoofing" />
-      
-        <category term="terminal" />
-      
-        <category term="wifi" />
-      
-        <category term="wifi wireless" />
-      
-        <category term="wireless" />
       
 
       
@@ -708,11 +700,11 @@ src=&quot;https://www.youtube.com/embed/kffacxfA7G4?autoplay=1&quot; frameborder
       
       <title type="html">HackOTG (v1.3): Creating our own hotspot on boot</title>
       
-      <link href="http://localhost:4000/hackotg-v1-3-creating-our-own-hotspot-on-boot/" rel="alternate" type="text/html" title="HackOTG (v1.3): Creating our own hotspot on boot" />
-      <published>2017-10-11T00:44:53+00:00</published>
-      <updated>2017-10-11T00:44:53+00:00</updated>
-      <id>http://localhost:4000/hackotg-v1-3-creating-our-own-hotspot-on-boot</id>
-      <content type="html" xml:base="http://localhost:4000/hackotg-v1-3-creating-our-own-hotspot-on-boot/">&lt;p&gt;&lt;em&gt;This article is part of a series: &lt;a href=&quot;https://demgeeks.com/hackotg-v1-0-universal-portable-security-platform/&quot;&gt;you can find the first article here&lt;/a&gt;. If you missed the previous one, &lt;a href=&quot;https://demgeeks.com/hackotg-v1-2-basic-connectivity-to-internet/&quot;&gt;it is here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+      <link href="http://localhost:4000/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/" rel="alternate" type="text/html" title="HackOTG (v1.3): Creating our own hotspot on boot" />
+      <published>2017-10-11T00:00:00+00:00</published>
+      <updated>2017-10-11T00:00:00+00:00</updated>
+      <id>http://localhost:4000/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot</id>
+      <content type="html" xml:base="http://localhost:4000/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/">&lt;p&gt;&lt;em&gt;This article is part of a series: &lt;a href=&quot;/2017/10/07/hackotg-v1-0-universal-portable-security-platform/&quot;&gt;you can find the first article here&lt;/a&gt;. If you missed the previous one, &lt;a href=&quot;/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/&quot;&gt;it is here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2&gt;Checking the capabilities of our WiFi-interface&lt;/h2&gt;
 
@@ -829,11 +821,11 @@ exit 0&lt;/pre&gt;
 
 &lt;p&gt;Now you can restart the device and if everything is OK, it will create the WiFi-hotspot named &lt;em&gt;“HackOTG”&lt;/em&gt; with the password &lt;em&gt;“raspberry”&lt;/em&gt;. If you waited for a minute and you can’t pick up the signal, you can still log in to your device over the emulated Ethernet-to-USB device. Now you have 2 ways to connect to your HackOTG!.&lt;/p&gt;
 
-&lt;p&gt;In &lt;a href=&quot;https://demgeeks.com/hackotg-v1-4-see-all-traffic-on-a-network/&quot;&gt;the next article&lt;/a&gt; we will further explore the possibilities to see and controll trafiic on a network.&lt;/p&gt;
+&lt;p&gt;In &lt;a href=&quot;/2017/10/31/hackotg-v1-4-see-all-traffic-on-a-network/&quot;&gt;the next article&lt;/a&gt; we will further explore the possibilities to see and controll trafiic on a network.&lt;/p&gt;
 
 &lt;blockquote class=&quot;wp-embedded-content&quot; data-secret=&quot;UxtFeiWmpQ&quot;&gt;
   &lt;p&gt;
-    &lt;a href=&quot;https://demgeeks.com/hackotg-v1-4-see-all-traffic-on-a-network/&quot;&gt;HackOTG (v1.4): See all traffic on a network with Promiscuous mode and Bettercap&lt;/a&gt;
+    &lt;a href=&quot;/2017/10/31/hackotg-v1-4-see-all-traffic-on-a-network/&quot;&gt;HackOTG (v1.4): See all traffic on a network with Promiscuous mode and Bettercap&lt;/a&gt;
   &lt;/p&gt;
 &lt;/blockquote&gt;</content>
 
@@ -852,49 +844,15 @@ exit 0&lt;/pre&gt;
       
 
       
-        <category term="Hacking" />
+        <category term="HackOTG" />
       
 
       
-        <category term="ap" />
-      
-        <category term="command-line" />
-      
-        <category term="dhclient" />
-      
-        <category term="dhcp" />
-      
-        <category term="dnsmasq" />
-      
-        <category term="embedded system" />
-      
-        <category term="ethernet" />
-      
-        <category term="hackotg" />
-      
-        <category term="hostapd" />
-      
-        <category term="hotspot" />
-      
-        <category term="ifconfig" />
-      
-        <category term="ip" />
-      
-        <category term="linux" />
+        <category term="embedded" />
       
         <category term="networking" />
       
-        <category term="operating system" />
-      
-        <category term="OTG" />
-      
         <category term="rpi" />
-      
-        <category term="rpi zero" />
-      
-        <category term="terminal" />
-      
-        <category term="usb" />
       
         <category term="wifi" />
       
@@ -915,11 +873,11 @@ exit 0&lt;/pre&gt;
       
       <title type="html">HackOTG (v1.2): Basic connectivity to the internet</title>
       
-      <link href="http://localhost:4000/hackotg-v1-2-basic-connectivity-to-internet/" rel="alternate" type="text/html" title="HackOTG (v1.2): Basic connectivity to the internet" />
-      <published>2017-10-11T00:16:02+00:00</published>
-      <updated>2017-10-11T00:16:02+00:00</updated>
-      <id>http://localhost:4000/hackotg-v1-2-basic-connectivity-to-internet</id>
-      <content type="html" xml:base="http://localhost:4000/hackotg-v1-2-basic-connectivity-to-internet/">&lt;p&gt;&lt;em&gt;This article is part of a series: &lt;a href=&quot;https://demgeeks.com/hackotg-v1-0-universal-portable-security-platform/&quot;&gt;you can find the first article here&lt;/a&gt;. If you missed the previous one, &lt;a href=&quot;https://demgeeks.com/hackotg-v1-1-integrating-the-cable-for-more-portability/&quot;&gt;it is here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+      <link href="http://localhost:4000/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/" rel="alternate" type="text/html" title="HackOTG (v1.2): Basic connectivity to the internet" />
+      <published>2017-10-11T00:00:00+00:00</published>
+      <updated>2017-10-11T00:00:00+00:00</updated>
+      <id>http://localhost:4000/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet</id>
+      <content type="html" xml:base="http://localhost:4000/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">&lt;p&gt;&lt;em&gt;This article is part of a series: &lt;a href=&quot;/2017/10/07/hackotg-v1-0-universal-portable-security-platform/&quot;&gt;you can find the first article here&lt;/a&gt;. If you missed the previous one, &lt;a href=&quot;/2017/10/10/hackotg-v1-1-integrating-the-cable-for-more-portability/&quot;&gt;it is here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;After the previous article, we can plug-in our HackOTG and log in with SSH over the emulated Ethernet-adapter. Now, we don’t have internet-connectivity yet… Sometimes we will want to have an internet-connection to install new packages, backup our device or have a new way to connect to our device. In this article we will go through the basics of networking on your HackOTG.&lt;/p&gt;
 
@@ -1040,7 +998,7 @@ sudo apt-get dist-upgrade&lt;/pre&gt;
 
 &lt;blockquote class=&quot;wp-embedded-content&quot; data-secret=&quot;tVHiU01lqM&quot;&gt;
   &lt;p&gt;
-    &lt;a href=&quot;https://demgeeks.com/hackotg-v1-3-creating-our-own-hotspot-on-boot/&quot;&gt;HackOTG (v1.3): Creating our own hotspot on boot&lt;/a&gt;
+    &lt;a href=&quot;/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/&quot;&gt;HackOTG (v1.3): Creating our own hotspot on boot&lt;/a&gt;
   &lt;/p&gt;
 &lt;/blockquote&gt;</content>
 
@@ -1059,43 +1017,17 @@ sudo apt-get dist-upgrade&lt;/pre&gt;
       
 
       
-        <category term="Hacking" />
+        <category term="HackOTG" />
       
 
       
-        <category term="bash" />
-      
-        <category term="command-line" />
-      
-        <category term="embedded system" />
-      
-        <category term="hacking" />
-      
-        <category term="linux" />
+        <category term="embedded" />
       
         <category term="networking" />
       
-        <category term="operating system" />
-      
-        <category term="os" />
-      
-        <category term="proxy" />
-      
-        <category term="raspbian" />
-      
         <category term="rpi" />
       
-        <category term="rpi zero" />
-      
-        <category term="security" />
-      
-        <category term="terminal" />
-      
-        <category term="tunneling" />
-      
         <category term="wifi" />
-      
-        <category term="wifi wireless" />
       
         <category term="wireless" />
       
@@ -1114,11 +1046,11 @@ sudo apt-get dist-upgrade&lt;/pre&gt;
       
       <title type="html">HackOTG (v1.1): Integrating the cable for more portability</title>
       
-      <link href="http://localhost:4000/hackotg-v1-1-integrating-the-cable-for-more-portability/" rel="alternate" type="text/html" title="HackOTG (v1.1): Integrating the cable for more portability" />
-      <published>2017-10-10T20:13:42+00:00</published>
-      <updated>2017-10-10T20:13:42+00:00</updated>
-      <id>http://localhost:4000/hackotg-v1-1-integrating-the-cable-for-more-portability</id>
-      <content type="html" xml:base="http://localhost:4000/hackotg-v1-1-integrating-the-cable-for-more-portability/">&lt;p&gt;&lt;em&gt;This article is part of a series: &lt;a href=&quot;https://demgeeks.com/hackotg-v1-0-universal-portable-security-platform/&quot;&gt;you can find the first article here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+      <link href="http://localhost:4000/2017/10/10/hackotg-v1-1-integrating-the-cable-for-more-portability/" rel="alternate" type="text/html" title="HackOTG (v1.1): Integrating the cable for more portability" />
+      <published>2017-10-10T00:00:00+00:00</published>
+      <updated>2017-10-10T00:00:00+00:00</updated>
+      <id>http://localhost:4000/2017/10/10/hackotg-v1-1-integrating-the-cable-for-more-portability</id>
+      <content type="html" xml:base="http://localhost:4000/2017/10/10/hackotg-v1-1-integrating-the-cable-for-more-portability/">&lt;p&gt;&lt;em&gt;This article is part of a series: &lt;a href=&quot;/2017/10/07/hackotg-v1-0-universal-portable-security-platform/&quot;&gt;you can find the first article here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Before we start using our device, we have to make sure it is a good form-factor for our purpose and at this point, we will always need a USB-cable attached to the device, to be able to interface with it. In the future we will sometimes want to connect with WiFi so we can use the same connection to emulate different devices for our physical attacks.&lt;/p&gt;
 
@@ -1156,7 +1088,7 @@ sudo apt-get dist-upgrade&lt;/pre&gt;
 
 &lt;blockquote class=&quot;wp-embedded-content&quot; data-secret=&quot;zjGS1XMwjZ&quot;&gt;
   &lt;p&gt;
-    &lt;a href=&quot;https://demgeeks.com/hackotg-v1-2-basic-connectivity-to-internet/&quot;&gt;HackOTG (v1.2): Basic connectivity to the internet&lt;/a&gt;
+    &lt;a href=&quot;/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/&quot;&gt;HackOTG (v1.2): Basic connectivity to the internet&lt;/a&gt;
   &lt;/p&gt;
 &lt;/blockquote&gt;</content>
 
@@ -1175,51 +1107,19 @@ sudo apt-get dist-upgrade&lt;/pre&gt;
       
 
       
-        <category term="Hacking" />
+        <category term="HackOTG" />
       
 
       
-        <category term="android" />
-      
         <category term="badusb" />
       
-        <category term="bluetooth" />
-      
-        <category term="embedded system" />
-      
-        <category term="ethernet" />
-      
-        <category term="hid" />
-      
-        <category term="kernel" />
-      
-        <category term="linux" />
-      
-        <category term="microusb" />
-      
-        <category term="modules" />
-      
-        <category term="networking" />
-      
-        <category term="operating system" />
-      
-        <category term="os" />
+        <category term="embedded" />
       
         <category term="OTG" />
       
-        <category term="raspbian" />
-      
         <category term="rpi" />
       
-        <category term="rpi zero" />
-      
-        <category term="sd" />
-      
         <category term="usb" />
-      
-        <category term="wifi" />
-      
-        <category term="wifi wireless" />
       
 
       
@@ -1424,7 +1324,7 @@ usb0: flags=4163&amp;lt;up,broadcast,running,multicast&amp;gt; mtu 1500
 
 &lt;blockquote class=&quot;wp-embedded-content&quot; data-secret=&quot;HpdD86nrmQ&quot;&gt;
   &lt;p&gt;
-    &lt;a href=&quot;https://demgeeks.com/hackotg-v1-1-integrating-the-cable-for-more-portability/&quot;&gt;HackOTG (v1.1): Integrating the cable for more portability&lt;/a&gt;
+    &lt;a href=&quot;/2017/10/10/hackotg-v1-1-integrating-the-cable-for-more-portability/&quot;&gt;HackOTG (v1.1): Integrating the cable for more portability&lt;/a&gt;
   &lt;/p&gt;
 &lt;/blockquote&gt;</content>
 
@@ -1451,29 +1351,11 @@ usb0: flags=4163&amp;lt;up,broadcast,running,multicast&amp;gt; mtu 1500
       
         <category term="ethernet" />
       
-        <category term="hid" />
-      
-        <category term="kernel" />
-      
-        <category term="linux" />
-      
-        <category term="microusb" />
-      
-        <category term="networking" />
-      
         <category term="OTG" />
-      
-        <category term="raspbian" />
       
         <category term="rpi" />
       
-        <category term="sd" />
-      
         <category term="usb" />
-      
-        <category term="wifi" />
-      
-        <category term="wireless" />
       
 
       

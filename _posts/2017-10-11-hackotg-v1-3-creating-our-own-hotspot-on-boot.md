@@ -1,43 +1,16 @@
 ---
-id: 889
 title: 'HackOTG (v1.3): Creating our own hotspot on boot'
-date: 2017-10-11T00:44:53+00:00
-author: Lars Veelaert
 layout: post
-guid: https://demgeeks.com/?p=889
-permalink: /hackotg-v1-3-creating-our-own-hotspot-on-boot/
-tdc_dirty_content:
-  - "1"
-post_views_count:
-  - "17"
-image: /wp-content/uploads/2017/10/Screenshot-2017-10-11-at-16.05.17.png
 categories:
-  - Hacking
+  - HackOTG
 tags:
-  - ap
-  - command-line
-  - dhclient
-  - dhcp
-  - dnsmasq
-  - embedded system
-  - ethernet
-  - hackotg
-  - hostapd
-  - hotspot
-  - ifconfig
-  - ip
-  - linux
+  - embedded
   - networking
-  - operating system
-  - OTG
   - rpi
-  - rpi zero
-  - terminal
-  - usb
   - wifi
   - wireless
 ---
-_This article is part of a series: [you can find the first article here](https://demgeeks.com/hackotg-v1-0-universal-portable-security-platform/). If you missed the previous one, [it is here](https://demgeeks.com/hackotg-v1-2-basic-connectivity-to-internet/)._
+_This article is part of a series: [you can find the first article here](/2017/10/07/hackotg-v1-0-universal-portable-security-platform/). If you missed the previous one, [it is here](/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/)._
 
 ## Checking the capabilities of our WiFi-interface
 
@@ -154,10 +127,10 @@ exit 0</pre>
 
 Now you can restart the device and if everything is OK, it will create the WiFi-hotspot named _&#8220;HackOTG&#8221;_ with the password _&#8220;raspberry&#8221;_. If you waited for a minute and you can&#8217;t pick up the signal, you can still log in to your device over the emulated Ethernet-to-USB device. Now you have 2 ways to connect to your HackOTG!.
 
-In [the next article](https://demgeeks.com/hackotg-v1-4-see-all-traffic-on-a-network/) we will further explore the possibilities to see and controll trafiic on a network.
+In [the next article](/2017/10/31/hackotg-v1-4-see-all-traffic-on-a-network/) we will further explore the possibilities to see and controll trafiic on a network.
 
 <blockquote class="wp-embedded-content" data-secret="UxtFeiWmpQ">
   <p>
-    <a href="https://demgeeks.com/hackotg-v1-4-see-all-traffic-on-a-network/">HackOTG (v1.4): See all traffic on a network with Promiscuous mode and Bettercap</a>
+    <a href="/2017/10/31/hackotg-v1-4-see-all-traffic-on-a-network/">HackOTG (v1.4): See all traffic on a network with Promiscuous mode and Bettercap</a>
   </p>
 </blockquote>

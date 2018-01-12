@@ -1,42 +1,16 @@
 ---
-id: 858
 title: 'HackOTG (v1.1): Integrating the cable for more portability'
-date: 2017-10-10T20:13:42+00:00
-author: Lars Veelaert
 layout: post
-guid: https://demgeeks.com/?p=858
-permalink: /hackotg-v1-1-integrating-the-cable-for-more-portability/
-tdc_dirty_content:
-  - "1"
-post_views_count:
-  - "15"
-image: /wp-content/uploads/2017/10/wp-image-143906911.jpg
 categories:
-  - Hacking
+  - HackOTG
 tags:
-  - android
   - badusb
-  - bluetooth
-  - embedded system
-  - ethernet
-  - hid
-  - kernel
-  - linux
-  - microusb
-  - modules
-  - networking
-  - operating system
-  - os
+  - embedded
   - OTG
-  - raspbian
   - rpi
-  - rpi zero
-  - sd
   - usb
-  - wifi
-  - wifi wireless
 ---
-_This article is part of a series: [you can find the first article here](https://demgeeks.com/hackotg-v1-0-universal-portable-security-platform/)._
+_This article is part of a series: [you can find the first article here](/2017/10/07/hackotg-v1-0-universal-portable-security-platform/)._
 
 Before we start using our device, we have to make sure it is a good form-factor for our purpose and at this point, we will always need a USB-cable attached to the device, to be able to interface with it. In the future we will sometimes want to connect with WiFi so we can use the same connection to emulate different devices for our physical attacks.
 
@@ -72,6 +46,6 @@ _You can find the next one here:_
 
 <blockquote class="wp-embedded-content" data-secret="zjGS1XMwjZ">
   <p>
-    <a href="https://demgeeks.com/hackotg-v1-2-basic-connectivity-to-internet/">HackOTG (v1.2): Basic connectivity to the internet</a>
+    <a href="/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">HackOTG (v1.2): Basic connectivity to the internet</a>
   </p>
 </blockquote>

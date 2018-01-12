@@ -1,5 +1,14 @@
 ---
+title: '11 Tips to protect yourself from being hacked'
 layout: post
+categories:
+  - Security
+tags:
+  - security
+  - clients
+  - privacy
+  - malware
+  - attack-vectors 
 ---
 ![Intro 11 tips hacked]({{ "/assets/11_tips_hacked.jpg" | absolute_url }})
 

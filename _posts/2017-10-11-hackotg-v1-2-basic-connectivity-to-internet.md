@@ -1,39 +1,16 @@
 ---
-id: 876
 title: 'HackOTG (v1.2): Basic connectivity to the internet'
-date: 2017-10-11T00:16:02+00:00
-author: Lars Veelaert
 layout: post
-guid: https://demgeeks.com/?p=876
-permalink: /hackotg-v1-2-basic-connectivity-to-internet/
-tdc_dirty_content:
-  - "1"
-post_views_count:
-  - "21"
-image: /wp-content/uploads/2017/10/Screenshot-2017-10-11-at-02.14.00.png
 categories:
-  - Hacking
+  - HackOTG
 tags:
-  - bash
-  - command-line
-  - embedded system
-  - hacking
-  - linux
+  - embedded
   - networking
-  - operating system
-  - os
-  - proxy
-  - raspbian
   - rpi
-  - rpi zero
-  - security
-  - terminal
-  - tunneling
   - wifi
-  - wifi wireless
   - wireless
 ---
-_This article is part of a series: [you can find the first article here](https://demgeeks.com/hackotg-v1-0-universal-portable-security-platform/). If you missed the previous one, [it is here](https://demgeeks.com/hackotg-v1-1-integrating-the-cable-for-more-portability/)._
+_This article is part of a series: [you can find the first article here](/2017/10/07/hackotg-v1-0-universal-portable-security-platform/). If you missed the previous one, [it is here](/2017/10/10/hackotg-v1-1-integrating-the-cable-for-more-portability/)._
 
 After the previous article, we can plug-in our HackOTG and log in with SSH over the emulated Ethernet-adapter. Now, we don&#8217;t have internet-connectivity yet&#8230; Sometimes we will want to have an internet-connection to install new packages, backup our device or have a new way to connect to our device. In this article we will go through the basics of networking on your HackOTG.
 
@@ -154,6 +131,6 @@ _You can find the next one here:_
 
 <blockquote class="wp-embedded-content" data-secret="tVHiU01lqM">
   <p>
-    <a href="https://demgeeks.com/hackotg-v1-3-creating-our-own-hotspot-on-boot/">HackOTG (v1.3): Creating our own hotspot on boot</a>
+    <a href="/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/">HackOTG (v1.3): Creating our own hotspot on boot</a>
   </p>
 </blockquote>
