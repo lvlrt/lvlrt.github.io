@@ -1,0 +1,14 @@
+### how make your own git central git repo
+# ssh access
+# init bare
+# clone to
+
+### how make a central file syncing systen (flexible)
+# met scripts gitsync
+
+git installeren
+git bare
+dan kh1:/ clonene
+en met scripts dan in sync houden in alias bashcommands
+
+you must have access and write rights tio the folder -> mustake

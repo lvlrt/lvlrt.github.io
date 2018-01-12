@@ -1,0 +1,59 @@
+This article is part of a series: you can find the first article here. If you missed the previous one, it is here.
+
+The network attacks mentioned in the previous article can only be done if you are connected to the same network as your victim. If this is not the case you can try to do some Social Engineering to get the password or crack the password by guessing or brute-force attacks. Ofcourse if you can plug in to an Ethernet-port that connects you to the network, that is also an option,
+
+If these options are no good, or there is no Wifi nearby we can create our own. In many cases victims will connect by themselves if they see that there is free Wifi.
+But we can go further. We can impersonate other (unsecured) Wifi access points and clients will not know the difference.
+This can be handy in 2 situations. If you want to hijack victims from a hotspot nearby, by providing a stronger signal, or when the victim has no connection and you broadcast a Wifi-SSID that is already known to him, the victim will happily connect.
+
+< increase changes by death or monitor mode check for beacons >
+
+< mtu aanpassen?? >
+
+< txpower verhogen? >
+
+goeie attacks zonder backhaul:
+
+-> captive portal creds
+
+
+
+-> poisontap. backdoor and cookie siphoning (backdoor er even uitlaten
+
+maybe for next time ? after hid ? beef inject in bettercap and this applicatble
+-> ipv van full poisontab of beef ook een backdoor programma schrijven gebaseerd op poisontab
+
+-> browserspear instead of beef?
+
+-> hook with beef.js
+
+#moet libv8-3.14... installeren via apt-get install
+
+#gem install rubyracer -v 0.12.2
+
+or use latestrubyracer?
+
+<dependencies>
+
+sudo apt-get update
+sudo apt-get install curl git nodejs
+command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+curl -sSL https://get.rvm.io | bash -s stable
+source /home/pi/.rvm/scripts/rvm
+rvm install 2.3.0
+rvm use 2.3.0 -- default
+gem install bundler
+git clone git://github.com/beefproject/beef.git
+cd beef
+bundle install
+<Usage>
+
+rvm use 2.3.0 -- default
+ruby beef
+also learn about persistant injection -> over the internet https,
+
+#after beef HID attack basic
+
+#after that metasploit and injection by network access, beef or HID attack
+
+

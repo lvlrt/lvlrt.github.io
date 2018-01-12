@@ -1,0 +1,48 @@
+Sometimes, I want to access a program on a remot
+There are 2 reasons why you'd want to do this; Number one is security en number 2 is just ease.
+The security standpoint is obvious, accessing a GUI application on e remote host in a secure way (as opposed to vnc) with a ssh protocol you are already using.
+
+And, Vnc will have to launch or forward a complete desktop session, there are ways to go around this but still, even if you wanted to access a box behind a firewall, you'd have to set up multiple hops of port forwarding with for example (#TODO link to article) ssh.
+
+So I needed to do this (#link article KVM) for remote managing my virtualization cluster, programs like virt-manager, which provide libvirt ( a way of managing KVM and other virtualization techniques ) with a
+virtual interface.
+Virt-manager has a way to connect over SSH and even SSL, but this would have access to my virtual machines, so I'd like to keep them more secured. read here (#TODO article) how I try to keep my machines only remote accessible trough 1 manner only, namely ssh.
+Tldr; If I keep SSH updated and rotate the keys, all is safe.
+
+Requirements
+- Remote device you want to access (Linux, Windows, MacOSX) -> from now on called 'server'
+- Client device which you want to connect with, running a X enviroment -> from now on called 'client'
+
+########DRAFT
+
+##TODO windows serverside en client side en ## TODO in macosx server en client side
+
+To have it X forward,
+
+You can have multiple sessions or multiple encryption steps between you and the machine, but al have to be started with -X in ssh
+
+and 2 configuration options have to be active in all the sshd_config files between you and the server you are trying to get something from
+
+## cut
+install xorg-xauth and xorg-xhost from the official repositories
+
+sudo pacman -Sy xorg-xauth xorg-xhost
+On every machine you are x forwarding from
+
+in /etc/ssh/sshd_config:
+verify that AllowTcpForwarding and X11UseLocalhost options are set to yes, and that X11DisplayOffset is set to 10 (those are the default values if nothing has been changed, see sshd_config(5))
+set X11Forwarding to yes
+then restart the sshd daemon.
+
+I ran into a bug,
+just change AdressFamily to inet
+
+AddressFamily inet
+in that same file and it will work
+##
+
+
+
+Then log into all your machines with the -X option in a string and run in the last session like if you were goingto start a GUI application
+
+### if you have problems try -Y or X11localhost to no (I needed this when I forwarded twice):

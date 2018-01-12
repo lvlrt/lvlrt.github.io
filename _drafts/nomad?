@@ -1,0 +1,68 @@
+eee
+#Waarom chroot?
+#waarom archlinux
+
+#HOE CHROOT IK ER IN???
+#Compare to vm
+
+#HOE MAAK IK HET SYSTEEM (CHECK WEL THE ARCHITECTURE) of not
+curl -O https://mirrors.kernel.org/archlinux/iso/2016.12.01/archlinux-bootstrap-2016.12.01-x86_64.tar.gz
+tar xvf ...
+
+sudo root.x86_64/bin/arch-chroot root.x86_64/ -&gt; run as root (arch-chroot makes this simple)
+
+pacman-key --init
+pacman-key --populate archlinux
+<img class="alignnone size-medium wp-image-295" src="http://www.demgeeks.com/wp-content/uploads/2017/01/Screenshot-2017-01-26-at-18.54.14-300x104.png" alt="" width="300" height="104" />
+
+- THere are no packages installed (no nano or vim, so exit the chroot en edit it from another root)
+exit
+nano root.x86_64/etc/pacman.d/mirrorlist
+nano in this file and select mirrors by uncommenting them -&gt; /etc/pacman.d/mirrorlist
+
+now chroot back into the system
+and now you can install your base system
+<pre>sudo root.x86_64/bin/arch-chroot root.x86_64/
+pacman -Syu base base-devel
+</pre>
+So install base, I like rto install bas-devel also
+
+vanaf TIMEZONE in installation
+
+### HAVE IT WORK IN CHROMEOS??
+use chrooton<img class="alignnone wp-image-298 size-full" src="https://demgeeks.com/wp-content/uploads/2017/01/Screenshot-2017-01-27-at-01.04.03.png" alt="" width="799" height="229" />
+
+<img class="alignnone wp-image-297 size-full" src="https://demgeeks.com/wp-content/uploads/2017/01/Screenshot-2017-01-27-at-01.04.20.png" alt="" width="898" height="44" />
+
+<img class="alignnone size-medium wp-image-296" src="http://www.demgeeks.com/wp-content/uploads/2017/01/Screenshot-2017-01-27-at-01.04.42-300x4.png" alt="" width="300" height="4" />
+
+-&gt; just chroot gave problems, otherwise arch
+
+--&gt;&gt;&gt; belangrijk is dat alles is gemount
+
+WAT IK DEED, in een fres hchromeos, crouton scrpts installeren
+een chroot maken
+mkdir /media/removable/CHROOTS/root.x86_64/etc/crouton #dit is een folder voor in de chroot (
+enter-chroot -c /media/removable/CHROOTS/ -n root.x86_64 -u root
+
+##### X SERVER
+
+pacman -Syu tigervnc
+<pre>vncserver</pre>
+-&gt; type in a password
+
+~/.vnc/config -&gt; settings for remote and stuff
+
+export DISPLAY=:1
+
+-&gt; steam -&gt; maar niet runnen als deze usr
+
+useradd -m -s /bin/bash steam
+
+pacman -Syu lsb-release
+
+pacman -Syu lib32-curl lib32-libgpg-error
+
+I installd xfce
+
+https://wiki.archlinux.org/index.php/Install_from_existing_Linux#Replacing_the_existing_system_without_a_LiveCD

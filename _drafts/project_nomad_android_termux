@@ -1,0 +1,42 @@
+termux
+
+install wget and proot tar
+
+uname -a -> see architecture
+
+download arm system -> I choose arch linux
+
+mkdir chroot
+
+wget
+
+tar  xvzf A....
+
+
+
+#if you get extended keyword error, ignore it
+
+rm A
+
+proot -0 -r ~/CHROOT -b /dev/ -b /sys/ -b /proc/
+
+rm /etc/resolv.conf
+
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+
+add to /etc/group ,'inet:x:3003:root,alarm' AND 'net_raw:x:3004:root'
+
+miss su en cd doen om in de juiste map te geraken?
+
+
+
+-> probleem met permission when unzipped... so should be done on other machine??
+
+https://sdrausty.github.io/TermuxArch/
+
+ 
+-> recoommand hackerkeyboard
+
+-> nomad is all about mount bindin the home dir
+
+
