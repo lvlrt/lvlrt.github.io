@@ -10,6 +10,8 @@ tags:
   - wifi
   - wireless
 ---
+![Header]({{ "/assets/wifi_pi.png" | absolute_url }})
+
 _This article is part of a series: [you can find the first article here](/2017/10/07/hackotg-v1-0-universal-portable-security-platform/). If you missed the previous one, [it is here](/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/)._
 
 ## Checking the capabilities of our WiFi-interface
@@ -100,7 +102,7 @@ sudo ifconfig wlan0 up 10.0.0.1 netmask 255.255.255.0</pre>
 <pre>sudo killall dnsmasq hostapd dhcpcd wpa_supplicant
 sudo ifconfig wlan0 0.0.0.0</pre>
 
-_(optional) _You should add the hotspot_stop.sh script to the previous _connect\_wifi\_ssid.sh_ script from [this article](https://demgeeks.com/hackotg-v1-2-basic-connectivity-to-internet/). Otherwise you will not be able to connect to the internet anymore because the AP will be occupying the AP, add the _hotspot_stop.sh_ command to the script like this:
+_(optional) _You should add the hotspot_stop.sh script to the previous _connect\_wifi\_ssid.sh_ script from [this article](https://larsveelaert.github.io/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/). Otherwise you will not be able to connect to the internet anymore because the AP will be occupying the AP, add the _hotspot_stop.sh_ command to the script like this:
 
 <pre>sh /home/pi/hotspot_stop.sh
 sudo wpa_supplicant -B -i wlan0 -D wext -c ssid.conf

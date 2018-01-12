@@ -10,6 +10,8 @@ tags:
   - terminal
   - vpn
 ---
+![header]({{ "/assets/vpn.png" | absolute_url }})
+
 ## Why?
 
 There are a lot of reasons why you would want a [proxy](https://en.wikipedia.org/wiki/Proxy_server) or [VPN](https://en.wikipedia.org/wiki/Virtual_private_network), one of them is safety and protection from attackers at your location. For example if you are visiting sensitive things in your local coffee shop, other visitors could sniff your traffic because they are connected to the same network. From that point it is not only possible to read but also manupulate the ftraffic and possibly inject malicious code. Other usage cases are services who are only accessible behind a firewall or only if the user appears to be located at a certain specified IP address.

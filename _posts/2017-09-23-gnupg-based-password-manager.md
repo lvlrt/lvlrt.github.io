@@ -9,6 +9,8 @@ tags:
   - security
   - terminal
 ---
+![Header]({{ "/assets/encryption.jpg" | absolute_url }})
+
 In this article we will setup a secure password manager. You probably use the same password over and over again on multiple sites/devices/applications. Not so great! If one service gets compromised, an attacker can wreak some serious havoc. **YOU SHOULD USE DIFFERENT PASSWORDS!**
   
 But this is hard, so many store their passwords in a passwords.txt file on their desktop, or even better, in a service like Dropbox storing all passwords together and keeping that file synced. Copying passwords will also circumvent [keyloggers](https://en.wikipedia.org/wiki/Keystroke_logging) active on your system. So awesome right?!

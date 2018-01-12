@@ -12,7 +12,7 @@ tags:
 ---
 ![HackOTG]({{ "/assets/HackOTG.jpg" | absolute_url }})
 
-_When demonstrating a possible attack vector to a friend or a client, you want something standalone that is not influenced by your day-to-day tasks. Many have a persistent [Kali Linux](https://www.kali.org/) on a [bootable USB-drive](https://demgeeks.com/eli5-boot-different-operating-system-bootable-usb-drive/) exactly for this purpose. There are also many attack-vectors which require physical devices. Exploits like [DNS-tunneling](https://demgeeks.com/hack-get-free-wifi-on-paid-access-hotspots/), HID-attacks and [BadUSB](https://www.topsec.com/it-security-news-and-info/what-is-badusb-and-should-i-be-scared) are only a couple of examples._
+_When demonstrating a possible attack vector to a friend or a client, you want something standalone that is not influenced by your day-to-day tasks. Many have a persistent [Kali Linux](https://www.kali.org/) on a bootable USB-drive exactly for this purpose. There are also many attack-vectors which require physical devices. Exploits like [DNS-tunneling](https://larsveelaert.github.io/2017/10/03/hack-get-free-wifi-on-paid-access-hotspots/), HID-attacks and [BadUSB](https://www.topsec.com/it-security-news-and-info/what-is-badusb-and-should-i-be-scared) are only a couple of examples._
 
 You can buy specific devices like the [USB rubber ducky](https://hakshop.com/products/usb-rubber-ducky-deluxe) to perform these attacks in an easy, portable, quick way. Apart from being quite costly, you can&#8217;t carry them all in your everyday backpack and they often require to be reprogrammed for a different attack on the same vector&#8230; So having multiple will only make it worse.
 
@@ -20,7 +20,7 @@ I&#8217;ve ported a lot of my physical exploits and some wifi-exploits to my And
 
 So I was searching something open-source, portable, inexpensive, expendable, easy-to-mod and easy to interface with and change it behavior and I found this:
 
-<img class="alignnone wp-image-848 size-full" src="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-10.57.52-e1507627804407.png?resize=640%2C317&#038;ssl=1" alt="" srcset="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-10.57.52-e1507627804407.png?w=889&ssl=1 889w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-10.57.52-e1507627804407.png?resize=300%2C149&ssl=1 300w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-10.57.52-e1507627804407.png?resize=768%2C381&ssl=1 768w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-10.57.52-e1507627804407.png?resize=640%2C317&ssl=1 640w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" />
+![Rpi Zero on adafruit]({{ "/assets/Rpizero.png" | absolute_url }})
 
 It is essentially a small stand-alone computer, running Linux of an SD-card. What is cool about this model is, that it has WiFi and Bluetooth and a board-setup configured to support USB-gadget or OTG mode. Which can change one of the micro-USB ports in whatever USB-device that you want (HID, Ethernet Dongle, Mass-storage, MIDI, &#8230; ). It is powered with a normal 5v micro-USB cable plugged in a USB-device or wall-adapter.
 
@@ -36,7 +36,7 @@ A SD-card in a raspberry pi consists of 1 small FAT-partition with boot files an
 
 **Download the Raspbian Lite-image:** (You don&#8217;t need te full one)
 
-<img class="alignnone wp-image-854 size-full" src="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-13.10.42.png?resize=425%2C232&#038;ssl=1" alt="" srcset="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-13.10.42.png?w=425&ssl=1 425w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-13.10.42.png?resize=300%2C164&ssl=1 300w" sizes="(max-width: 425px) 100vw, 425px" data-recalc-dims="1" />
+![Raspbian Download]({{ "/assets/raspbian_download.png" | absolute_url }})
 
 <pre>wget https://downloads.raspberrypi.org/raspbian_lite_latest
 unzip raspbian_lite_latest #will unzip an .img file</pre>
@@ -158,7 +158,7 @@ unmount boot root</pre>
 
 If everything is set up correctly, you can use a micro-USB to USB-A (regular charging cable) to connect your device with the &#8220;USB&#8221; marked port to your computer (or any other device with a terminal). The connection will give both a 5V power and a data-connection to your Pi. After plugging the device in, the ACT light will start blinking if the SD-card has a bootable operating system on it. The first time the boot up process will take longer, but normally this takes about 10 seconds.
 
-<img class="alignnone wp-image-853 size-full" src="https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?resize=640%2C360&#038;ssl=1" alt="" srcset="https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?w=1414&ssl=1 1414w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?resize=300%2C169&ssl=1 300w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?resize=768%2C432&ssl=1 768w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?resize=1024%2C576&ssl=1 1024w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?resize=640%2C360&ssl=1 640w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?w=1280&ssl=1 1280w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" />
+![HackOTG]({{ "/assets/HackOTG.jpg" | absolute_url }})
 
 On Linux, you can check your interfaces by issuing the command:
 

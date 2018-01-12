@@ -10,11 +10,14 @@ tags:
   - sniffing
   - spoofing
 ---
- _This article is part of a series:_ _[you can find the first article here](/2017/10/07/hackotg-v1-0-universal-portable-security-platform/)__. If you missed the previous one,_ _[it is here](/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/)__._
+![Header]({{ "/assets/header_hackotgv1_4.png" | absolute_url }})
+
+ _This article is part of a series: [you can find the first article here](/2017/10/07/hackotg-v1-0-universal-portable-security-platform/). 
+If you missed the previous one, [it is here](/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/)._
 
 ## First, the basics
 
-Your network card (WiFi or ethernet) is your gateway to your network and the rest of the internet. The most common way to use it is to connect to an existing network, get an IP and done! But a network card can do many other things. A good example is that WiFi cards can set up a WiFi-hotspot themselves [(mobile phone tethering)](https://www.computerworld.com/article/2499772/mobile-wireless/mobile-wireless-wi-fi-tethering-101-use-a-smartphone-as-a-mobile-hotspot.html). We did this to the card of our HackOTG in [one of the previous articles](https://demgeeks.com/hackotg-v1-3-creating-our-own-hotspot-on-boot/).
+Your network card (WiFi or ethernet) is your gateway to your network and the rest of the internet. The most common way to use it is to connect to an existing network, get an IP and done! But a network card can do many other things. A good example is that WiFi cards can set up a WiFi-hotspot themselves [(mobile phone tethering)](https://www.computerworld.com/article/2499772/mobile-wireless/mobile-wireless-wi-fi-tethering-101-use-a-smartphone-as-a-mobile-hotspot.html). We did this to the card of our HackOTG in [one of the previous articles](https://larsveelaert.github.io/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/).
 
 In the normal &#8216;client&#8217; mode, which is just being connected to an existing network our network-card will only process packets that are directly meant for us to use or send through. We can change this behavior in 2 ways.
   
@@ -44,7 +47,7 @@ Supported interface modes:
 
 ## Watch your own traffic
 
-First, connect to a WiFi-hotspot with your HackOTG with the 2 scripts (connect\_wifi\_\***.sh and route_wlan0.sh) we made in [this article](https://demgeeks.com/hackotg-v1-2-basic-connectivity-to-internet/).
+First, connect to a WiFi-hotspot with your HackOTG with the 2 scripts (connect\_wifi\_\***.sh and route_wlan0.sh) we made in [this article](https://larsveelaert.github.io/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/).
   
 Now if we check the status of our network-cards with the following command, we can see the FLAGS at the end. The &#8220;P&#8221;-flag means promiscuous. As you can see, there&#8217;s none, because our device is not in the _Promiscuous mode_.
 
@@ -203,7 +206,7 @@ You can also strip encryption (HTTPS, HSTS) till a certain extend by using other
 
 <pre>sudo bettercap -T 192.168.1.14 --proxy -P POST</pre>
 
-<img class="alignnone wp-image-978 size-full" src="https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.46.46.png?resize=640%2C313&#038;ssl=1" alt="" srcset="https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.46.46.png?w=775&ssl=1 775w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.46.46.png?resize=300%2C147&ssl=1 300w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.46.46.png?resize=768%2C376&ssl=1 768w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.46.46.png?resize=640%2C313&ssl=1 640w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" />
+![Bettercap capture]({{ "/assets/bettercap_capture.png" | absolute_url }})
 
 As you can see (above) a password was captured:
 
@@ -217,7 +220,7 @@ If you can&#8217;t strip the encryption (better safety), you can replace it with
 
 <pre>sudo bettercap -T 192.168.1.14 --proxy --proxy-https -P POST</pre>
 
-<img class="alignnone wp-image-977 size-full" src="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.43.19.png?resize=640%2C422&#038;ssl=1" alt="" srcset="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.43.19.png?w=701&ssl=1 701w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.43.19.png?resize=300%2C198&ssl=1 300w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.43.19.png?resize=640%2C422&ssl=1 640w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" />
+![Connection private]({{ "/assets/connection_private.png" | absolute_url }})
 
 Now if we have control over the unencrypted data, we can change it in any way we want. Some easy examples for injection attacks are the following, you can still add the force https option to these:
 

@@ -718,7 +718,9 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p><em>This article is part of a series: <a href="/2017/10/07/hackotg-v1-0-universal-portable-security-platform/">you can find the first article here</a>. If you missed the previous one, <a href="/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">it is here</a>.</em></p>
+    <p><img src="http://localhost:4000/assets/wifi_pi.png" alt="Header" /></p>
+
+<p><em>This article is part of a series: <a href="/2017/10/07/hackotg-v1-0-universal-portable-security-platform/">you can find the first article here</a>. If you missed the previous one, <a href="/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">it is here</a>.</em></p>
 
 <h2>Checking the capabilities of our WiFi-interface</h2>
 
@@ -808,7 +810,7 @@ sudo ifconfig wlan0 up 10.0.0.1 netmask 255.255.255.0</pre>
 <pre>sudo killall dnsmasq hostapd dhcpcd wpa_supplicant
 sudo ifconfig wlan0 0.0.0.0</pre>
 
-<p><em>(optional) _You should add the hotspot_stop.sh script to the previous _connect_wifi_ssid.sh</em> script from <a href="https://demgeeks.com/hackotg-v1-2-basic-connectivity-to-internet/">this article</a>. Otherwise you will not be able to connect to the internet anymore because the AP will be occupying the AP, add the <em>hotspot_stop.sh</em> command to the script like this:</p>
+<p><em>(optional) _You should add the hotspot_stop.sh script to the previous _connect_wifi_ssid.sh</em> script from <a href="https://larsveelaert.github.io/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">this article</a>. Otherwise you will not be able to connect to the internet anymore because the AP will be occupying the AP, add the <em>hotspot_stop.sh</em> command to the script like this:</p>
 
 <pre>sh /home/pi/hotspot_stop.sh
 sudo wpa_supplicant -B -i wlan0 -D wext -c ssid.conf

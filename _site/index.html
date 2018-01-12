@@ -2865,11 +2865,14 @@ https://www.linkedin.com/redir/invalid-link-page?url=%5B%3A%3A1%5D KEYLOGGER:I w
         </header>
 
         <div class="post-content">
-          <p><em>This article is part of a series:</em> <em><a href="/2017/10/07/hackotg-v1-0-universal-portable-security-platform/">you can find the first article here</a><strong>. If you missed the previous one,_ _<a href="/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/">it is here</a></strong>.</em></p>
+          <p><img src="http://localhost:4000/assets/header_hackotgv1_4.png" alt="Header" /></p>
+
+<p><em>This article is part of a series: <a href="/2017/10/07/hackotg-v1-0-universal-portable-security-platform/">you can find the first article here</a>. 
+If you missed the previous one, <a href="/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/">it is here</a>.</em></p>
 
 <h2>First, the basics</h2>
 
-<p>Your network card (WiFi or ethernet) is your gateway to your network and the rest of the internet. The most common way to use it is to connect to an existing network, get an IP and done! But a network card can do many other things. A good example is that WiFi cards can set up a WiFi-hotspot themselves <a href="https://www.computerworld.com/article/2499772/mobile-wireless/mobile-wireless-wi-fi-tethering-101-use-a-smartphone-as-a-mobile-hotspot.html">(mobile phone tethering)</a>. We did this to the card of our HackOTG in <a href="https://demgeeks.com/hackotg-v1-3-creating-our-own-hotspot-on-boot/">one of the previous articles</a>.</p>
+<p>Your network card (WiFi or ethernet) is your gateway to your network and the rest of the internet. The most common way to use it is to connect to an existing network, get an IP and done! But a network card can do many other things. A good example is that WiFi cards can set up a WiFi-hotspot themselves <a href="https://www.computerworld.com/article/2499772/mobile-wireless/mobile-wireless-wi-fi-tethering-101-use-a-smartphone-as-a-mobile-hotspot.html">(mobile phone tethering)</a>. We did this to the card of our HackOTG in <a href="https://larsveelaert.github.io/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/">one of the previous articles</a>.</p>
 
 <p>In the normal ‘client’ mode, which is just being connected to an existing network our network-card will only process packets that are directly meant for us to use or send through. We can change this behavior in 2 ways.</p>
 
@@ -2899,7 +2902,7 @@ Supported interface modes:
 
 <h2>Watch your own traffic</h2>
 
-<p>First, connect to a WiFi-hotspot with your HackOTG with the 2 scripts (connect_wifi_***.sh and route_wlan0.sh) we made in <a href="https://demgeeks.com/hackotg-v1-2-basic-connectivity-to-internet/">this article</a>.</p>
+<p>First, connect to a WiFi-hotspot with your HackOTG with the 2 scripts (connect_wifi_***.sh and route_wlan0.sh) we made in <a href="https://larsveelaert.github.io/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">this article</a>.</p>
 
 <p>Now if we check the status of our network-cards with the following command, we can see the FLAGS at the end. The “P”-flag means promiscuous. As you can see, there’s none, because our device is not in the <em>Promiscuous mode</em>.</p>
 
@@ -3058,7 +3061,7 @@ done</pre>
 
 <pre>sudo bettercap -T 192.168.1.14 --proxy -P POST</pre>
 
-<p><img class="alignnone wp-image-978 size-full" src="https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.46.46.png?resize=640%2C313&#038;ssl=1" alt="" srcset="https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.46.46.png?w=775&amp;ssl=1 775w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.46.46.png?resize=300%2C147&amp;ssl=1 300w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.46.46.png?resize=768%2C376&amp;ssl=1 768w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.46.46.png?resize=640%2C313&amp;ssl=1 640w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" /></p>
+<p><img src="http://localhost:4000/assets/bettercap_capture.png" alt="Bettercap capture" /></p>
 
 <p>As you can see (above) a password was captured:</p>
 
@@ -3072,7 +3075,7 @@ RedirectUrl : http://www.standaard.be/
 
 <pre>sudo bettercap -T 192.168.1.14 --proxy --proxy-https -P POST</pre>
 
-<p><img class="alignnone wp-image-977 size-full" src="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.43.19.png?resize=640%2C422&#038;ssl=1" alt="" srcset="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.43.19.png?w=701&amp;ssl=1 701w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.43.19.png?resize=300%2C198&amp;ssl=1 300w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-31-at-11.43.19.png?resize=640%2C422&amp;ssl=1 640w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" /></p>
+<p><img src="http://localhost:4000/assets/connection_private.png" alt="Connection private" /></p>
 
 <p>Now if we have control over the unencrypted data, we can change it in any way we want. Some easy examples for injection attacks are the following, you can still add the force https option to these:</p>
 
@@ -3727,7 +3730,9 @@ src="https://www.youtube.com/embed/kffacxfA7G4?autoplay=1" frameborder="0" allow
         </header>
 
         <div class="post-content">
-          <p><em>This article is part of a series: <a href="/2017/10/07/hackotg-v1-0-universal-portable-security-platform/">you can find the first article here</a>. If you missed the previous one, <a href="/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">it is here</a>.</em></p>
+          <p><img src="http://localhost:4000/assets/wifi_pi.png" alt="Header" /></p>
+
+<p><em>This article is part of a series: <a href="/2017/10/07/hackotg-v1-0-universal-portable-security-platform/">you can find the first article here</a>. If you missed the previous one, <a href="/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">it is here</a>.</em></p>
 
 <h2>Checking the capabilities of our WiFi-interface</h2>
 
@@ -3817,7 +3822,7 @@ sudo ifconfig wlan0 up 10.0.0.1 netmask 255.255.255.0</pre>
 <pre>sudo killall dnsmasq hostapd dhcpcd wpa_supplicant
 sudo ifconfig wlan0 0.0.0.0</pre>
 
-<p><em>(optional) _You should add the hotspot_stop.sh script to the previous _connect_wifi_ssid.sh</em> script from <a href="https://demgeeks.com/hackotg-v1-2-basic-connectivity-to-internet/">this article</a>. Otherwise you will not be able to connect to the internet anymore because the AP will be occupying the AP, add the <em>hotspot_stop.sh</em> command to the script like this:</p>
+<p><em>(optional) _You should add the hotspot_stop.sh script to the previous _connect_wifi_ssid.sh</em> script from <a href="https://larsveelaert.github.io/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">this article</a>. Otherwise you will not be able to connect to the internet anymore because the AP will be occupying the AP, add the <em>hotspot_stop.sh</em> command to the script like this:</p>
 
 <pre>sh /home/pi/hotspot_stop.sh
 sudo wpa_supplicant -B -i wlan0 -D wext -c ssid.conf

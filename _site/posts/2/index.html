@@ -1484,7 +1484,9 @@ sudo apt-get dist-upgrade</pre>
         </header>
 
         <div class="post-content">
-          <p><em>This article is part of a series: <a href="/2017/10/07/hackotg-v1-0-universal-portable-security-platform/">you can find the first article here</a>.</em></p>
+          <p><img src="http://localhost:4000/assets/HackOTG3.jpg" alt="Hackotg complete with usb" /></p>
+
+<p><em>This article is part of a series: <a href="/2017/10/07/hackotg-v1-0-universal-portable-security-platform/">you can find the first article here</a>.</em></p>
 
 <p>Before we start using our device, we have to make sure it is a good form-factor for our purpose and at this point, we will always need a USB-cable attached to the device, to be able to interface with it. In the future we will sometimes want to connect with WiFi so we can use the same connection to emulate different devices for our physical attacks.</p>
 
@@ -1504,19 +1506,19 @@ sudo apt-get dist-upgrade</pre>
 
 <h2>Putting it all together</h2>
 
-<p><img class="alignnone wp-image-871 size-full" src="https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-1821625988.jpg?resize=640%2C544&#038;ssl=1" alt="" srcset="https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-1821625988.jpg?w=2585&amp;ssl=1 2585w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-1821625988.jpg?resize=300%2C255&amp;ssl=1 300w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-1821625988.jpg?resize=768%2C653&amp;ssl=1 768w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-1821625988.jpg?resize=1024%2C870&amp;ssl=1 1024w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-1821625988.jpg?resize=640%2C544&amp;ssl=1 640w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-1821625988.jpg?w=1280&amp;ssl=1 1280w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-1821625988.jpg?w=1920&amp;ssl=1 1920w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" /></p>
+<p><img src="http://localhost:4000/assets/rpi_usb.jpg" alt="Rpi USB" /></p>
 
 <p>No surprises here, snip of the USB-A side, strip the cable from the black plastic layer, and you’ll find a metallic shielding layer with 4 cables in it (white, green, red, black). Those are 2 data-cables and 2 for power. If you make 2 small indentations on both sides of the USB-port, you can tie a cable-tie around it and through the holes. Pull the cable-tie very tight (use pliers) and it wont move anymore.</p>
 
 <p>Solder the cables to the pads with respective indicated color on the image below. The cables can be as short as 5cm. You can drop a bit of glue onto the wires to insulate them form each other again.</p>
 
-<p><img class="alignnone wp-image-867 size-full" src="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-21.54.32.png?resize=640%2C307&#038;ssl=1" alt="" srcset="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-21.54.32.png?w=695&amp;ssl=1 695w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-21.54.32.png?resize=300%2C144&amp;ssl=1 300w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-21.54.32.png?resize=640%2C307&amp;ssl=1 640w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" /></p>
+<p><img src="http://localhost:4000/assets/solder_pins_rpi.png" alt="Pins rpi" /></p>
 
 <h2>The result and what’s next?</h2>
 
 <p>Now you don’t have to carry a USB-cable together with the Pi, it is already integrated in the device! If you plug it straight into a power source (battery, wall-socket, …) it will boot. And if the device is also a USB-host, it will present itself as an Ethernet-to-USB adapter and we can SSH into it to perform our work. Now we can start using our HackOTG everywhere!</p>
 
-<p><img class="alignnone wp-image-864 size-full" src="https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-143906911.jpg?resize=640%2C480&#038;ssl=1" alt="" srcset="https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-143906911.jpg?w=1765&amp;ssl=1 1765w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-143906911.jpg?resize=300%2C225&amp;ssl=1 300w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-143906911.jpg?resize=768%2C576&amp;ssl=1 768w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-143906911.jpg?resize=1024%2C768&amp;ssl=1 1024w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-143906911.jpg?resize=80%2C60&amp;ssl=1 80w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-143906911.jpg?resize=245%2C184&amp;ssl=1 245w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-143906911.jpg?resize=260%2C195&amp;ssl=1 260w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-143906911.jpg?resize=640%2C480&amp;ssl=1 640w, https://i2.wp.com/demgeeks.com/wp-content/uploads/2017/10/wp-image-143906911.jpg?w=1280&amp;ssl=1 1280w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" /></p>
+<p><img src="http://localhost:4000/assets/HackOTG3.jpg" alt="Hackotg complete with usb" /></p>
 
 <p><em>You can find the next one here:</em></p>
 
@@ -2158,7 +2160,7 @@ sudo apt-get dist-upgrade</pre>
         <div class="post-content">
           <p><img src="http://localhost:4000/assets/HackOTG.jpg" alt="HackOTG" /></p>
 
-<p><em>When demonstrating a possible attack vector to a friend or a client, you want something standalone that is not influenced by your day-to-day tasks. Many have a persistent <a href="https://www.kali.org/">Kali Linux</a> on a <a href="https://demgeeks.com/eli5-boot-different-operating-system-bootable-usb-drive/">bootable USB-drive</a> exactly for this purpose. There are also many attack-vectors which require physical devices. Exploits like <a href="https://demgeeks.com/hack-get-free-wifi-on-paid-access-hotspots/">DNS-tunneling</a>, HID-attacks and <a href="https://www.topsec.com/it-security-news-and-info/what-is-badusb-and-should-i-be-scared">BadUSB</a> are only a couple of examples.</em></p>
+<p><em>When demonstrating a possible attack vector to a friend or a client, you want something standalone that is not influenced by your day-to-day tasks. Many have a persistent <a href="https://www.kali.org/">Kali Linux</a> on a bootable USB-drive exactly for this purpose. There are also many attack-vectors which require physical devices. Exploits like <a href="https://larsveelaert.github.io/2017/10/03/hack-get-free-wifi-on-paid-access-hotspots/">DNS-tunneling</a>, HID-attacks and <a href="https://www.topsec.com/it-security-news-and-info/what-is-badusb-and-should-i-be-scared">BadUSB</a> are only a couple of examples.</em></p>
 
 <p>You can buy specific devices like the <a href="https://hakshop.com/products/usb-rubber-ducky-deluxe">USB rubber ducky</a> to perform these attacks in an easy, portable, quick way. Apart from being quite costly, you can’t carry them all in your everyday backpack and they often require to be reprogrammed for a different attack on the same vector… So having multiple will only make it worse.</p>
 
@@ -2166,7 +2168,7 @@ sudo apt-get dist-upgrade</pre>
 
 <p>So I was searching something open-source, portable, inexpensive, expendable, easy-to-mod and easy to interface with and change it behavior and I found this:</p>
 
-<p><img class="alignnone wp-image-848 size-full" src="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-10.57.52-e1507627804407.png?resize=640%2C317&#038;ssl=1" alt="" srcset="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-10.57.52-e1507627804407.png?w=889&amp;ssl=1 889w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-10.57.52-e1507627804407.png?resize=300%2C149&amp;ssl=1 300w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-10.57.52-e1507627804407.png?resize=768%2C381&amp;ssl=1 768w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-10.57.52-e1507627804407.png?resize=640%2C317&amp;ssl=1 640w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" /></p>
+<p><img src="http://localhost:4000/assets/Rpizero.png" alt="Rpi Zero on adafruit" /></p>
 
 <p>It is essentially a small stand-alone computer, running Linux of an SD-card. What is cool about this model is, that it has WiFi and Bluetooth and a board-setup configured to support USB-gadget or OTG mode. Which can change one of the micro-USB ports in whatever USB-device that you want (HID, Ethernet Dongle, Mass-storage, MIDI, … ). It is powered with a normal 5v micro-USB cable plugged in a USB-device or wall-adapter.</p>
 
@@ -2182,7 +2184,7 @@ sudo apt-get dist-upgrade</pre>
 
 <p><strong>Download the Raspbian Lite-image:</strong> (You don’t need te full one)</p>
 
-<p><img class="alignnone wp-image-854 size-full" src="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-13.10.42.png?resize=425%2C232&#038;ssl=1" alt="" srcset="https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-13.10.42.png?w=425&amp;ssl=1 425w, https://i0.wp.com/demgeeks.com/wp-content/uploads/2017/10/Screenshot-2017-10-10-at-13.10.42.png?resize=300%2C164&amp;ssl=1 300w" sizes="(max-width: 425px) 100vw, 425px" data-recalc-dims="1" /></p>
+<p><img src="http://localhost:4000/assets/raspbian_download.png" alt="Raspbian Download" /></p>
 
 <pre>wget https://downloads.raspberrypi.org/raspbian_lite_latest
 unzip raspbian_lite_latest #will unzip an .img file</pre>
@@ -2304,7 +2306,7 @@ unmount boot root</pre>
 
 <p>If everything is set up correctly, you can use a micro-USB to USB-A (regular charging cable) to connect your device with the “USB” marked port to your computer (or any other device with a terminal). The connection will give both a 5V power and a data-connection to your Pi. After plugging the device in, the ACT light will start blinking if the SD-card has a bootable operating system on it. The first time the boot up process will take longer, but normally this takes about 10 seconds.</p>
 
-<p><img class="alignnone wp-image-853 size-full" src="https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?resize=640%2C360&#038;ssl=1" alt="" srcset="https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?w=1414&amp;ssl=1 1414w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?resize=300%2C169&amp;ssl=1 300w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?resize=768%2C432&amp;ssl=1 768w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?resize=1024%2C576&amp;ssl=1 1024w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?resize=640%2C360&amp;ssl=1 640w, https://i1.wp.com/demgeeks.com/wp-content/uploads/2017/10/RPiZero_Demarrage.jpg?w=1280&amp;ssl=1 1280w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1" /></p>
+<p><img src="http://localhost:4000/assets/HackOTG.jpg" alt="HackOTG" /></p>
 
 <p>On Linux, you can check your interfaces by issuing the command:</p>
 
