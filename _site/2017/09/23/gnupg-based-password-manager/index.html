@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Setting Up a GnuPG-based Password Manager</title>
+  <meta name="description" content="In this article we will setup a secure password manager. You probably use the same password over and over again on multiple sites/devices/applications. Not so great! If one service gets compromised, an attacker can wreak some serious havoc. YOU SHOULD USE DIFFERENT PASSWORDS! But this is hard, so many store their passwords in a passwords.txt file on their desktop, or even better, in a service like Dropbox storing all passwords together and keeping that file synced. Copying passwords will also circumvent keyloggers active on your system. So awesome right?! Not really, If one of your devices gets compromised, or Dropbox makes a mistake, you are screwed. You should still have an extra layer of access protection between the file and the passwords, syncing with Dropbox can be fine, but you have to encrypt the file. About password managers One option is using tools like Keepass or 1Password. But you are depending on that service, its not modular (you can not choose the way it gets synced). I don’t like trusting these services. Not only the communication but things like encryption type, memory leaks, temporary files can all be badly designed.  Open-source tools are the way to go, because you can trust AND verify. The best way to do this is with asymmetric encryption. Their are standards such as PGP (GnuPG on linux) who make this easy. The encryption is very strong because you use a long encryption key, to decrypt your target file. The long encryption key is stored locally on your machines, and you need a passphrase to use it. So even if the can get access to the long secure encryption key (private key). They will still need the passphrase. This is not all that GnuPG can do, it is an amazing piece of work, if interested, you should check it out. A nice place to get started with using it is this Arch Linux page about GnuPG. I use the terminal everywhere and there is a cli-tool named pass to automate the usage of GnuPG for passwords. We will use that to manage our passwords. The cool thing about the pass password-manager, is its cross platform uniform behavior. You know how to use it on one platform and you know it on all your other devices (more on syncing the passwords later) Dependencies You first have to install pass and GnuPG and more important, set up GnuPG and have it make a key for you (you can of course use an already existing key, but then you would not be reading this). Do what is right on your system: Debian-based; sudo apt-get install pass gnupg Arch Linux;  sudo pacman -Sy pass gnupg Setup your encryption key gpg --full-gen-key Now gpg will ask you a couple questions, like what kind of key you want, press 1. I chose a key-size of 4096, which is the highest possible. Then put in 0 for a everlasting key, confirm you choice. Then it will ask for a name, email and comment (like “created pm 27/12/2016”). Confirm with pressing O and ENTER. Then STOP! You should now have the following output: [root@localhost ~]# gpg --full-gen-key gpg (GnuPG) 2.2.4; Copyright (C) 2017 Free Software Foundation, Inc. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law. Please select what kind of key you want: (1) RSA and RSA (default) (2) DSA and Elgamal (3) DSA (sign only) (4) RSA (sign only) Your selection? 1 RSA keys may be between 1024 and 4096 bits long. What keysize do you want? (2048) 4096 Requested keysize is 4096 bits Please specify how long the key should be valid. 0 = key does not expire &amp;lt;n&amp;gt; = key expires in n days &amp;lt;n&amp;gt;w = key expires in n weeks &amp;lt;n&amp;gt;m = key expires in n months &amp;lt;n&amp;gt;y = key expires in n years Key is valid for? (0) 0 Key does not expire at all Is this correct? (y/N) y GnuPG needs to construct a user ID to identify your key. Real name: lvlrt Email address: gpg@larsveelaert.com Comment: Thisismycomment You selected this USER-ID: &quot;lvlrt (Thisismycomment) &amp;lt;gpg@larsveelaert.com&amp;gt;&quot; Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy. Please enter the passphrase to protect your new key Passphrase: Now put a YouTube video playing, setup a file copy from and to your disk for 10 minutes or something. Then go back to your console and it will have asked for a password. Fill in the password while your device is doing the heavy work. Confirm and you are done. You can close your YouTube video and the file transfer. This was to generate some computer noise. Which will improve the randomness of the generated key! To test if the key was successfully created enter the following command: [root@localhost ~]# gpg --list-keys ... ---------------------------- pub rsa2048 2018-01-10 [SC] 927A1402D78C9188216F233841CB4088BBF533E9 uid [ultimate] lvlrt (test) &amp;lt;gpg@larsveelaert.com&amp;gt; Ok great!, let us now get pass setup, you can do that with this command: (where the &amp;lt;id&amp;gt; value is your email or name you just put in) pass init &amp;lt;id&amp;gt; Then it will output the following: [root@localhost ~]# pass init gpg@larsveelaert.com mkdir: created directory &#39;/home/king/.password-store/&#39; Password store initialized for gpg@larsveelaert.com Setup done! Usage To insert a password in your password-store: pass insert stuffathome/thingseverybodyshouldknow/wifipassword You can keep adding or removing ‘/’ signs to make more divisions in your password-store. These will just be added as descending folders. To have it instead generate a password for you (if you want to be extra safe) and store it in an encrypted file: pass generate stuffathome/thingseverybodyshouldknow/wifipassword No password asked? Isn’t this unsafe? The way we encrypted this password-store is asymmetrical… so everybody can encrypt, but only the ones with a private key can decrypt. To list the available passwords just type: pass show To retrieve the password we just created, do: pass show stuffathome/thingseverybodyshouldknow/wifipassword And now it will ask for your passphrase of the gpg key you specified in the setup command. Then it should echo the password out. And thats really all you need to know to use this password manager. The key will be available for a small time until it timed out. That’s it! Syncing your passwords To synchronize your password manager between devices. You need to synchronize 2 sets of files. The first one is you gpg key. Those are stored in the folder ~/.gnupg by default. You can change the location where GnuPG checks for these files with setting the $GNUPGHOME variable: export GNUPGHOME=&quot;~/keys&quot; Now you can move your .gnupg folder to a new location and put the new location in this variable. REMINDER: you have to put this command in your ~/.bashrc file or alias it with your pass command (more on that later). You passwords are stored in a directory, called a store, this is the one that pass has setup for you. The default location is ~/.password-store. If you use change the variables $PASSWORD_STORE_DIR and $PASSWORDS_STORE_GIT to the location where your store is. So all this in one command (put this in ~/.bashrc): alias pass=&#39;GNUPGHOME=~/keys PASSWORD_STORE_DIR=~/DATA/PASSWORDS PASSWORD_STORE_GIT=~/DATA/PASSWORDS pass&#39; This alias command, will make your pass command always use these variables. You copy the passwords-store and key to a service like Dropbox or in a synced git-repository, put the path to these directories in the command and you are set! Please keep the key and password-store seperate, it is still protected by a passphrase but you lose the protection of you 4096-bit key. That’s it! Good Luck with your password manager!">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2017/09/23/gnupg-based-password-manager/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="lvlrt" href="http://localhost:4000/feed.xml">
+
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Setting Up a GnuPG-based Password Manager">
+  <meta name="twitter:description" content="In this article we will setup a secure password manager. You probably use the same password over and over again on multiple sites/devices/applications. Not so great! If one service gets compromised...">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-112123975-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">lvlrt</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/archives/">Archives</a>
+      
+        
+        <a class="page-link" href="https://github.com/larsveelaert">GitHub</a>
+      
+        
+        <a class="page-link" href="https://linkedin.com/in/larsveelaert">LinkedIn</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Setting Up a GnuPG-based Password Manager</h1>
+    
+    <p class="post-meta"><time datetime="2017-09-23T00:00:00+00:00" itemprop="datePublished">Sep 23, 2017</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/encryption/">encryption</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+
+ •
+  
+    
+    
+      
+        <a href="/tags/linux/">linux</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/productivity/">productivity</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/security/">security</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/terminal/">terminal</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="http://localhost:4000/assets/encryption.jpg" alt="Header" /></p>
+
+<p>In this article we will setup a secure password manager. You probably use the same password over and over again on multiple sites/devices/applications. Not so great! If one service gets compromised, an attacker can wreak some serious havoc. <strong>YOU SHOULD USE DIFFERENT PASSWORDS!</strong></p>
+
+<p>But this is hard, so many store their passwords in a passwords.txt file on their desktop, or even better, in a service like Dropbox storing all passwords together and keeping that file synced. Copying passwords will also circumvent <a href="https://en.wikipedia.org/wiki/Keystroke_logging">keyloggers</a> active on your system. So awesome right?!</p>
+
+<p>Not really, If one of your devices gets compromised, or Dropbox makes a mistake, you are screwed. You should still have an extra layer of access protection between the file and the passwords, syncing with Dropbox can be fine, but you have to encrypt the file.</p>
+
+<h2>About password managers</h2>
+
+<p>One option is using tools like <a href="http://keepass.info/">Keepass</a> or <a href="https://1password.com/">1Password</a>. 
+But you are depending on that service, its not modular (you can not choose the way it gets synced). 
+I don’t like trusting these services. 
+Not only the communication but things like encryption type, memory leaks, temporary files can all be badly designed. 
+<a href="https://www.coredna.com/blogs/comparing-open-closed-source-software">Open-source</a> tools are the way to go, because you can trust AND verify.</p>
+
+<p>The best way to do this is with <a href="https://en.wikipedia.org/wiki/Public-key_cryptography">asymmetric encryption</a>. 
+Their are standards such as <a href="https://nl.wikipedia.org/wiki/Pretty_Good_Privacy">PGP</a> (<a href="https://www.gnupg.org/">GnuPG</a> on linux) who make this easy. 
+The encryption is very strong because you use a long encryption key, to decrypt your target file.</p>
+
+<p>The long encryption key is stored locally on your machines, and you need a passphrase to use it. 
+So even if the can get access to the long secure encryption key (private key). They will still need the passphrase.</p>
+
+<p>This is not all that <a href="https://www.gnupg.org/">GnuPG</a> can do, it is an amazing piece of work, if interested, you should check it out. 
+A nice place to get started with using it is this <a href="https://wiki.archlinux.org/index.php/GnuPG">Arch Linux page</a> about GnuPG.</p>
+
+<p>I use the terminal everywhere and there is a cli-tool named <a href="https://wiki.archlinux.org/index.php/Pass">pass</a> to automate the usage of GnuPG for passwords. We will use that to manage our passwords.
+The cool thing about the pass password-manager, is its cross platform uniform behavior. You know how to use it on one platform and you know it on all your other devices (more on syncing the passwords later)</p>
+
+<h2>Dependencies</h2>
+
+<p>You first have to install pass and GnuPG and more important, set up GnuPG and have it make a key for you (you can of course use an already existing key, but then you would not be reading this). Do what is right on your system:</p>
+
+<p><strong>Debian-based;</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install pass gnupg
+</code></pre></div></div>
+<p><strong>Arch Linux; </strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo pacman -Sy pass gnupg
+</code></pre></div></div>
+<h2>Setup your encryption key</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg --full-gen-key
+</code></pre></div></div>
+<p>Now gpg will ask you a couple questions, like what kind of key you want, press 1.
+I chose a key-size of 4096, which is the highest possible. Then put in 0 for a everlasting key, confirm you choice.
+Then it will ask for a name, email and comment (like “created pm 27/12/2016”). 
+Confirm with pressing <code class="highlighter-rouge">O</code> and ENTER. Then STOP!</p>
+
+<p>You should now have the following output:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@localhost ~]# gpg --full-gen-key
+gpg (GnuPG) 2.2.4; Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+Your selection? 1
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (2048) 4096
+Requested keysize is 4096 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      &lt;n&gt;  = key expires in n days
+      &lt;n&gt;w = key expires in n weeks
+      &lt;n&gt;m = key expires in n months
+      &lt;n&gt;y = key expires in n years
+Key is valid for? (0) 0
+Key does not expire at all
+Is this correct? (y/N) y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: lvlrt
+Email address: gpg@larsveelaert.com
+Comment: Thisismycomment
+You selected this USER-ID:
+    "lvlrt (Thisismycomment) &lt;gpg@larsveelaert.com&gt;"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+Please enter the passphrase to
+protect your new key
+Passphrase: 
+</code></pre></div></div>
+<p>Now put a YouTube video playing, setup a file copy from and to your disk for 10 minutes or something. 
+Then go back to your console and it will have asked for a password. Fill in the password while your device is doing the heavy work. Confirm and you are done.</p>
+
+<p>You can close your YouTube video and the file transfer. This was to generate some computer noise. Which will improve the randomness of the generated key!</p>
+
+<p>To test if the key was successfully created enter the following command:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@localhost ~]# gpg --list-keys
+...
+----------------------------
+pub   rsa2048 2018-01-10 [SC]
+      927A1402D78C9188216F233841CB4088BBF533E9
+uid           [ultimate] lvlrt (test) &lt;gpg@larsveelaert.com&gt;
+</code></pre></div></div>
+<p>Ok great!, let us now get pass setup, you can do that with this command: 
+(where the <code class="highlighter-rouge">&lt;id&gt;</code> value is your email or name you just put in)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pass init &lt;id&gt;
+</code></pre></div></div>
+<p>Then it will output the following:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@localhost ~]# pass init gpg@larsveelaert.com
+mkdir: created directory '/home/king/.password-store/'
+Password store initialized for gpg@larsveelaert.com
+</code></pre></div></div>
+<p>Setup done!</p>
+
+<h2>Usage</h2>
+
+<p><strong>To insert a password in your password-store:</strong></p>
+
+<pre>pass insert stuffathome/thingseverybodyshouldknow/wifipassword</pre>
+
+<p>You can keep adding or removing ‘/’ signs to make more divisions in your password-store.</p>
+
+<p>These will just be added as descending folders.</p>
+
+<p>To have it instead generate a password for you (if you want to be extra safe) and store it in an encrypted file:</p>
+
+<pre>pass generate stuffathome/thingseverybodyshouldknow/wifipassword</pre>
+
+<p><strong>No password asked? Isn’t this unsafe?</strong></p>
+
+<p>The way we encrypted this password-store is asymmetrical… so everybody can encrypt, but only the ones with a private key can decrypt.</p>
+
+<p><strong>To list the available passwords just type:</strong></p>
+
+<pre>pass show</pre>
+
+<p><strong>To retrieve the password we just created, do:</strong></p>
+
+<pre>pass show stuffathome/thingseverybodyshouldknow/wifipassword</pre>
+
+<p>And now it will ask for your passphrase of the gpg key you specified in the setup command. Then it should echo the password out. And thats really all you need to know to use this password manager. The key will be available for a small time until it timed out. That’s it!</p>
+
+<h2>Syncing your passwords</h2>
+
+<p>To synchronize your password manager between devices. You need to synchronize 2 sets of files. The first one is you gpg key. Those are stored in the folder ~/.gnupg by default. You can change the location where GnuPG checks for these files with setting the $GNUPGHOME variable:</p>
+
+<pre>export GNUPGHOME="~/keys"</pre>
+
+<p>Now you can move your .gnupg folder to a new location and put the new location in this variable. REMINDER: you have to put this command in your ~/.bashrc file or alias it with your pass command (more on that later).</p>
+
+<p>You passwords are stored in a directory, called a store, this is the one that pass has setup for you. The default location is ~/.password-store. If you use change the variables $PASSWORD_STORE_DIR and $PASSWORDS_STORE_GIT to the location where your store is. So all this in one command (put this in ~/.bashrc):</p>
+
+<pre>alias pass='GNUPGHOME=~/keys PASSWORD_STORE_DIR=~/DATA/PASSWORDS PASSWORD_STORE_GIT=~/DATA/PASSWORDS pass'</pre>
+
+<p>This alias command, will make your pass command always use these variables. You copy the passwords-store and key to a service like Dropbox or in a synced git-repository, put the path to these directories in the command and you are set! Please keep the key and password-store seperate, it is still protected by a passphrase but you lose the protection of you 4096-bit key.</p>
+
+<p>That’s it! Good Luck with your password manager!</p>
+
+  </div>
+
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; Lars Veelaert - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="http://localhost:4000/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>HackOTG (v1.1): Integrating the cable for more portability</title>
+  <meta name="description" content="This article is part of a series: you can find the first article here. Before we start using our device, we have to make sure it is a good form-factor for our purpose and at this point, we will always need a USB-cable attached to the device, to be able to interface with it. In the future we will sometimes want to connect with WiFi so we can use the same connection to emulate different devices for our physical attacks. No matter what, we will need the cable attached to it, be it for power, connectivity or attack. There are handy connections on the bottom of the Pi zero to make the following process easier. If you don’t want to perform this mod, you don’t need to, but it is very handy and makes the whole platform more compact and portable. What do you need? Soldering iron, solder and tweezers (small wires) Pi zero Spare USB-cable Small zip tie Knife Pliers Glue Putting it all together No surprises here, snip of the USB-A side, strip the cable from the black plastic layer, and you’ll find a metallic shielding layer with 4 cables in it (white, green, red, black). Those are 2 data-cables and 2 for power. If you make 2 small indentations on both sides of the USB-port, you can tie a cable-tie around it and through the holes. Pull the cable-tie very tight (use pliers) and it wont move anymore. Solder the cables to the pads with respective indicated color on the image below. The cables can be as short as 5cm. You can drop a bit of glue onto the wires to insulate them form each other again. The result and what’s next? Now you don’t have to carry a USB-cable together with the Pi, it is already integrated in the device! If you plug it straight into a power source (battery, wall-socket, …) it will boot. And if the device is also a USB-host, it will present itself as an Ethernet-to-USB adapter and we can SSH into it to perform our work. Now we can start using our HackOTG everywhere! You can find the next one here: HackOTG (v1.2): Basic connectivity to the internet">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2017/10/10/hackotg-v1-1-integrating-the-cable-for-more-portability/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="lvlrt" href="http://localhost:4000/feed.xml">
+
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="HackOTG (v1.1): Integrating the cable for more portability">
+  <meta name="twitter:description" content="This article is part of a series: you can find the first article here. Before we start using our device, we have to make sure it is a good form-factor for our purpose and at this point, we will alw...">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-112123975-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">lvlrt</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/archives/">Archives</a>
+      
+        
+        <a class="page-link" href="https://github.com/larsveelaert">GitHub</a>
+      
+        
+        <a class="page-link" href="https://linkedin.com/in/larsveelaert">LinkedIn</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">HackOTG (v1.1): Integrating the cable for more portability</h1>
+    
+    <p class="post-meta"><time datetime="2017-10-10T00:00:00+00:00" itemprop="datePublished">Oct 10, 2017</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/hackotg/">HackOTG</a>
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+
+ •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/badusb/">badusb</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/embedded/">embedded</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/otg/">OTG</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/rpi/">rpi</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/usb/">usb</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="http://localhost:4000/assets/HackOTG3.jpg" alt="Hackotg complete with usb" /></p>
+
+<p><em>This article is part of a series: <a href="/2017/10/07/hackotg-v1-0-universal-portable-security-platform/">you can find the first article here</a>.</em></p>
+
+<p>Before we start using our device, we have to make sure it is a good form-factor for our purpose and at this point, we will always need a USB-cable attached to the device, to be able to interface with it. In the future we will sometimes want to connect with WiFi so we can use the same connection to emulate different devices for our physical attacks.</p>
+
+<p>No matter what, we will need the cable attached to it, be it for power, connectivity or attack. There are handy connections on the bottom of the Pi zero to make the following process easier. If you don’t want to perform this mod, you don’t need to, but it is very handy and makes the whole platform more compact and portable.</p>
+
+<h2>What do you need?</h2>
+
+<ul>
+  <li>Soldering iron, solder and tweezers (small wires)</li>
+  <li>Pi zero</li>
+  <li>Spare USB-cable</li>
+  <li>Small zip tie</li>
+  <li>Knife</li>
+  <li>Pliers</li>
+  <li>Glue</li>
+</ul>
+
+<h2>Putting it all together</h2>
+
+<p><img src="http://localhost:4000/assets/rpi_usb.jpg" alt="Rpi USB" /></p>
+
+<p>No surprises here, snip of the USB-A side, strip the cable from the black plastic layer, and you’ll find a metallic shielding layer with 4 cables in it (white, green, red, black). Those are 2 data-cables and 2 for power. If you make 2 small indentations on both sides of the USB-port, you can tie a cable-tie around it and through the holes. Pull the cable-tie very tight (use pliers) and it wont move anymore.</p>
+
+<p>Solder the cables to the pads with respective indicated color on the image below. The cables can be as short as 5cm. You can drop a bit of glue onto the wires to insulate them form each other again.</p>
+
+<p><img src="http://localhost:4000/assets/solder_pins_rpi.png" alt="Pins rpi" /></p>
+
+<h2>The result and what’s next?</h2>
+
+<p>Now you don’t have to carry a USB-cable together with the Pi, it is already integrated in the device! If you plug it straight into a power source (battery, wall-socket, …) it will boot. And if the device is also a USB-host, it will present itself as an Ethernet-to-USB adapter and we can SSH into it to perform our work. Now we can start using our HackOTG everywhere!</p>
+
+<p><img src="http://localhost:4000/assets/HackOTG3.jpg" alt="Hackotg complete with usb" /></p>
+
+<p><em>You can find the next one here:</em></p>
+
+<blockquote class="wp-embedded-content" data-secret="zjGS1XMwjZ">
+  <p>
+    <a href="/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">HackOTG (v1.2): Basic connectivity to the internet</a>
+  </p>
+</blockquote>
+
+  </div>
+
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; Lars Veelaert - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="http://localhost:4000/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

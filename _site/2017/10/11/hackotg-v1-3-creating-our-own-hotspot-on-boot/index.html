@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>HackOTG (v1.3): Creating our own hotspot on boot</title>
+  <meta name="description" content="This article is part of a series: you can find the first article here. If you missed the previous one, it is here. Checking the capabilities of our WiFi-interface On any system you can run the following command to get the capabilities of the wireless interfaces attached to that device: iw list In the output of our Pi Zero W, we can see that is supports an AP mode, which means we can make the HostOTG create a hotspot on boot for controlling the device from a distance or without making use of the Ethernet-to-USB interface that the HostOTG emulates. In the same output you can also see that we can combine modes, but with a couple restrictions: #{ managed } &amp;lt;= 1, #{ AP } &amp;lt;= 1, #{ P2P-client } &amp;lt;= 1, #{ P2P-device } &amp;lt;= 1, total &amp;lt;= 4, #channels &amp;lt;= 1 This means that we can set the interface in both AP and client mode. As a result you can have connectivity from an existing WiFi-hotspot and create also our own. Both hotspots must exist on the same channel, but that is no problem. This is quite advanced but cool to keep in mind. In our case we want to set up an AP that starts on boot, so we can make our first connection. If you want to use both the AP and be a client to another, you’ll have to know and configure the environment before. This is not practical, so you’ll have to configure it over the emulated Ethernet-to-USB connection to make it work in every situation. You can find more on setting up combined modes here. Creating the hotspot Install the necessairy packages: sudo apt-get install hostapd dnsmasq Now we must create a configuration file containing all the settings of the hotspot. I like to keep all configurations files in the home directory, so they are easily changed, copied and reused. We will be combining a lot of the programs in different setups, so it’s easier if they are easy to find. Create the file hostapd.conf: (Change ssid and wpa_passphrase if you want to) ssid=HackOTG wpa_passphrase=raspberry interface=wlan0 driver=nl80211 hw_mode=g channel=6 macaddr_acl=0 auth_algs=1 ignore_broadcast_ssid=0 wpa=2 wpa_key_mgmt=WPA-PSK wpa_pairwise=TKIP rsn_pairwise=CCMP Start the hotspot: killall wpa_supplicant dhcpcd hostapd dnsmasq #kill all unnecessary processes sudo mount --bind /dev/urandom /dev/random #BUGFIX, to ensure good security sudo hostapd hostapd.conf Run a DHCP-server on the hotspot-interface An easy and lightweight option of looking for a DHCP-server is “dnsmasq”. We already installed the package so we go on and create the config file. dnsmasq.conf: # disables dnsmasq reading any other files like /etc/resolv.conf for nameservers no-resolv # Interface to bind to interface=wlan0 # Specify starting_range,end_range,lease_time dhcp-range=10.0.0.3,10.0.0.20,12h # dns addresses to send to the clients server=8.8.8.8 server=8.8.4.4 Start the DHCP-server and configure the interface: sudo dnsmasq -C dnsmaq.conf sudo ifconfig wlan0 up 10.0.0.1 netmask 255.255.255.0 Putting it all together We can make scripts to start or stop the hotspot on-demand. Just create these scripts and run them to put the HackOTG in and out hotspot-mode. hotspot_start.sh: if [ $( mount | grep urandom | wc -l ) -eq 0 ]; then sudo mount --bind /dev/urandom /dev/random fi sh /home/pi/hotspot_stop.sh sudo hostapd /home/pi/hostapd.conf&amp;amp; sudo dnsmasq -C /home/pi/dnsmasq.conf&amp;amp; sleep 2 sudo ifconfig wlan0 up 10.0.0.1 netmask 255.255.255.0 hotspot_stop.sh: sudo killall dnsmasq hostapd dhcpcd wpa_supplicant sudo ifconfig wlan0 0.0.0.0 (optional) _You should add the hotspot_stop.sh script to the previous _connect_wifi_ssid.sh script from this article. Otherwise you will not be able to connect to the internet anymore because the AP will be occupying the AP, add the hotspot_stop.sh command to the script like this: sh /home/pi/hotspot_stop.sh sudo wpa_supplicant -B -i wlan0 -D wext -c ssid.conf sudo dhcpcd --nohook wpa_supplicant wlan0 Start the hotspot on boot For all Debian-based distro’s there is a file /etc/rc.local that runs all commands that are put in it when the device is fully booted. Simply add a line with the hotspot_start.sh command to it (don’t forget the &amp;amp; at the end to make it a background-process). The command should go before the line containing “exit 0”. /etc/rc.local: # By default this script does nothing. # Print the IP address _IP=$(hostname -I) || true if [ &quot;$_IP&quot; ]; then printf &quot;My IP address is %s\n&quot; &quot;$_IP&quot; fi # put your scripts to boot here sh /home/pi/hotspot_start.sh&amp;amp; exit 0 Now you can restart the device and if everything is OK, it will create the WiFi-hotspot named “HackOTG” with the password “raspberry”. If you waited for a minute and you can’t pick up the signal, you can still log in to your device over the emulated Ethernet-to-USB device. Now you have 2 ways to connect to your HackOTG!. In the next article we will further explore the possibilities to see and controll trafiic on a network. HackOTG (v1.4): See all traffic on a network with Promiscuous mode and Bettercap">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="lvlrt" href="http://localhost:4000/feed.xml">
+
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="HackOTG (v1.3): Creating our own hotspot on boot">
+  <meta name="twitter:description" content="This article is part of a series: you can find the first article here. If you missed the previous one, it is here. Checking the capabilities of our WiFi-interface On any system you can run the foll...">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-112123975-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">lvlrt</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/archives/">Archives</a>
+      
+        
+        <a class="page-link" href="https://github.com/larsveelaert">GitHub</a>
+      
+        
+        <a class="page-link" href="https://linkedin.com/in/larsveelaert">LinkedIn</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">HackOTG (v1.3): Creating our own hotspot on boot</h1>
+    
+    <p class="post-meta"><time datetime="2017-10-11T00:00:00+00:00" itemprop="datePublished">Oct 11, 2017</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/hackotg/">HackOTG</a>
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+
+ •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/embedded/">embedded</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+        <a href="/tags/networking/">networking</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/rpi/">rpi</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/wifi/">wifi</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/tags/wireless/">wireless</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="http://localhost:4000/assets/wifi_pi.png" alt="Header" /></p>
+
+<p><em>This article is part of a series: <a href="/2017/10/07/hackotg-v1-0-universal-portable-security-platform/">you can find the first article here</a>. If you missed the previous one, <a href="/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">it is here</a>.</em></p>
+
+<h2>Checking the capabilities of our WiFi-interface</h2>
+
+<p>On any system you can run the following command to get the capabilities of the wireless interfaces attached to that device:</p>
+
+<pre>iw list</pre>
+
+<p>In the output of our Pi Zero W, we can see that is supports an AP mode, which means we can make the HostOTG create a hotspot on boot for controlling the device from a distance or without making use of the Ethernet-to-USB interface that the HostOTG emulates.</p>
+
+<p>In the same output you can also see that we can combine modes, but with a couple restrictions:</p>
+
+<pre class="output">#{ managed } &lt;= 1, #{ AP } &lt;= 1, #{ P2P-client } &lt;= 1, #{ P2P-device } &lt;= 1,
+ total &lt;= 4, #channels &lt;= 1</pre>
+
+<p>This means that we can set the interface in both AP and client mode. As a result you can have connectivity from an existing WiFi-hotspot and create also our own. Both hotspots must exist on the same channel, but that is no problem.</p>
+
+<p>This is quite advanced but cool to keep in mind. In our case we want to set up an AP that starts on boot, so we can make our first connection. If you want to use both the AP and be a client to another, you’ll have to know and configure the environment before. This is not practical, so you’ll have to configure it over the emulated Ethernet-to-USB connection to make it work in every situation. You can find more on setting up combined modes <a href="https://wiki.archlinux.org/index.php/software_access_point">here</a>.</p>
+
+<h2>Creating the hotspot</h2>
+
+<p><strong>Install the necessairy packages:</strong></p>
+
+<pre>sudo apt-get install hostapd dnsmasq</pre>
+
+<p>Now we must create a configuration file containing all the settings of the hotspot. I like to keep all configurations files in the home directory, so they are easily changed, copied and reused. We will be combining a lot of the programs in different setups, so it’s easier if they are easy to find.</p>
+
+<p><strong>Create the file <em>hostapd.conf</em>:</strong> (Change ssid and wpa_passphrase if you want to)</p>
+
+<pre>ssid=HackOTG
+wpa_passphrase=raspberry
+interface=wlan0
+driver=nl80211
+hw_mode=g
+channel=6
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP</pre>
+
+<p><strong>Start the hotspot:</strong></p>
+
+<pre>killall wpa_supplicant dhcpcd hostapd dnsmasq #kill all unnecessary processes
+sudo mount --bind /dev/urandom /dev/random #BUGFIX, to ensure good security
+sudo hostapd hostapd.conf</pre>
+
+<h2>Run a DHCP-server on the hotspot-interface</h2>
+
+<p>An easy and lightweight option of looking for a DHCP-server is “dnsmasq”. We already installed the package so we go on and create the config file.</p>
+
+<p><strong>dnsmasq.conf:</strong></p>
+
+<pre class="output"># disables dnsmasq reading any other files like /etc/resolv.conf for nameservers
+no-resolv
+# Interface to bind to
+interface=wlan0
+# Specify starting_range,end_range,lease_time
+dhcp-range=10.0.0.3,10.0.0.20,12h
+# dns addresses to send to the clients
+server=8.8.8.8
+server=8.8.4.4</pre>
+
+<p><strong>Start the DHCP-server and configure the interface:</strong></p>
+
+<pre>sudo dnsmasq -C dnsmaq.conf
+sudo ifconfig wlan0 up 10.0.0.1 netmask 255.255.255.0</pre>
+
+<h2>Putting it all together</h2>
+
+<p>We can make scripts to start or stop the hotspot on-demand. Just create these scripts and run them to put the HackOTG in and out hotspot-mode.</p>
+
+<p><strong>hotspot_start.sh:</strong></p>
+
+<pre>if [ $( mount | grep urandom | wc -l ) -eq 0 ]; then
+ sudo mount --bind /dev/urandom /dev/random
+fi
+sh /home/pi/hotspot_stop.sh
+sudo hostapd /home/pi/hostapd.conf&amp;
+sudo dnsmasq -C /home/pi/dnsmasq.conf&amp;
+sleep 2
+sudo ifconfig wlan0 up 10.0.0.1 netmask 255.255.255.0</pre>
+
+<p><strong>hotspot_stop.sh:</strong></p>
+
+<pre>sudo killall dnsmasq hostapd dhcpcd wpa_supplicant
+sudo ifconfig wlan0 0.0.0.0</pre>
+
+<p><em>(optional) _You should add the hotspot_stop.sh script to the previous _connect_wifi_ssid.sh</em> script from <a href="https://larsveelaert.github.io/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/">this article</a>. Otherwise you will not be able to connect to the internet anymore because the AP will be occupying the AP, add the <em>hotspot_stop.sh</em> command to the script like this:</p>
+
+<pre>sh /home/pi/hotspot_stop.sh
+sudo wpa_supplicant -B -i wlan0 -D wext -c ssid.conf
+sudo dhcpcd --nohook wpa_supplicant wlan0</pre>
+
+<h2>Start the hotspot on boot</h2>
+
+<p>For all Debian-based distro’s there is a file <em>/etc/rc.local</em> that runs all commands that are put in it when the device is fully booted. Simply add a line with the <em>hotspot_start.sh</em> command to it (don’t forget the &amp; at the end to make it a background-process). The command should go before the line containing <em>“exit 0”</em>.</p>
+
+<p><strong>/etc/rc.local:</strong></p>
+
+<pre># By default this script does nothing.
+
+# Print the IP address
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+ printf "My IP address is %s\n" "$_IP"
+fi
+
+# put your scripts to boot here
+sh /home/pi/hotspot_start.sh&amp;
+
+exit 0</pre>
+
+<p>Now you can restart the device and if everything is OK, it will create the WiFi-hotspot named <em>“HackOTG”</em> with the password <em>“raspberry”</em>. If you waited for a minute and you can’t pick up the signal, you can still log in to your device over the emulated Ethernet-to-USB device. Now you have 2 ways to connect to your HackOTG!.</p>
+
+<p>In <a href="/2017/10/31/hackotg-v1-4-see-all-traffic-on-a-network/">the next article</a> we will further explore the possibilities to see and controll trafiic on a network.</p>
+
+<blockquote class="wp-embedded-content" data-secret="UxtFeiWmpQ">
+  <p>
+    <a href="/2017/10/31/hackotg-v1-4-see-all-traffic-on-a-network/">HackOTG (v1.4): See all traffic on a network with Promiscuous mode and Bettercap</a>
+  </p>
+</blockquote>
+
+  </div>
+
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; Lars Veelaert - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="http://localhost:4000/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

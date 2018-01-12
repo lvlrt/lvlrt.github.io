@@ -1,0 +1,8 @@
+pacman -Syu tigervnc
+
+vncserver
+-> type in a password
+
+~/.vnc/config -> settings for remote and stuff
+
+export DISPLAY=:1

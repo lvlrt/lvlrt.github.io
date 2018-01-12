@@ -1,0 +1,58 @@
+html, vlc , blablam, cmus not working
+
+install vlc
+
+install pulseaudio (on chromebook)
+
+vlc -I http --http-password trealeev MUSIC/*
+
+###TODO hoe media library te maken
+
+youtube-dl how to use
+
+#### MPD (vlc reaaaaaly basic)))
+mopidy vs mpd
+
+Add the archive’s GPG key:
+
+wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
+Add the APT repo to your package sources:
+
+sudo wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/jessie.list
+Install Mopidy and all dependencies:
+
+sudo apt-get update
+sudo apt-get install mopidy
+Finally, you need to set a couple of config values, and then you’re ready to run Mopidy or run Mopidy as a service.
+When a new release of Mopidy is out, and you can’t wait for you system to figure it out for itself, run the following to upgrade right away:
+
+sudo apt-get update
+sudo apt-get dist-upgrade
+Installing extensions
+If you want to use any Mopidy extensions, like Spotify support or Last.fm scrobbling, you need to install additional packages.
+
+To list all the extensions available from apt.mopidy.com, you can run:
+
+apt-cache search mopidy
+To install one of the listed packages, e.g. mopidy-spotify, simply run:
+
+sudo apt-get install mopidy-spotify
+
+#########or through pip>
+
+no config just launc,
+
+127.0.0.1 install extensions
+
+
+https://docs.mopidy.com/en/latest/ext/web/#ext-web to get some clients
+
+go to 127.0.0.1:6680 and select the client you installed and enjoy
+
+### youtube dl https://github.com/rg3/youtube-dl/blob/master/README.md#readme
+
+#to install
+
+sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+
+sudo chmod a+rx /usr/local/bin/youtube-dl
