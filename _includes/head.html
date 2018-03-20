@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
+  <!--<script>
     var isChromium = window.chrome,
     winNav = window.navigator,
     vendorName = winNav.vendor,
@@ -26,7 +26,7 @@
         document.getElementsByTagName("html")[0].style.transformOrigin="top left 0px";
     }
     //added this because chrome viewport and iframes
-  </script>
+  </script>-->
   {% assign title = page.title | default: site.title | escape %}
   {% assign canonical = page.url | replace:'index.html','' | absolute_url %}
   {% assign description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | escape %}
