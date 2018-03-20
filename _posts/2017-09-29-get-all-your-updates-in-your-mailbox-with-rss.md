@@ -9,7 +9,7 @@ tags:
   - networking
   - terminal
 ---
-![header rss article]({{ "/assets/rss.jpg" | absolute_url }})
+![header rss article]({{ "/assets/rss.jpg" | relative_url }})
 
 So I have a couple sites I check regularly&#8230; YouTube, a couple blogs, Reddit-pages, LinkedIn and some news-sites. Often it happens that I miss some interesting article, or in general, I have to remember to check it. It&#8217;s not very productive to have the feeling you have to check everything, all the time.
 
