@@ -10,7 +10,7 @@ tags:
   - rpi
   - usb
 ---
-![HackOTG]({{ "/assets/HackOTG.jpg" | absolute_url }})
+![HackOTG]({{ "/assets/HackOTG.jpg" | relative_url }})
 
 _When demonstrating a possible attack vector to a friend or a client, you want something standalone that is not influenced by your day-to-day tasks. Many have a persistent [Kali Linux](https://www.kali.org/) on a bootable USB-drive exactly for this purpose. There are also many attack-vectors which require physical devices. Exploits like [DNS-tunneling](https://larsveelaert.github.io/2017/10/03/hack-get-free-wifi-on-paid-access-hotspots/), HID-attacks and [BadUSB](https://www.topsec.com/it-security-news-and-info/what-is-badusb-and-should-i-be-scared) are only a couple of examples._
 
@@ -20,7 +20,7 @@ I&#8217;ve ported a lot of my physical exploits and some wifi-exploits to my And
 
 So I was searching something open-source, portable, inexpensive, expendable, easy-to-mod and easy to interface with and change it behavior and I found this:
 
-![Rpi Zero on adafruit]({{ "/assets/Rpizero.png" | absolute_url }})
+![Rpi Zero on adafruit]({{ "/assets/Rpizero.png" | relative_url }})
 
 It is essentially a small stand-alone computer, running Linux of an SD-card. What is cool about this model is, that it has WiFi and Bluetooth and a board-setup configured to support USB-gadget or OTG mode. Which can change one of the micro-USB ports in whatever USB-device that you want (HID, Ethernet Dongle, Mass-storage, MIDI, &#8230; ). It is powered with a normal 5v micro-USB cable plugged in a USB-device or wall-adapter.
 
@@ -36,7 +36,7 @@ A SD-card in a raspberry pi consists of 1 small FAT-partition with boot files an
 
 **Download the Raspbian Lite-image:** (You don&#8217;t need te full one)
 
-![Raspbian Download]({{ "/assets/raspbian_download.png" | absolute_url }})
+![Raspbian Download]({{ "/assets/raspbian_download.png" | relative_url }})
 
 <pre>wget https://downloads.raspberrypi.org/raspbian_lite_latest
 unzip raspbian_lite_latest #will unzip an .img file</pre>
