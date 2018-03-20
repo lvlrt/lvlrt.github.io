@@ -10,7 +10,7 @@ tags:
   - sniffing
   - spoofing
 ---
-![Header]({{ "/assets/header_hackotgv1_4.png" | absolute_url }})
+![Header]({{ "/assets/header_hackotgv1_4.png" | relative_url }})
 
  _This article is part of a series: [you can find the first article here](/2017/10/07/hackotg-v1-0-universal-portable-security-platform/). 
 If you missed the previous one, [it is here](/2017/10/11/hackotg-v1-3-creating-our-own-hotspot-on-boot/)._
@@ -206,7 +206,7 @@ You can also strip encryption (HTTPS, HSTS) till a certain extend by using other
 
 <pre>sudo bettercap -T 192.168.1.14 --proxy -P POST</pre>
 
-![Bettercap capture]({{ "/assets/bettercap_capture.png" | absolute_url }})
+![Bettercap capture]({{ "/assets/bettercap_capture.png" | relative_url }})
 
 As you can see (above) a password was captured:
 
@@ -220,7 +220,7 @@ If you can&#8217;t strip the encryption (better safety), you can replace it with
 
 <pre>sudo bettercap -T 192.168.1.14 --proxy --proxy-https -P POST</pre>
 
-![Connection private]({{ "/assets/connection_private.png" | absolute_url }})
+![Connection private]({{ "/assets/connection_private.png" | relative_url }})
 
 Now if we have control over the unencrypted data, we can change it in any way we want. Some easy examples for injection attacks are the following, you can still add the force https option to these:
 
