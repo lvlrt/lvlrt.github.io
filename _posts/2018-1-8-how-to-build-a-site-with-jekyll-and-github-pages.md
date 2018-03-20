@@ -10,7 +10,7 @@ tags:
   - git
   - jekyll
 ---
-![Jekyll and Pages Logo]({{ "/assets/jekyll_pages.jpg" | absolute_url }})
+![Jekyll and Pages Logo]({{ "/assets/jekyll_pages.jpg" | relative_url }})
 
 _As a terminal-guy, I never really like the way Content Management Systems for websites work. Sure, they provide great UX (mostly) for the average user. But what if I want to skip all that and just make a barebones site that is easily manageable with the applications I already have on my system now?_
 
