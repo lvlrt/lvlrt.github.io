@@ -9,7 +9,7 @@ tags:
   - security
   - terminal
 ---
-![Header]({{ "/assets/encryption.jpg" | absolute_url }})
+![Header]({{ "/assets/encryption.jpg" | relative_url }})
 
 In this article we will setup a secure password manager. You probably use the same password over and over again on multiple sites/devices/applications. Not so great! If one service gets compromised, an attacker can wreak some serious havoc. **YOU SHOULD USE DIFFERENT PASSWORDS!**
   
