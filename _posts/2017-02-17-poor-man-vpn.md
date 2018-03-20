@@ -10,7 +10,7 @@ tags:
   - terminal
   - vpn
 ---
-![header]({{ "/assets/vpn.png" | absolute_url }})
+![header]({{ "/assets/vpn.png" | relative_url }})
 
 ## Why?
 
