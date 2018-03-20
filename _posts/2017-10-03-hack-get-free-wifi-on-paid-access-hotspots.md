@@ -11,7 +11,7 @@ tags:
   - tunneling
   - vpn
 ---
-![header]({{ "/assets/dns-tunnel-monitoring.png" | absolute_url }})
+![header]({{ "/assets/dns-tunnel-monitoring.png" | relative_url }})
 
 Everybody knows that you can&#8217;t connect to a WiFi-hotspot if it is secured and you don&#8217;t have a the password. But at airports, train-stations or homes with a routers from a big provider you will have a unsecured wifi hotspot, but when you connect to it and you open your browser, you will get prompted to log in or supply a credit card, etc&#8230; . Great if you have a login but otherwise you are stuck behind this [&#8216;captive&#8217; portal](https://en.wikipedia.org/wiki/Captive_portal) (that is what this page is called).
 
