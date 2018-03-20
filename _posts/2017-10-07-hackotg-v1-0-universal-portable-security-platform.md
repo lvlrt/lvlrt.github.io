@@ -36,7 +36,7 @@ A SD-card in a raspberry pi consists of 1 small FAT-partition with boot files an
 
 **Download the Raspbian Lite-image:** (You don&#8217;t need te full one)
 
-![Raspbian Download]({{ "/assets/raspbian_download.png" | relative_url }})
+![Raspbian Download]({{ "/assets/raspian_download.png" | relative_url }})
 
 <pre>wget https://downloads.raspberrypi.org/raspbian_lite_latest
 unzip raspbian_lite_latest #will unzip an .img file</pre>
@@ -158,7 +158,7 @@ unmount boot root</pre>
 
 If everything is set up correctly, you can use a micro-USB to USB-A (regular charging cable) to connect your device with the &#8220;USB&#8221; marked port to your computer (or any other device with a terminal). The connection will give both a 5V power and a data-connection to your Pi. After plugging the device in, the ACT light will start blinking if the SD-card has a bootable operating system on it. The first time the boot up process will take longer, but normally this takes about 10 seconds.
 
-![HackOTG]({{ "/assets/HackOTG.jpg" | absolute_url }})
+![HackOTG]({{ "/assets/HackOTG.jpg" | relative_url }})
 
 On Linux, you can check your interfaces by issuing the command:
 
