@@ -10,7 +10,7 @@ tags:
   - malware
   - attack-vectors 
 ---
-![Intro 11 tips hacked]({{ "/assets/11_tips_hacked.jpg" | absolute_url }})
+![Intro 11 tips hacked]({{ "/assets/11_tips_hacked.jpg" | relative_url }})
 
 _We all live online and have complete digital lives. To chat, work, live and buy online means that we need to get the right data to the right person. First let’s start with which data is so important to us and so desired by nefarious actors in the digital world._
 
