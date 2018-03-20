@@ -42,7 +42,7 @@ This means that if we control the subdomain we are looking up, and we control th
 
 You can use [freedns.afraid.org](https://freedns.afraid.org/) for the [dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS) and the [NS-record](https://en.wikipedia.org/wiki/List_of_DNS_record_types#NS). So make an account and go to &#8220;subdomains&#8221;. You need to make 2 subdomains. One is a normal A-record (domain name to IP) and one of the type NS that is redirected to the A-record so it points to the public IP of the server at home.
 
-![setup ddns on site]({{ "/assets/iodine1.png" | absolute_url }})
+![setup ddns on site]({{ "/assets/iodine1.png" | relative_url }})
   
 For the A-record fill in a sub domain (can be anything, just remember it) and choose a domain (these are donated by a large community to use). fill in the captcha and done.
   
@@ -50,7 +50,7 @@ The NS-record do the same, but change the destination to the A-record you just m
 
 The IP of the A-record was auto-filled when the subdomain was created but it needs to be periodicly updated by the server, so it keeps pointing at the public IP of you home-router with the server behind it. There are many ways to do this ([can be found here](https://freedns.afraid.org/scripts/freedns.clients.php)), but one of the easiest is fetching an url with a curl-command every 60 seconds.If you go to [freedns.afraid.org/dynamic](https://freedns.afraid.org/dynamic/), you can choose your subdomain of your A-record and get the link behind &#8216;direct link&#8217;.
 
-![extra setup]({{ "/assets/iodine2.png" | absolute_url }})
+![extra setup]({{ "/assets/iodine2.png" | relative_url }})
 
 It looks like this:
 
