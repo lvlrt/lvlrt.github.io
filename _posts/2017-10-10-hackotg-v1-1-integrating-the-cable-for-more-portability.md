@@ -10,7 +10,7 @@ tags:
   - rpi
   - usb
 ---
-![Hackotg complete with usb]({{ "/assets/HackOTG3.jpg" | absolute_url }})
+![Hackotg complete with usb]({{ "/assets/HackOTG3.jpg" | relative_url }})
 
 _This article is part of a series: [you can find the first article here](/2017/10/07/hackotg-v1-0-universal-portable-security-platform/)._
 
@@ -30,19 +30,19 @@ No matter what, we will need the cable attached to it, be it for power, connecti
 
 ## Putting it all together
 
-![Rpi USB]({{ "/assets/rpi_usb.jpg" | absolute_url }})
+![Rpi USB]({{ "/assets/rpi_usb.jpg" | relative_url }})
 
 No surprises here, snip of the USB-A side, strip the cable from the black plastic layer, and you&#8217;ll find a metallic shielding layer with 4 cables in it (white, green, red, black). Those are 2 data-cables and 2 for power. If you make 2 small indentations on both sides of the USB-port, you can tie a cable-tie around it and through the holes. Pull the cable-tie very tight (use pliers) and it wont move anymore.
   
 Solder the cables to the pads with respective indicated color on the image below. The cables can be as short as 5cm. You can drop a bit of glue onto the wires to insulate them form each other again.
 
-![Pins rpi]({{ "/assets/solder_pins_rpi.png" | absolute_url }})
+![Pins rpi]({{ "/assets/solder_pins_rpi.png" | relative_url }})
 
 ## The result and what&#8217;s next?
 
 Now you don&#8217;t have to carry a USB-cable together with the Pi, it is already integrated in the device! If you plug it straight into a power source (battery, wall-socket, &#8230;) it will boot. And if the device is also a USB-host, it will present itself as an Ethernet-to-USB adapter and we can SSH into it to perform our work. Now we can start using our HackOTG everywhere!
 
-![Hackotg complete with usb]({{ "/assets/HackOTG3.jpg" | absolute_url }})
+![Hackotg complete with usb]({{ "/assets/HackOTG3.jpg" | relative_url }})
 
 _You can find the next one here:_
 
