@@ -10,7 +10,7 @@ tags:
   - wifi
   - wireless
 ---
-![Header]({{ "/assets/wifi_pi.png" | absolute_url }})
+![Header]({{ "/assets/wifi_pi.png" | relative_url }})
 
 _This article is part of a series: [you can find the first article here](/2017/10/07/hackotg-v1-0-universal-portable-security-platform/). If you missed the previous one, [it is here](/2017/10/11/hackotg-v1-2-basic-connectivity-to-internet/)._
 
