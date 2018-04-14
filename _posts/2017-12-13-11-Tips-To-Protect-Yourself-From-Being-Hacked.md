@@ -35,7 +35,7 @@ So a good habit would be to reboot your laptop, smartphone, tablet, … once a d
 ## 2. Disable features of your device
 Have you seen the post-its covering the webcam on a colleague's laptop? This is a great tip. If somebody would get unintended access to your device’s webcam, it would still be unusable.
 
-You can continue this line of thinking, and turn off Wifi, Bluetooth and GPS when you are not using it. It’ll not only save you some battery life, but you’ll limit the vectors of attacks and data that can be used against you.
+You can continue this line of thinking, and put a piece of tape over your microphone, turn off Wifi, Bluetooth and GPS when you are not using it. It’ll not only save you some battery life, but you’ll limit the vectors of attacks and data that can be used against you.
 
 ## 3. Use a modern browser
 Use a modern browser like [Google Chrome](https://www.google.com/chrome/browser/desktop/index.html) or [Firefox](https://www.mozilla.org/en-US/firefox/new). They update themselves and will protect you from scams and malicious content. If you work at a company and can’t install new software, ask the IT-person which browser is configured on your machine. Internet Explorer 9 is not a good answer.
