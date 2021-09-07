@@ -17,7 +17,7 @@ title: lvlrt
 author: Lars Veelaert
 description: Personal site of Lars Veelaert
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://larsveelaert.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://lvlrt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 lang: en
 timezone: UTC
 exclude:
